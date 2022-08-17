@@ -22,8 +22,9 @@ Eric Brasil Nepomuceno
 
 ## Fase 2: Estudo do *workflow* do **Programming Historian** no GitHub
 
-- [ ] **02/07 a 10/08**: Análise da estrutura dos repositórios
-- [ ] **11/08 a 26/08**: Análise do *workflow* do repositório de submissões (*ph-submissions*)
+- [x] **02/07 a 10/08**: Análise da estrutura dos repositórios
+- [ ] **11/08 a 19/08**: Levantamento bibliográfico sobre o Programming Historian e análise
+- [ ] **20/08 a 26/08**: Análise do *workflow* do repositório de submissões (*ph-submissions*)
 - [ ] **29/08 a 16/09**: Compreensão da estrutura e dinâmica de trabalho do DH_Lab;
 - [ ] **29/08 a 16/09**: Análise do *workflow* do repositório do site estático do *Programming Historian* baseado em Jekyll
 - [ ] **26/08 a 23/09**: Relatório técnico referente à fase 2.
