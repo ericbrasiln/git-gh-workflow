@@ -78,6 +78,7 @@ Com essa função, podemos analisar os dados em um app de visualização em um b
 >    - Conceptual Structure  
 >    - Intellectual Structure  
 >    - Social Strucutre (sic)
+>
 > K-SYNTH. “Biblioshiny”. Bibliometrix. Acessado 17 de agosto de 2022. https://www.bibliometrix.org/home/index.php/layout/biblioshiny.
 
 Buscamos gerar visualizações dos dados - assim como os dados tabulares, arquivados em formato `.csv` - para cada uma das categorias supracitadas.
@@ -87,6 +88,11 @@ Os resultados das visualizações podem ser encontrados [aqui](bibliometrix/visu
 ### Análise 2: Publicações sobre o *PH*
 
 Esse conjunto de publicações gerado pela busca no Google Scholar será analisado através de leitura próxima e servirão de base para as reflexões posteriores sobre o *PH*.
+
+Utilizaremos o *QualCoder* para analisar as publicações [^2].
+
+[^2]: Curtain, C. (2022). QualCoder (3.0) [Python]. https://github.com/ccbogel/QualCoder/releases/tag/3.0 (Original work published 2019)
+
 
 ### Resultados
 
