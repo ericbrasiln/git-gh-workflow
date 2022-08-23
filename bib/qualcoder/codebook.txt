@@ -1,0 +1,60 @@
+Livro de código para proghist.qda
+========
+Categoria: METADATA, catid:1Proprietário: default
+Memo: 
+--Código: ABSTRACT, cid:6, Frq: 2Proprietário: default
+--Memo: 
+--Código: AIM, cid:12, Frq: 5Proprietário: default
+--Memo: 
+--Código: AUTHOR, cid:2, Frq: 13Proprietário: default
+--Memo: 
+--Código: EMAIL, cid:3, Frq: 2Proprietário: default
+--Memo: 
+--Código: INSTITUTION, cid:4, Frq: 7Proprietário: default
+--Memo: 
+--Código: KEYWORDS, cid:7, Frq: 2Proprietário: default
+--Memo: 
+--Código: TITLE, cid:5, Frq: 6Proprietário: default
+--Memo: 
+Categoria: PROGRAMMING HISTORIAN, catid:2Proprietário: default
+Memo: 
+--Código: DEFINITION, cid:8, Frq: 7Proprietário: default
+--Memo: 
+--Código: PH, cid:1, Frq: 4Proprietário: default
+--Memo: 
+--Código: PH::COMUNITY, cid:13, Frq: 3Proprietário: default
+--Memo: 
+--Código: PH::CRITICAL_MAKING, cid:27, Frq: 2Proprietário: default
+--Memo: 
+--Código: PH::CRITICS, cid:23, Frq: 5Proprietário: default
+--Memo: 
+--Código: PH::EDITORIAL_PRACTICES, cid:16, Frq: 13Proprietário: default
+--Memo: 
+--Código: PH::ESPANHOL, cid:9, Frq: 4Proprietário: default
+--Memo: 
+--Código: PH::ETHICAL_ISSUES, cid:25, Frq: 0Proprietário: default
+--Memo: 
+--Código: PH::GENDER, cid:17, Frq: 3Proprietário: default
+--Memo: 
+--Código: PH::LESSONS, cid:24, Frq: 1Proprietário: default
+--Memo: 
+--Código: PH::METHODOLOGY, cid:11, Frq: 4Proprietário: default
+--Memo: 
+--Código: PH::MULTILINGUISM, cid:10, Frq: 10Proprietário: default
+--Memo: 
+--Código: PH::NOVICE-FRIENDLY, cid:22, Frq: 1Proprietário: default
+--Memo: 
+--Código: PH::OPENNESS, cid:20, Frq: 6Proprietário: default
+--Memo: 
+--Código: PH::PROPOSOTIONS, cid:21, Frq: 0Proprietário: default
+--Memo: 
+--Código: PH::TECHNICAL_ASPECTS, cid:19, Frq: 12Proprietário: default
+--Memo: 
+--Código: PH::TRANSLATION, cid:14, Frq: 6Proprietário: default
+--Memo: 
+Código: GITHUB, cid:18, Frq: 6Proprietário: default
+Memo: 
+Código: GLOBAL_SOUTH, cid:15, Frq: 1Proprietário: default
+Memo: 
+Código: SITE, cid:26, Frq: 2Proprietário: default
+Memo: 
