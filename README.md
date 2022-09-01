@@ -15,6 +15,32 @@ O plano de trabalho está inserido no projeto Programming Historian em Portuguê
 
 ---
 
+## Análise bibliográfica sobre o Programming Historian (2008-2022)
+
+Veja mais detalhes [aqui](bib/README.md)
+
+## Análise da estrutura, diretrizes e fluxos de trabalho do Programming Historian
+
+Veja mais detalhes [aqui](PH_workflow/README.md)
+
+## Proposta de lição em português para o PH
+
+Veja mais detalhes [aqui](Proposta-lição-PH/README.md)
+
+## Biblioteca Online no Zotero
+
+[*Programming Historian - publicações, diretrizes e documentação*](https://www.zotero.org/groups/4765521/programming_historian_-_publicaes_diretrizes_e_documentao/)
+
+![logo-bib](imgs/bib_zot.png)
+
+O objetivo dessa biblioteca online de referências é organizar, categorizar e classificar criticamente a documentação do projeto Programming Historian presente no GitHub, no Site e em um conjunto de publicações acadêmicas.
+
+A biblioteca está organizada em duas subcoleções principais: Documentação e Publicações.
+
+*Nota*: Essa biblioteca ainda está em atualização, visto que a pesquisa ainda está em curso.
+
+---
+
 Esse plano de trabalho compõe um projeto mais amplo, intitulado *Git Workflow for History Projects*, e pode ser acessado [aqui](https://github.com/users/ericbrasiln/projects/4).
 
 ---
