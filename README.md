@@ -31,7 +31,7 @@ Veja mais detalhes [aqui](Proposta-lição-PH/README.md)
 
 [*Programming Historian - publicações, diretrizes e documentação*](https://www.zotero.org/groups/4765521/programming_historian_-_publicaes_diretrizes_e_documentao/)
 
-![logo-bib](imgs/bib_zot.png)
+![logo-bib](img/bib_zot.png)
 
 O objetivo dessa biblioteca online de referências é organizar, categorizar e classificar criticamente a documentação do projeto Programming Historian presente no GitHub, no Site e em um conjunto de publicações acadêmicas.
 
