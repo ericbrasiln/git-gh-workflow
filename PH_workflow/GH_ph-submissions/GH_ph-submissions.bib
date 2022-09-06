@@ -1,0 +1,248 @@
+
+@misc{noauthor_programming_2022,
+	title = {Programming {Historian} - {A} work-in-progress site for submitting and reviewing new {Programming} {Historian} lessons},
+	url = {https://github.com/programminghistorian/ph-submissions},
+	abstract = {A work-in-progress site for submitting and reviewing new Programming Historian lessons},
+	urldate = {2022-08-23},
+	month = aug,
+	year = {2022},
+	note = {original-date: 2016-01-15T15:25:56Z},
+	keywords = {GitHub, ph-submissions},
+	annote = {Análise dos diretórios do repositório `ph-submissions`
+Nesse documentos apresento a estrutura e realizo a análise dos diretórios que compõe o repositório `ph-submissions`. Os diretórios centrais dessa análise são: `pt/`, `es/`, `en/`, `fr/` e `lesson/`.
+Estrutura dos 4 diretórios dos idiomas
+Português
+pt
+├── licoes
+│   ├── originaes
+│   ├── publicadas
+│   ├── traducoes
+│   ├── README.md
+│
+├── README.md
+Propostas
+O diretório `pt/licoes/traducoes` possui oito diretórios de imagens de lições traduzidas. Essas imagens não deveriam estar localizadas aqui, mesmo se forem imagens novas produzidas para as traduções. Se essas imagens já foram inseridas nos diretório `programminghistorian/jekyll/images` elas devem ser excluídas.
+Por exemplo, o diretório `pt/licoes/traducoes/Sonificacap-dos-dados` possui imagens idênticas às da pasta `programminghistorian/jekyll/images/sonification`. E no arquivo md da lição em português, os links das imagens se referem às imagens originais em inglês. Ou seja, o diretório `pt/licoes/traducoes/Sonificacap-dos-dados` não deveria existir.
+O diretório `pt/licoes/publicadas` foi atualizado pela última vez 14 meses atrás. Portanto, muitas lições em português já publicadas não estão registradas ali.
+É importante atualizar o README.md da pasta de pt com o link para a página da equipe editorial e as urls como no padrão espanhol.
+Buscando padronizar os diretórios dos quatro idiomas, sugiro mover os diretórios `pt/licoes/originais`, `pt/licoes/publicadas` e `pt/licoes/traducoes` para o diretório `pt/`, e excluir o ficheiro `licoes/`. Também seria interessante incluir um ficheiro `lista-de-traducoes.md`.
+Espanhol
+es
+├── borradores
+│   ├── originales
+│   ├── traducciones
+│
+├── publicadas
+│   ├── originales
+│   ├── traducciones
+│
+├── README.md
+├── lista-de-traducciones.md
+├── PLANTILLA-LECCION.md
+├── PLANTILLA-PROPUESTA-LECCION.md
+├── PLANTILLA-TRADUCCION.md
+Propostas
+Sugiro excluir os ficheiros `PLANTILLA...`, pois são modelos de criação de issues, que devem constar como issue templates (ver proposta de criação de templates de issues para vários idiomas).
+Francês
+fr
+├── documentation
+│   ├── gabarit-texte-relecture.md
+│   ├── liste-traductions.md
+│
+├── en-cours
+│   ├── originales
+│   ├── traductions
+│
+├── publiees
+│   ├── originales
+│   ├── traductions
+│
+├── README.md
+Propostas
+Sugiro a exclusão do ficheiro `documentation/gabarit-texte-relecture.md`, pois deve estar inserido nos templates para issues (ver proposta de criação de templates de issues para vários idiomas). E mover o ficheiro `documentation/liste-traductions.md` para `fr`. Assim o diretório `documentation`pode ser excluído.
+Inglês
+en
+├── drafts
+│   ├── originals
+│   ├── translations
+│
+├── published
+│   ├── originals
+│   ├── translations
+├── sample-lesson.md
+├──.gitignore
+Propostas
+Sugiro a inclusão de um README.md no mesmo padrão dos demais idiomas, a exclusão do `.gitignore`, que está vazio e do `sample-lesson.md` (a não ser que se pretenda incluir em todas os demais idiomas).
+Proposta de estrutura para todos os diretórios
+en/es/fr/pt
+├── drafts/borradores/en-cours/rascunhos
+│   ├── originals/originales/originales/originais
+│   ├── translations/traducciones/traductions/traducoes
+│
+├── published/publicadas/publiees/publicadas
+│   ├── originals/originales/originales/originais
+│   ├── translations/traducciones/traductions/traducoes
+│
+├── README.md
+│
+├── translation-list.md/lista-de-traducciones.md/liste-traductions.md/lista-de-traducoes.md
+Diretório `lessons`
+Esse diretório não tem muito sentido, reunindo ficheiros variados e sem coerência. Apenas olhando sua estrutura e os ficheiros não é possível saber do que se trata.
+Minha sugestão é sua exclusão, após avaliação das equipes dos idiomas.
+lessons
+├── portuguese
+│   ├── propostas
+│
+├── published
+│
+├── spanish
+│   ├── lecciones
+│   ├── readme.md
+│
+├── enron\_network\_with\_communities.png
+│
+├── lavorato-j.zip
+│
+├── out.html
+│
+├── sample-lesson.md
+},
+	annote = {Página inicial do repositório para submissão
+Na página inicial do repositório ph-submissions encontramos o README.md em inglês informando a estrutura e os procedimentos básicos pata submissão de propostas de lição (sejam elas inéditas ou traduções).
+Nesse repositório encontramos ficheiros referentes à cada idioma assim como os ficheiros relativos à página web publicada com as infos.
+Há uma discrepância entre o conteúdo do REDME.md e o index.md que está publicado no endereço http://programminghistorian.github.io/ph-submissions/
+Essa questão será detalhada na nota referente aos itens: “Programming Historian Submission Readme”, 27 de agosto de 2022. https://github.com/programminghistorian/ph-submissions/blob/61eccbbea9f65e6e946668cdcb591c24b4ace48e/index.md. e “About PH-Submissions {\textbar} Programming Historian”. Acessado 23 de agosto de 2022. http://programminghistorian.github.io/ph-submissions/.
+O ficheiro pt será analisado com detalhamento no item: “ph-submissions/pt at gh-pages · programminghistorian/ph-submissions”. Acessado 5 de setembro de 2022. https://github.com/programminghistorian/ph-submissions/tree/gh-pages/pt. 
+},
+}
+
+@misc{noauthor_issues_nodate,
+	title = {Issues · programminghistorian/ph-submissions},
+	url = {https://github.com/programminghistorian/ph-submissions/issues},
+	language = {en},
+	urldate = {2022-08-23},
+	keywords = {GitHub, ph-submissions},
+	annote = {Página de issues
+Aqui é possível encontrar todas os tickets abertos e fechados.
+Atualmente (2022-09-06) contamos com:
+
+
+52 abertos
+
+
+275 fechados
+
+
+},
+}
+
+@misc{noauthor_branches_nodate,
+	title = {Branches},
+	url = {https://github.com/programminghistorian/ph-submissions/settings/branches},
+	urldate = {2022-08-23},
+	keywords = {GitHub, Erro/Sugestão, ph-submissions},
+	annote = {Configurações de branches
+Atualmente não há uma política de proteção do branch gh-pages(que é o branch base do repositório)
+Avaliar a necessidade da inclusão de diretriz de requerer um PR antes de merge qualquer commit com a inclusão de um revisor. Isso incluiria mais uma etapa no processo e o envolvimento de mais um membro da equipe. Porém garantiria mais precisão no processo. 
+},
+}
+
+@misc{noauthor_about_nodate,
+	title = {About {PH}-{Submissions} {\textbar} {Programming} {Historian}},
+	url = {http://programminghistorian.github.io/ph-submissions/},
+	urldate = {2022-08-23},
+	keywords = {GitHub, Site, Erro/Sugestão, ph-submissions},
+	annote = {Site publicado com dados do ph-submissions
+O conteúdo da página está desatualizado em comparação com o README.md do repositório ph-submissions.
+O último commit com alterações no index.md foi realizado em 05 de julho de 2017. Vale a pena avaliar se há necessidade de atualização e mesmo se essa página precisa existir.
+},
+}
+
+@misc{noauthor_labels_nodate,
+	title = {Labels · programminghistorian/ph-submissions},
+	url = {https://github.com/programminghistorian/ph-submissions/labels},
+	urldate = {2022-08-23},
+	keywords = {GitHub, ph-submissions},
+	annote = {Labels
+Atualmente, existem dezessete labels no repositório. Mas apenas duas delas possuem descrições. 
+Uma sugestão é incluir as breves descrições nas demais quinze labels.
+},
+}
+
+@misc{noauthor_settingsgeneral_nodate,
+	title = {Settings/{General}},
+	url = {https://github.com/programminghistorian/ph-submissions/settings},
+	urldate = {2022-08-23},
+	keywords = {GitHub, Questão Técnica, ph-submissions},
+	annote = {Configurações básicas do repositório
+As configurações gerais do repositório ph-submissions permitem a criação de issues, projetos (classic) e sua preservação no GitHub Archive Program. Não são permitidas a criação de Wikis e Discussions.
+A política de Pull Request permite merge commits,  squash merging e rebase merge.
+
+},
+}
+
+@misc{noauthor_ph-submissionsptlicoes_2022,
+	title = {ph-submissions/pt/licoes/},
+	url = {https://github.com/programminghistorian/ph-submissions/tree/gh-pages/pt/licoes},
+	abstract = {A work-in-progress site for submitting and reviewing new Programming Historian lessons},
+	urldate = {2022-09-04},
+	month = aug,
+	year = {2022},
+	note = {original-date: 2016-01-15T15:25:56Z},
+	keywords = {GitHub, Lições, ph-submissions},
+	annote = {Ficheiro das lições em português
+
+},
+}
+
+@misc{noauthor_ph-submissionsgithub_nodate,
+	title = {ph-submissions/.github at gh-pages · programminghistorian/ph-submissions},
+	url = {https://github.com/programminghistorian/ph-submissions/tree/gh-pages/.github},
+	abstract = {A work-in-progress site for submitting and reviewing new Programming Historian lessons - ph-submissions/.github at gh-pages · programminghistorian/ph-submissions},
+	language = {en},
+	urldate = {2022-09-05},
+	journal = {GitHub},
+	keywords = {GitHub, Erro/Sugestão, ph-submissions},
+	annote = {Ficheiro de configurações do GH .github
+Nesse ficheiro é possível incluir arquivos para configurar e automatizar processos recorrentes no GH.
+
+},
+	annote = {Sugestão
+Atualmente a única configuração existente é um template para issues. Entretanto, esse template contempla apenas o idioma inglês e foi atualizado pela última vez em 2021.
+O commit dessa última alteração mostra apenas a atualização de um link.
+O commit anterior, de setembro de 2020, incluiu infos sobre o Ombudsperson. E as últimas alterações significativas aconteceram no ano de 2019.
+Proponho a criação de templates para os 4 idiomas, gerando botões automáticos para escolher o template mais apropriado para a nova issue a ser aberta, conforme a documentação do GH.
+É possível criar templates específicos para novas lições, traduções, revisões, etc.
+},
+}
+
+@misc{noauthor_indexmd_2022,
+	title = {index.md - {Programming} {Historian} {Submission} {Readme}},
+	url = {https://github.com/programminghistorian/ph-submissions/blob/61eccbbea9f65e6e946668cdcb591c24b4ace48e/index.md},
+	abstract = {A work-in-progress site for submitting and reviewing new Programming Historian lessons},
+	urldate = {2022-09-05},
+	month = aug,
+	year = {2022},
+	note = {original-date: 2016-01-15T15:25:56Z},
+	keywords = {GitHub, Site, Erro/Sugestão, ph-submissions},
+	annote = {index.md da página http://programminghistorian.github.io/ph-submissions/
+Ver comentário na nota do item “About PH-Submissions {\textbar} Programming Historian”. Acessado 23 de agosto de 2022. http://programminghistorian.github.io/ph-submissions/.
+},
+}
+
+@misc{noauthor_ph-submissionspt_nodate,
+	title = {ph-submissions/pt at gh-pages · programminghistorian/ph-submissions},
+	url = {https://github.com/programminghistorian/ph-submissions/tree/gh-pages/pt},
+	urldate = {2022-09-05},
+	keywords = {GitHub, Lições, Erro/Sugestão, ph-submissions},
+	annote = {Ficheiro das submissões em português
+Esse ficheiro pretende arquivar de forma organizada as diferentes propostas de publicação em português (nova lição e traduções), antes de serem publicadas.
+
+},
+	annote = {Sugestão
+O README.md desse ficheiro não conta com links importantes para os usuários. A versão em francês possui link para a equipe editorial, e a versão espanhola possui links para a equipe editorial, e os exemplos das urls de para visualização das propostas tanto de novas quanto de traduções.
+Em relação à estrutura do ficheiro, não há necessidade de existir um ficheiro `licoes` e dentro dele a estrutura de originais, publicadas e traduções, pq esse já é um ficheiro para lições. Além disso, há um ficheiro README.md tanto no ficheiro pt quanto no ficheiro pt/licoes com as mesmas informações. Entretanto o ficheiro em pt/licoes possui link para a equipe de editores.
+As estruturas nos outros 3 idiomas está incoerente. Um análise mais detalhada e uma proposta de padronização pode ser encontrada na nota “Ánálise dos repositórios en, pt, es, fr” do item “Programming Historian - A work-in-progress site for submitting and reviewing new Programming Historian lessons”, 6 de agosto de 2022. https://github.com/programminghistorian/ph-submissions.
+
+},
+}
