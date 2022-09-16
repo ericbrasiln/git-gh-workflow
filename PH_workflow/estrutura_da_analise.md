@@ -47,7 +47,7 @@ Descrever a estrutura de cada repositório:
 
 ## Entrevistas
 
-Avaliar a possibilidade de realizar entevistas remotas com editores-chefes e/ou responsáveis técnicos.
+Avaliar a possibilidade de realizar entrevistas remotas com editores-chefes e/ou responsáveis técnicos.
 
 Jennifer Isasi - Technical Team
 Daniel Alves - Managing Editor
