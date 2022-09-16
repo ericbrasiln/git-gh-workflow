@@ -1,6 +1,6 @@
 ---
 title: Cronograma de trabalho
-date: 2022-08-01
+date: 2022-09-16
 author: Eric Brasil
 lang: pt-BR
 ---
@@ -23,15 +23,16 @@ Eric Brasil Nepomuceno
 ## Fase 2: Estudo do *workflow* do **Programming Historian** no GitHub
 
 - [x] **02/07 a 10/08**: Análise da estrutura dos repositórios
-- [ ] **11/08 a 19/08**: Levantamento bibliográfico sobre o Programming Historian e análise
-- [ ] **20/08 a 26/08**: Análise do *workflow* do repositório de submissões (*ph-submissions*)
-- [ ] **29/08 a 16/09**: Compreensão da estrutura e dinâmica de trabalho do DH_Lab;
-- [ ] **29/08 a 16/09**: Análise do *workflow* do repositório do site estático do *Programming Historian* baseado em Jekyll
-- [ ] **26/08 a 23/09**: Relatório técnico referente à fase 2.
+- [x] **11/08 a 30/08**: Levantamento bibliográfico sobre o Programming Historian e análise
+- [x] **24/08 a 02/09**: Compreensão da estrutura e dinâmica de trabalho do DH_Lab;
+- [x] **30/08 a 09/09**: Análise do *workflow* do repositório de submissões (*ph-submissions*)
+- [ ] **12/09 a 23/09**: Análise do *workflow* do repositório do site estático do *Programming Historian* baseado em Jekyll
+- [ ] **20/09 a 23/09**: Relatório técnico referente à fase 2.
 
 ## Fase 3: Produção, apresentação e submissão de lição em português para o PH
 
-- [ ] **01/09 a 26/09**: Escrita da lição
-- [ ] **27/09 a 30/09**: Apresentação da lição para os membros do laboratório
-- [ ] **03/10 a 11/10**: Revisão da lição
-- [ ] **12/10 - 18/10**: Submissão da lição para o PH
+- [x] **15/09 a 16/09**: Escrita da Proposta de Lição
+- [ ] **20/09 a 03/10**: Escrita da lição
+- [ ] **03/10 a 07/10**: Apresentação da lição para os membros do laboratório
+- [ ] **07/10 a 14/10**: Revisão da lição
+- [ ] **17/10 - 18/10**: Submissão da lição para o PH
