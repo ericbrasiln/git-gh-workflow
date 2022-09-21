@@ -27,8 +27,9 @@ Eric Brasil Nepomuceno
 - [x] **24/08 a 02/09**: Compreensão da estrutura e dinâmica de trabalho do DH_Lab;
 - [x] **30/08 a 09/09**: Análise do *workflow* do repositório de submissões (*ph-submissions*)
 - [x] **12/09 a 20/09**: Análise do *workflow* do repositório do site estático do *Programming Historian* baseado em Jekyll
-- [ ] **21/09 a 23/09**: Análise da *Wiki* do projeto.
+- [x] **21/09 a 23/09**: Análise da *Wiki* do projeto.
 - [ ] **20/09 a 26/09**: Relatório técnico referente à fase 2.
+- [ ] **26/09 a 30/09**: Reunião com o DH_Lab para apresentação do relatório técnico referente à fase 2 e criação de issues no repositório do Programming Historian referentes às melhorias propostas.
 
 ## Fase 3: Produção, apresentação e submissão de lição em português para o PH
 
