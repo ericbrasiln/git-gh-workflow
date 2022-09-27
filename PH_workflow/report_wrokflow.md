@@ -176,23 +176,30 @@ As palavras mais relevantes no data set são: Digital Humanities e Digital Histo
 
 ![Most Relevant Words](../bibliography/bibliometrix/visualizations/imgs/MostRelevantWords-2022-08-17.png)
 
-Por fim, gostaria de destacar a rede de colaboração presente nesses 92 artigos. É notável uma centralização entre países da Estados Unidos, Canadá e países da Europa Ocidental, como Reino Unido, Alemanhã e Espanha.
+É importante destacar a rede de colaboração presente nesses 92 artigos. É notável uma centralização entre países da Estados Unidos, Canadá e países da Europa Ocidental, como Reino Unido, Alemanha e Espanha.
 
 ![Country COllaboration Map](../bibliography/bibliometrix/visualizations/imgs/CountryCollaborationMap-2022-08-17.png)
 
+Por fim, gostaria de caracterizar a rede de co-citações de autores gerada a partir desse conjunto de dados. Podemos perceber com precisão três agrupamentos de co-citação. A primeira delas está centralizada pelos trabalhos de Graham, nomeadamente seu livro com Ian Milligan e Scot Weingart, *Exploring big historical data* (2015).
+
+A segunda tem citações mais bem distribuídas e podemos perceber um conjunto de autores bastante ligado ao *PH*, como Adam Crymble, James Turkel, o próprio Ian Milligan e autores importantes para as Humanidades Digitais como Roy Rosenzwieg, Dan Cohen e Moretti.
+
+O terceiro agrupamento apresenta  autores variados e demanda uma análise mais detalhada que não cabe no escopo desse relatório.
+
+![Co-citation Authors Network](../bibliography/bibliometrix/visualizations/imgs/aut_co-citation.png)
+
 Não busquei aqui dar conta de todas as possibilidades de uso e citação do *PH* na literatura de humanidades. Procurei realizar um mapeamento inicial com dados gerados pelo Scopus e analisá-lo com o apoio do bibliometrix buscando perceber alguma tendência. É possível concluir que, apesar do recente esforço de tornar o projeto multilinguístico, ainda percebemos que há uma centralidade em seu uso e citação em trabalhos publicados em revistas e por pesquisadores vinculadas a universidades dos países centrais do Norte capitalista. 
 
-Ao mesmo tempo, percebemos que os trabalhos têm uma predominância de referências do Reino Unido.
+Os dados e reflexões iniciais servirão de base para um futuro paper.
 
 **Análise 2: Publicações sobre o *PH***
 
-Esse conjunto de publicações gerado pela busca no Google Scholar será analisado através de leitura próxima e servirão de base para as reflexões posteriores sobre o *PH*.
+Esse conjunto de publicações gerado pela busca no Google Scholar foi analisado através de leitura próxima através do software *QualCoder* para analisar as publicações [^3].
 
-Utilizaremos o *QualCoder* para analisar as publicações [^3].
+- Códigos criados
+- resultados: textos dos próprios membros analisando aspectos técnicos e pedagógicos + resenhas.
 
-### Resultados
-
-Conclusões?
+Não consistiu em uma revisão da literatura completa.
 
 **Biblioteca Programming Historian - publicações, diretrizes e documentação no Zotero**
 
