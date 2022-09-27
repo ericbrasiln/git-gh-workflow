@@ -25,17 +25,18 @@ $ git log --date=format:'%Y-%m-%d %H:%M:%S'\
     --pretty=format:"%h,%an,%ad,%s" > git_log_oneline.csv
 ```
 
-
 No decorrer do relatório, serão apresentados os resultados de cada etapa da pesquisa, assim como as principais conclusões e recomendações.
 
 ## Levantamento Bibliográfico
 
 Buscando mapear as publicações que utilizaram as publicações do *PH*, estruturamos o levantamento bibliográfico em duas etapas:
 
+1. Publicações que citam o *PH* em suas referências bibliográficas
+2. Plublicações sobre o *PH*
 
-### Etapa 1: Publicações que citam o *PH* em suas referências bibliográficas
+### 1 - Publicações que citam o *PH* em suas referências bibliográficas
 
-Buscamos publicações que contenham as palavras "programming historian" nas referências bibliográficas através do Scopus. A seguir, listamos os parâmetros da busca e os resultados obtidos.
+Buscamos publicações que contenham as palavras "programming historian" nas referências bibliográficas através do [Scopus](https://www.scopus.com). A seguir, listamos os parâmetros da busca e os resultados obtidos.
 
 1. site: https://www.scopus.com
 2. Logado com a conta de estudante da NOVA
@@ -47,7 +48,7 @@ Buscamos publicações que contenham as palavras "programming historian" nas ref
     3. Book: 13
     4. book series: 6 
 
-### Etapa 2: Publicações sobre o *PH*
+### 2 - Publicações sobre o *PH*
 
 Buscamos publicações que contenham as palavras "programming historian" em seu título, através do Google Scholar. A seguir, listamos os parâmetros da busca e os resultados obtidos.
 
@@ -57,7 +58,7 @@ Buscamos publicações que contenham as palavras "programming historian" em seu 
 4. Exclusão de citações
 5. Resultados: 15 documentos - todos podem ser consultados [aqui](scholar.bib)
 
-Todos as publicações encontradas foram armazenadas em formato `.bib` e também foram incluídas em uma coleção específica no *Zotero*. A coleção, assim como toda bibliografia restante que será utilizada nesse plano de trabalho, formará uma biblioteca pública de referências disponível para consulta on-line.
+Todos as publicações encontradas foram armazenadas em formato `.bib` e também foram incluídas em uma coleção específica no *Zotero*. A coleção, assim como toda bibliografia restante que será utilizada nesse plano de trabalho, forma uma biblioteca pública de referências disponível para consulta on-line, intitulada *Biblioteca Programming Historian - publicações, diretrizes e documentação no Zotero* e pode ser acessada nesse [link](https://www.zotero.org/groups/4765521/programming_historian_-_publicaes_diretrizes_e_documentao/).
 
 ### Analisando os resultados
 
@@ -65,7 +66,7 @@ Devido ao caráter distinto das etapas e de suas publicações, estruturamos an�
 
 **Análise 1: Publicações que citam o *PH* em suas referências bibliográficas**
 
-Esse conjunto de publicações e seus dados foram gerados pelo *Scopus*, e nos possibilitou analisar os dados através de uma ferramenta de tratamento de dados bibliográficos chamada `bibliometrix`[^2].
+Esse conjunto de publicações e seus dados foram gerados a partir de busca no *Scopus* - os parâmetros e resultados gerais podem ser vistos [aqui](#1---publicações-que-citam-o-ph-em-suas-referências-bibliográficas). Utilizamos para sua análise uma ferramenta de tratamento de dados bibliográficos chamada `bibliometrix`[^2].
 
 A ferramenta é de código aberto e desenvolvida como um pacote para a linguagem de programação R. Segundo os autores,
 
@@ -107,7 +108,81 @@ Com essa função, podemos analisar os dados em um app de visualização em um b
 
 Buscamos gerar visualizações dos dados - assim como os dados tabulares, arquivados em formato `.csv` - para cada uma das categorias supracitadas.
 
-Os resultados das visualizações podem ser encontrados [aqui](bibliometrix/visualizations/) e os dados tabulares podem ser encontrados [aqui](bibliometrix/csvs).
+As visualizações podem ser encontrados [aqui](bibliometrix/visualizations/) e os dados tabulares podem ser encontrados [aqui](bibliometrix/csvs).
+
+Para essa análise preliminar, filtramos nosso data set para conter apenas artigos de periódicos.
+
+É possível perceber o crescimento de publicações que referenciam o *PH* a partir de 2019, com destaque para o ano de 2021.
+
+![Annual SCientific Production](../bibliography/bibliometrix/visualizations/imgs/AnnualScientificProduction-2022-08-17.png)
+
+Os países dos autores com maior relevância nesse recorte foram EUA, Reino Unido, Canadá e Finlândia.
+
+![MostRelevantCountries](../bibliography/bibliometrix/visualizations/imgs/MostRelevantCountries-2022-08-17.png)
+
+Entretanto, no que se refere às publicações, os números são mais equilibrados. Encontramos apenas dez publicações com mais de um artigo publicado.
+
+"Sources","Articles"
+"ACM INTERNATIONAL CONFERENCE PROCEEDING SERIES","3"
+"DIGITAL HUMANITIES QUARTERLY","3"
+"HISTORY OF PSYCHOLOGY","3"
+"ACADIENSIS","2"
+"BIJDRAGEN EN MEDEDELINGEN BETREFFENDE DE GESCHIEDENIS DER NEDERLANDEN","2"
+"FOLIA LINGUISTICA","2"
+"HISPANIA","2"
+"INTERNATIONAL CONFERENCE ON ELECTRICAL ENGINEERING, COMPUTER SCIENCE AND INFORMATICS (EECSI)","2"
+"INTERNATIONAL JOURNAL OF HUMANITIES AND ARTS COMPUTING","2"
+"JOURNAL OF VICTORIAN CULTURE","2"
+
+![MostRelevantSources](../bibliography/bibliometrix/visualizations/imgs/MostRelevantSources-2022-08-17.png)
+
+Nesse conjunto de dados, o autor mais relevante, ou seja, com o maior número de artigos publicados que citam o *PH* em suas referências é Ian Milligan, com 3.8% dos artigos.
+
+![Most Relevant Authors](../bibliography/bibliometrix/visualizations/imgs/MostRelevantAuthors-2022-08-17.png)
+
+E as filiações institucionais mais relevantes (contando mais de 1 ocorrência) são:
+
+```
+"Affiliation","Articles"
+"UNIVERSITY OF WATERLOO","6"
+"UNIVERSIDAD DE LA SALLE","4"
+"YORK UNIVERSITY","4"
+"AALTO UNIVERSITY","3"
+"CALIFORNIA STATE UNIVERSITY","3"
+"CARLETON UNIVERSITY","3"
+"NOTREPORTED","3"
+"UNIVERSITAT DE BARCELONA","3"
+"UNIVERSITY OF SUSSEX","3"
+"UNIVERSITY OF TEXAS AT AUSTIN","3"
+```
+
+![Most Relevant Affiliations](../bibliography/bibliometrix/visualizations/imgs/MostRelevantAffiliations-2022-08-17.png)
+
+Ao analisarmos os autores, países e documentos mais citados podemos ter uma noção de como o *PH* tem sido usado.
+
+Autores mais citados:
+
+Ian Milligan
+
+Os países mais citados no trabalhos que referência o *PH* são Reino Unido, China...
+
+![Most Cited Countries](../bibliography/bibliometrix/visualizations/imgs/MostCitedCountries-2022-08-17.png)
+
+Mais interessante é analisar os documentos mais citados nesses artigos:
+
+![Most Cited Documents](../bibliography/bibliometrix/visualizations/imgs/MostGlobalCitedDocuments-2022-08-17.png)
+
+As palavras mais relevantes no data set são: Digital Humanities e Digital History
+
+![Most Relevant Words](../bibliography/bibliometrix/visualizations/imgs/MostRelevantWords-2022-08-17.png)
+
+Por fim, gostaria de destacar a rede de colaboração presente nesses 92 artigos. É notável uma centralização entre países da Estados Unidos, Canadá e países da Europa Ocidental, como Reino Unido, Alemanhã e Espanha.
+
+![Country COllaboration Map](../bibliography/bibliometrix/visualizations/imgs/CountryCollaborationMap-2022-08-17.png)
+
+Não busquei aqui dar conta de todas as possibilidades de uso e citação do *PH* na literatura de humanidades. Procurei realizar um mapeamento inicial com dados gerados pelo Scopus e analisá-lo com o apoio do bibliometrix buscando perceber alguma tendência. É possível concluir que, apesar do recente esforço de tornar o projeto multilinguístico, ainda percebemos que há uma centralidade em seu uso e citação em trabalhos publicados em revistas e por pesquisadores vinculadas a universidades dos países centrais do Norte capitalista. 
+
+Ao mesmo tempo, percebemos que os trabalhos têm uma predominância de referências do Reino Unido.
 
 **Análise 2: Publicações sobre o *PH***
 
