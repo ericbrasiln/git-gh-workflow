@@ -194,12 +194,31 @@ Os dados e reflexões iniciais servirão de base para um futuro paper.
 
 **Análise 2: Publicações sobre o *PH***
 
-Esse conjunto de publicações gerado pela busca no Google Scholar foi analisado através de leitura próxima através do software *QualCoder* para analisar as publicações [^3].
+Esse conjunto de publicações foi gerado pela busca no Google Scholar descrita anteriormente e não consiste em uma revisão de literatura extensiva, mas sim uma primeira aproximação com o tema, buscando compreender como o *PH* aparece em uma busca simples em um dos mais populares buscadores disponíveis atualmente.
 
-- Códigos criados
-- resultados: textos dos próprios membros analisando aspectos técnicos e pedagógicos + resenhas.
+Esse conjunto de artigos foi analisado através de leitura próxima através do software *QualCoder* para analisar as publicações [^3].
 
-Não consistiu em uma revisão da literatura completa.
+Foram criado códigos buscando mapear metadados e o conteúdo dos artigos. 
+
+Importante notar que entre os códigos referentes à análise do conteúdo, os mais relevantes são àqueles relacionados aos aspectos técnicos e às diretrizes editoriais, seguidos por debates acerca do caráter multilinguístico do projeto.
+
+|Código|Total|
+|------|-----|
+|PH::TECHNICAL_ASPECTS|25|
+|PH::EDITORIAL_PRACTICES|14|
+|PH::MULTILINGUISM|11|
+|PH::CRITICAL_MAKING|9|
+|PH::TRANSLATION|8|
+|PH::OPENNESS|6|
+|PH::CRITICS|5|
+|PH::COMUNITY|4|
+|PH::ESPANHOL|4|
+|PH::METHODOLOGY|4|
+|PH::GENDER|3|
+|PH::LESSONS|2|
+|PH::NOVICE-FRIENDLY|1|
+
+Para acessar os dados completos da codificação, ver [esse arquivo](bibliography/qualcoder/../../../bibliography/qualcoder/Code_frequencies_0.csv)
 
 **Biblioteca Programming Historian - publicações, diretrizes e documentação no Zotero**
 
