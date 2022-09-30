@@ -4,6 +4,10 @@ author: Eric Brasil
 date: 2022-09-26
 abstract: Este relatório apresenta as etapas da pesquisa e seus resultados entre 20 de julho de 23 de setembro de 2022. Ao longo desses dois meses de trabalho foi realizado levantamento bibliográfico sobre o Programming Historian, análise das estruturas e workflow, assim como das diretrizes que formam o projeto. A pesquisa esteve centrada na versão em português do PH, porém não esteve restrita a ela. Como resultados apresento uma série de relatórios que mapearam erros e apontam possíveis soluções - com destaque para a análise da estrutura de pastas dos quatro idiomas no repositório ph-submissions,  a proposta de Projeto Kanban para a versão em português, o conjunto de templates para issues e correções de erros e incoerências no site do PH - e uma breve análise do levantamento bibliográfico realizado.
 ---
+# Relatório da Análise do Workflow, Estrutura e Diretrizes do Programming Historian
+
+Eric Brasil
+
 ## Introdução
 
 Este relatório é referente à segunda fase do plano de trabalho *Manutenção, criação e publicação de projetos de história digital: o caso do Programming Historian* da licença capacitação executada no Laboratório de Humanidades Digitais da FCSH-NOVA. São apresentadas aqui as etapas da pesquisa e os resultados alcançados entre 20 de julho de 23 de setembro de 2022.
@@ -32,7 +36,7 @@ No decorrer do relatório, serão apresentados os resultados de cada etapa da pe
 Buscando mapear as publicações que utilizaram as publicações do *PH*, estruturamos o levantamento bibliográfico em duas etapas:
 
 1. Publicações que citam o *PH* em suas referências bibliográficas
-2. Plublicações sobre o *PH*
+2. Publicações sobre o *PH*
 
 ### 1 - Publicações que citam o *PH* em suas referências bibliográficas
 
@@ -122,17 +126,18 @@ Os países dos autores com maior relevância nesse recorte foram EUA, Reino Unid
 
 Entretanto, no que se refere às publicações, os números são mais equilibrados. Encontramos apenas dez publicações com mais de um artigo publicado.
 
-"Sources","Articles"
-"ACM INTERNATIONAL CONFERENCE PROCEEDING SERIES","3"
-"DIGITAL HUMANITIES QUARTERLY","3"
-"HISTORY OF PSYCHOLOGY","3"
-"ACADIENSIS","2"
-"BIJDRAGEN EN MEDEDELINGEN BETREFFENDE DE GESCHIEDENIS DER NEDERLANDEN","2"
-"FOLIA LINGUISTICA","2"
-"HISPANIA","2"
-"INTERNATIONAL CONFERENCE ON ELECTRICAL ENGINEERING, COMPUTER SCIENCE AND INFORMATICS (EECSI)","2"
-"INTERNATIONAL JOURNAL OF HUMANITIES AND ARTS COMPUTING","2"
-"JOURNAL OF VICTORIAN CULTURE","2"
+|Sources|Articles|
+|-------|--------|
+|ACM INTERNATIONAL CONFERENCE PROCEEDING SERIES                                              |3|
+|DIGITAL HUMANITIES QUARTERLY                                                                |3|
+|HISTORY OF PSYCHOLOGY                                                                       |3|
+|ACADIENSIS                                                                                  |2|
+|BIJDRAGEN EN MEDEDELINGEN BETREFFENDE DE GESCHIEDENIS DER NEDERLANDEN                       |2|
+|FOLIA LINGUISTICA                                                                           |2|
+|HISPANIA                                                                                    |2|
+|INTERNATIONAL CONFERENCE ON ELECTRICAL ENGINEERING, COMPUTER SCIENCE AND INFORMATICS (EECSI)|2|
+|INTERNATIONAL JOURNAL OF HUMANITIES AND ARTS COMPUTING                                      |2|
+|JOURNAL OF VICTORIAN CULTURE                                                                |2|
 
 ![MostRelevantSources](../bibliography/bibliometrix/visualizations/imgs/MostRelevantSources-2022-08-17.png)
 
@@ -142,19 +147,18 @@ Nesse conjunto de dados, o autor mais relevante, ou seja, com o maior número de
 
 E as filiações institucionais mais relevantes (contando mais de 1 ocorrência) são:
 
-```
-"Affiliation","Articles"
-"UNIVERSITY OF WATERLOO","6"
-"UNIVERSIDAD DE LA SALLE","4"
-"YORK UNIVERSITY","4"
-"AALTO UNIVERSITY","3"
-"CALIFORNIA STATE UNIVERSITY","3"
-"CARLETON UNIVERSITY","3"
-"NOTREPORTED","3"
-"UNIVERSITAT DE BARCELONA","3"
-"UNIVERSITY OF SUSSEX","3"
-"UNIVERSITY OF TEXAS AT AUSTIN","3"
-```
+|Affiliation                  |Articles|
+|-----------------------------|--------|
+|UNIVERSITY OF WATERLOO       |6|
+|UNIVERSIDAD DE LA SALLE      |4|
+|YORK UNIVERSITY              |4|
+|AALTO UNIVERSITY             |3|
+|CALIFORNIA STATE UNIVERSITY  |3|
+|CARLETON UNIVERSITY          |3|
+|NOTREPORTED                  |3|
+|UNIVERSITAT DE BARCELONA     |3|
+|UNIVERSITY OF SUSSEX         |3|
+|UNIVERSITY OF TEXAS AT AUSTIN|3|
 
 ![Most Relevant Affiliations](../bibliography/bibliometrix/visualizations/imgs/MostRelevantAffiliations-2022-08-17.png)
 
@@ -162,23 +166,66 @@ Ao analisarmos os autores, países e documentos mais citados podemos ter uma no�
 
 Autores mais citados:
 
-Ian Milligan
+|Authors|Articles|Articles Fractionalized|
+|-------|--------|-----------------------|
+|MILLIGAN I|5|1.84|
+|AULIA A|3|0.83|
+|HAKIEM N|3|0.83|
+|HEINO E|3|0.46|
+|KHAIRANI D|3|0.83|
+|KOHO M|3|0.46|
+|KRAUSE TB|3|3.00|
+|LESKINEN P|3|0.46|
+|TUOMINEN J|3|0.46|
+|BAHAWERES RB|2|0.50|
 
 Os países mais citados no trabalhos que referência o *PH* são Reino Unido, China...
 
 ![Most Cited Countries](../bibliography/bibliometrix/visualizations/imgs/MostCitedCountries-2022-08-17.png)
 
-Mais interessante é analisar os documentos mais citados nesses artigos:
+Abaixo, vemos os documentos mais citados nesses artigos:
 
 ![Most Cited Documents](../bibliography/bibliometrix/visualizations/imgs/MostGlobalCitedDocuments-2022-08-17.png)
 
-As palavras mais relevantes no data set são: Digital Humanities e Digital History
+É interessante avaliar quais as palavras com maior frequência nesse conjunto de dados. Ao olharmos para as palavras-chaves definidas pelos próprios autores, percebemos que *Digital Humanities* e *Digital History* se destacam.
 
 ![Most Relevant Words](../bibliography/bibliometrix/visualizations/imgs/MostRelevantWords-2022-08-17.png)
 
-É importante destacar a rede de colaboração presente nesses 92 artigos. É notável uma centralização entre países da Estados Unidos, Canadá e países da Europa Ocidental, como Reino Unido, Alemanha e Espanha.
+Nos títulos, encontramos a seguinte distribuição:
 
-![Country COllaboration Map](../bibliography/bibliometrix/visualizations/imgs/CountryCollaborationMap-2022-08-17.png)
+|Terms|Frequency|
+|-----|---------|
+|digital|35|
+|history|26|
+|analysis|21|
+|data|16|
+|la|13|
+|research|13|
+|de|11|
+|historical|9|
+|social|9|
+|humanities|8|
+
+Já nos resumos, analisando os bigramas, encontramos:
+
+|Terms|Frequency|
+|-----|---------|
+|digital humanities|45|
+|social media|19|
+|digital history|14|
+|computational methods|11|
+|machine learning|11|
+|topic modelling|11|
+|dependency distance|9|
+|network analysis|8|
+|text analysis|8|
+|topic modeling|7|
+
+Como podemos perceber, os dados de frequência de palavras nos títulos, resumos e palavras-chaves indicam que o *PH* tem sido referenciado em trabalhos cujo debate principal é a aplicação de métodos computacionais para a análise de dados históricos. Entretanto, a ausência de termos e bigramas relativos a temas e questões históricas mais específicas também nos indica que parte significativa desses trabalhos apresentam reflexões metodológicas e/ou teóricas sobre os usos de ferramentas e técnicas digitais, mas não representam trabalhos que apresentam resultados historiográficos a partir do seu uso.
+
+É importante destacar também a rede de colaboração presente nesses 92 artigos. É notável uma centralização entre países da Estados Unidos, Canadá e países da Europa Ocidental, como Reino Unido, Alemanha e Espanha.
+
+![Country Collaboration Map](../bibliography/bibliometrix/visualizations/imgs/CountryCollaborationMap-2022-08-17.png)
 
 Por fim, gostaria de caracterizar a rede de co-citações de autores gerada a partir desse conjunto de dados. Podemos perceber com precisão três agrupamentos de co-citação. A primeira delas está centralizada pelos trabalhos de Graham, nomeadamente seu livro com Ian Milligan e Scot Weingart, *Exploring big historical data* (2015).
 
@@ -188,7 +235,7 @@ O terceiro agrupamento apresenta  autores variados e demanda uma análise mais d
 
 ![Co-citation Authors Network](../bibliography/bibliometrix/visualizations/imgs/aut_co-citation.png)
 
-Não busquei aqui dar conta de todas as possibilidades de uso e citação do *PH* na literatura de humanidades. Procurei realizar um mapeamento inicial com dados gerados pelo Scopus e analisá-lo com o apoio do bibliometrix buscando perceber alguma tendência. É possível concluir que, apesar do recente esforço de tornar o projeto multilinguístico, ainda percebemos que há uma centralidade em seu uso e citação em trabalhos publicados em revistas e por pesquisadores vinculadas a universidades dos países centrais do Norte capitalista. 
+Não busquei aqui dar conta de todas as possibilidades de uso e citação do *PH* na literatura de humanidades. Procurei realizar um mapeamento inicial com dados gerados pelo *Scopus* e analisá-lo com o apoio do bibliometrix buscando perceber alguma tendência. É possível concluir que, apesar do recente esforço de tornar o projeto multilinguístico, ainda percebemos que há uma centralidade em seu uso e citação em trabalhos publicados em revistas e por pesquisadores vinculadas a universidades dos países centrais do Norte capitalista. 
 
 Os dados e reflexões iniciais servirão de base para um futuro paper.
 
@@ -220,26 +267,103 @@ Importante notar que entre os códigos referentes à análise do conteúdo, os m
 
 Para acessar os dados completos da codificação, ver [esse arquivo](bibliography/qualcoder/../../../bibliography/qualcoder/Code_frequencies_0.csv)
 
-**Biblioteca Programming Historian - publicações, diretrizes e documentação no Zotero**
+Aqui também percebemos, como no tópico anterior, que os debates principais dos artigos recaem sobre os aspectos técnicos e metodológicos do *PH*, e praticamente não encontramos produções sobre temas e problemas da historiografia. Entretanto, nesse caso, isso era de se esperar pelo caráter da busca realizada. Ao encontrar trabalhos cujo título possuía a expressão "programming historian", o conjunto de dados estaria sobremaneira direcionado para a reflexão acerco do caráter do próprio projeto.
 
-Seu objetivo é organizar, categorizar e classificar criticamente a documentação do projeto Programming Historian presente no GitHub no Site e em um conjunto de publicações acadêmicas.
+**_Biblioteca Programming Historian - publicações, diretrizes e documentação_ no Zotero**
 
-A biblioteca está organizada em duas subcoleções principais: Documentação e Publicações.
+A partir dos dados produzidos nessa etapa de levantamento bibliográfico, foi criada uma biblioteca de referências no Zotero intitulada [*Programming Historian - publicações, diretrizes e documentação*](https://www.zotero.org/groups/4765521/programming_historian_-_publicaes_diretrizes_e_documentao/).
+
+![logo-bib](./../img/bib_zot.png)
+
+Seu objetivo é organizar, categorizar e classificar criticamente a as publicações acadêmicas aqui trabalhadas, mas também incluir toda a documentação do projeto Programming Historian presente no GitHub no Site, que foram analisadas e categorizadas na fase dois dessa pesquisa (e serão detalhadas no próximo tópico).
+
+O *Zotero* é "uma ferramenta livre, fácil de usar para ajudá-lo a coletar, organizar, anotar, citar e compartilhar sua pesquisa"[^4]. A ferramenta nos permite, portanto, gerenciar referências bibliográficas e desenvolver variadas estratégias de organização e análise, além de possibilitar o compartilhamento dos dados em bibliotecas colaborativas on-line.
+
+A biblioteca relativa à essa pesquisa está organizada em duas subcoleções principais: *Documentação* e *Publicações*. Foram criadas subcoleções e etiquetas organizadoras, que podem servir de filtro em buscas, assim como, os itens relativos à documentação receberam notas explicativas e de erros/sugestões.
 
 ## Análise das estruturas, workflow e diretrizes do Programming Historian
 
+O Programming Historian possui atualmente versões em quatro idiomas, inglês, espanhol, francês e português. Para o funcionamento e manutenção de uma empreitada desse porte, existe um robusto volume de diretrizes e políticas de publicação, workflow e documentação condensadas no [site do projeto](https://programminghistorian.org) e nos repositórios vinculados à sua organização no GitHub[^org-gh].
+
+Nesse tópico, busco apresentar a análise realizada sobre essa estrutura. Os objetivos são entender seu funcionamento, caracterizar a estrutura e fluxo de trabalho e mapear incoerências e erros, para então propor encaminhamentos de melhorias e/ou soluções.
+
+Para tanto, utilizei um método de organização e análise a partir de recursos do Zotero. Criei, conforme indicado anteriormente, subcoleções específicas para a documentação do *PH* e a partir dela, criei etiquetas e notas, vinculando documentos e notas quanto necessário.
+
+As subcoleções foram criadas a partir da própria estrutura dos repositórios da organização *PH* no GitHub, e do site do projeto. As subcoleções criadas foram:
+
+- Site: referente ao próprio site do projeto, contendo as seguintes subcoleções: `Apoiar`, `Contribuir`, `Questões Técnicas` e `Sobre`.[^site]
+- GH_ORG: referente ao perfil da organização _The Programming historian_ no GitHub
+- GH_ph-submissions: referente ao repositório _ph-submissions_
+- GH_jekyll: referente ao repositório _jekyll_. Também criamos uma subcoleção específica para a _Wiki_ do projeto, que está no repositório _jekyll_.
+
+Um conjunto de etiquetas (*tags*) foi criado para a análise, organização e filtro dos itens. Criei etiquetas primárias, que possibilitam um filtro temático mais geral. São elas: `Site`, `GitHub`, `ph-submission`, `jekyll`, `Wiki`, `Erro/Sugestão`. Posteriormente foram criadas etiquetas secundárias, que estão vinculadas mais diretamente a cada subcoleção ou temas específicos.  A lista é longa e pode ser consultada na [biblioteca no Zotero](https://www.zotero.org/groups/4765521/programming_historian_-_publicaes_diretrizes_e_documentao/).
+
+O site do Programming Historian é um site estático baseado em Jekyll[^jekyll], cujo conjunto de dados e arquivos está hospedado no repositório programminghistorian/jekyll[^jekyll-gh]. O site é gerado a partir desses arquivos e dados (a maioria escritos em linguagem de marcação Markdown), e hospedado no GitHub Pages[^gh-pages]. 
+
+A complexidade e sofisticação técnica e estrutural para a manutenção de um site multilinguístico que permita sua constante atualização e expansão, seja com a publicação de novas lições e traduções nos quatro idiomas, seja com a incorporação de novos colaboradores ao longo do tempo, é um desafio que tem sido enfrentado pelo projeto nos últimos anos. Nas palavras de Lincoln e colaboradores,  
+
+>Throughout the process of onboarding new editors from multiple backgrounds and publishing lessons in several languages, both originals and translations, the team came to discuss ways to better reach our global audience and enhance language accessibility. These goals have relied on the malleable Jekyll-based site to create a more accessible journal, but have also tested the limits of both the technology as well as our team’s processes.[^lincoln] 
+
+Ao enfrentarem o desafio da expansão para vários idiomas, respeitando as diretrizes do projeto de democratização do acesso ao conhecimento, a equipe técnica precisou desenvolver uma arquitetura técnica que garantisse seu funcionamento e ao mesmo tempo simplificasse o fluxo de trabalho dos editores, autores e tradutores. Isso gerou, consequentemente, o aumento da complexidade dos fluxos de trabalho da equipe técnica, ou seja, houve uma realocação da complexidade e do trabalho ue envolve (LINCOLN et al, 2022, par. 6).
+
+Os autores entendem esse processo nos marcos do que Matt Ratto chama de "critical making", definido como:
+
+>“connect[ing] two modes of engagement with the world that are often held separate — critical thinking, typically understood as conceptually and linguistically based, and physical ‘making,’ goal-based material work” (Ratto 2011, 253 apud Lincoln et al, 2022).
+
+E eles concluem:
+
+>For PH, creating and maintaining a multilingual publication is an act of critical making, negotiating the complexities of language and the constraints of our infrastructure in both technology and labor (LINCOLN et al, 2022, par. 5).
+
+Compreendendo a complexidade dessa arquitetura, que envolve além da equipe técnica, todos os membros e colaboradores do projeto, engloba tanto os arquivos em markdown presentes nos repositórios do *PH* no GitHub, quanto arquivos responsáveis pela geração do site, testes e conferências de conflitos, pretendo caracterizar esse processo e listar erros e incoerências encontradas e sugerir correções e melhorias.
+
 ### Site
+
+Ao acessar o site [programminghistoria.org](https://programminghistorian.org/), o usuário é direcionado para a página inicial, que apresenta as opções acessar o *PH* em cada um dos quatro idiomas atualmente disponíveis: inglês, espanhol, francês e português.
+
+O site é atualizado constantemente a partir das alterações realizadas no repositório [programminghistorian/jekyll](https://github.com/programminghistorian/jekyll) quando um novo commit é realizado através de um Pull Request (PR). Portanto, erros podem ser corrigidos facilmente e atualizações são efetuadas com rapidez. O workflow desse processo é explicado detalhadamente [no tópico *Fixing Content on the site* na página *Making technical contribution* da Wiki do projeto](https://github.com/programminghistorian/jekyll/wiki/Making-Technical-Contributions#fixing-content-on-the-site).
+
+Resumidamente, é necessário abrir uma *issue* no repositório [programminghistorian/jekyll](https://github.com/programminghistorian/jekyll/issues) explicando o erro e as alterações pretendidas e designar responsáveis. O segundo passo é criar um novo branch no repositório com o nome da issue e realizar as alterações nesse branch.
+
+Após as alterações terem sido realizadas, é necessário abrir um Pull Request, preencher o template, marcar as equipes ou usuários relacionados à issue, e designar um revisor para o PR.
+
+Caso o PR não apresente conflitos e o revisor aprove, é possível realizar o *merge* e o site será atualizado automaticamente.
+
+Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_sugestoes/Site/). A lista de propostas de correções e melhorias que serão convertidas em issues e PR no repositório jekyll podem encontradas no tópico [Propostas](#propostas).
 
 ### ph-submissions
 
+Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_sugestoes/GH_ph-submissions/). A lista de propostas de correções e melhorias que serão convertidas em issues e PR no repositório jekyll podem encontradas no tópico [Propostas](#propostas).
+
 ### jekyll
+
+Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_sugestoes/GH_pjekyll/). A lista de propostas de correções e melhorias que serão convertidas em issues e PR no repositório jekyll podem encontradas no tópico [Propostas](#propostas).
 
 ### organization
 
+Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_sugestoes/GH_ORG_/). A lista de propostas de correções e melhorias que serão convertidas em issues e PR no repositório jekyll podem encontradas no tópico [Propostas](#propostas).
+
 ### Propostas
 
+1. Site
+
+- [ ] Issue 1: Correção de erros de links nas diretrizes para tradutores em português. [Ver descrição](https://github.com/ericbrasiln/git-gh-workflow/blob/2396771754790ee167408b5632e48dda67639a24/PH_workflow/erros_sugestoes/Site/Erros - Diretrizes para tradutores.md)
+- [ ] Issue 2: Inclusão e correção de links na pagina Contribua e Diretrizes para editores nos quatro idiomas. Ver descrição [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/2396771754790ee167408b5632e48dda67639a24/PH_workflow/erros_sugestoes/Site/Erros - Diretrizes para tradutores.md) e [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/2396771754790ee167408b5632e48dda67639a24/PH_workflow/erros_sugestoes/Site/Erros - Directrizes pra editores.md)
+
+2. 
 [^1]: Para mais informações sobre o Git, consulte o [Manual do Git](https://git-scm.com/docs) e o livro [Pro Git](https://git-scm.com/book/pt-br/v2) de Scott Chacon e Ben Straub, especialmente o tópico [2.3 Fundamentos de Git - Vendo o histórico de Commits](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Vendo-o-hist%C3%B3rico-de-Commits).
 
 [^2]: Aria, Massimo, e Corrado Cuccurullo. “Bibliometrix: An R-Tool for Comprehensive Science Mapping Analysis”. *Journal of Informetrics 11*, nº 4 (1º de novembro de 2017): 959–75. https://doi.org/10.1016/j.joi.2017.08.007.
 
 [^3]: Curtain, C. (2022). QualCoder (3.0) [Python]. https://github.com/ccbogel/QualCoder/releases/tag/3.0 (Original work published 2019)
+
+[^4]: “Zotero | Your personal research assistant”. Acessado 30 de setembro de 2022. https://www.zotero.org/.
+
+[^org-gh]: Segundo a documentação do GitHub, "As organizações são contas compartilhadas nas quais empresas e projetos de código aberto podem colaborar em diversas iniciativas ao mesmo tempo, com recursos administrativos e de segurança sofisticados." GitHub Docs. “Sobre organizações - Documentação do GitHub”. Acessado 30 de setembro de 2022. https://ghdocs-prod.azurewebsites.net/pt/organizations/collaborating-with-groups-in-organizations/about-organizations.
+
+[^site]: O site do Programming Historian está hospedado no GitHub Pages, e o código fonte está disponível no repositório [jekyll](https://github.com/programminghistorian/jekyll), portanto, é possível encontrar toda a documentação e estrutura do site no repositório.
+
+[^jekyll]: Para saber mais veja o [site oficial](http://jekyllrb.com/).
+
+[^gh-pages]: Sobre o GitHub Pages, ver o [site com a documentação](https://pages.github.com/).
+
+[^lincoln]: Lincoln, Matthew, Jennifer Isasi, Sarah Melton, e François Dominic Laramée. “Relocating Complexity: The Programming Historian and Multilingual Static Site Generation.” DHQ: Digital Humanities Quarterly 16, nº 2 (2022).
