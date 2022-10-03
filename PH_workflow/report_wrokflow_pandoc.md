@@ -30,13 +30,13 @@ Ao longo desses dois meses de trabalho foi realizado levantamento bibliográfico
 
 Como resultados apresento uma série de relatórios que mapearam erros e apontam possíveis soluções - com destaque para a análise da estrutura de pastas dos quatro idiomas no repositório ph-submissions,  a proposta de Projeto Kanban para a versão em português, o conjunto de templates para issues e correções de erros e incoerências no site do PH - e uma breve análise do levantamento bibliográfico realizado.
 
-Uma representação gráfica e textual de todas as alterações realizadas no repositório `git-gh_workflow` entre 20 de julho de 23 de setembro de 2022 pode ser acessada [aqui](git_log_full_graph.txt). Nesse arquivo estão registrados todos os commits realizados, sendo possível encontrar os dados completos sobre cada alteração. O arquivo foi gerado através do seguinte comando no Git[^1]:
+Uma representação gráfica e textual de todas as alterações realizadas no repositório `git-gh_workflow` entre 20 de julho de 23 de setembro de 2022 pode ser acessada [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/git_logs/git_log_full_graph.txt). Nesse arquivo estão registrados todos os commits realizados, sendo possível encontrar os dados completos sobre cada alteração. O arquivo foi gerado através do seguinte comando no Git[^1]:
 
 ```bash
 $ git log --pretty=full --graph > git_log_full_graph.txt
 ```
 
-Também é possível acessar uma versão em `csv` dos dados, clicando [aqui](git_log_oneline.csv). Essa versão mostra a *hash* abreviada do *commit*, o nome do autor, a data e o assunto. Esse arquivo foi gerado com o seguinte comando:
+Também é possível acessar uma versão em `csv` dos dados, clicando [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/git_logs/git_log_oneline.csv). Essa versão mostra a *hash* abreviada do *commit*, o nome do autor, a data e o assunto. Esse arquivo foi gerado com o seguinte comando:
 
 ```bash
 $ git log --date=format:'%Y-%m-%d %H:%M:%S'\
@@ -62,7 +62,7 @@ Buscamos publicações que contenham as palavras "programming historian" nas ref
 2. Logado com a conta de estudante da NOVA
 3. data da busca: 2022-08-16
 4. parâmetro: `REF ( "programming Historian" )`
-5. Resultado: 130 documentos - todos podem ser consultados [aqui](scopus.bib)
+5. Resultado: 130 documentos - todos podem ser consultados [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/bibliography/scopus.bib)
     1. journal: 86
     2. conference proceedings: 25
     3. Book: 13
@@ -76,8 +76,8 @@ Buscamos publicações que contenham as palavras "programming historian" em seu 
 2. data da busca: 2022-08-04
 3. parâmetro utilizado: `allintitle:"programming historian"`
 4. Exclusão de citações
-5. Resultados: 15 documentos - todos podem ser consultados [aqui](scholar.bib)
-
+5. Resultados: 15 documentos - todos podem ser consultados [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/bibliography/scholar.bib)
+6. 
 Todos as publicações encontradas foram armazenadas em formato `.bib` e também foram incluídas em uma coleção específica no *Zotero*. A coleção, assim como toda bibliografia restante que será utilizada nesse plano de trabalho, forma uma biblioteca pública de referências disponível para consulta on-line, intitulada *Biblioteca Programming Historian - publicações, diretrizes e documentação no Zotero* e pode ser acessada nesse [link](https://www.zotero.org/groups/4765521/programming_historian_-_publicaes_diretrizes_e_documentao/).
 
 ### Analisando os resultados
@@ -86,7 +86,7 @@ Devido ao caráter distinto das etapas e de suas publicações, estruturamos an�
 
 **Análise 1: Publicações que citam o *PH* em suas referências bibliográficas**
 
-Esse conjunto de publicações e seus dados foram gerados a partir de busca no *Scopus* - os parâmetros e resultados gerais podem ser vistos [aqui](#1---publicações-que-citam-o-ph-em-suas-referências-bibliográficas). Utilizamos para sua análise uma ferramenta de tratamento de dados bibliográficos chamada `bibliometrix`[^2].
+Esse conjunto de publicações e seus dados foram gerados a partir de busca no *Scopus* - os parâmetros e resultados gerais podem ser vistos no ponto 1 desse tópico. Utilizamos para sua análise uma ferramenta de tratamento de dados bibliográficos chamada `bibliometrix`[^2].
 
 A ferramenta é de código aberto e desenvolvida como um pacote para a linguagem de programação R. Segundo os autores,
 
@@ -128,7 +128,7 @@ Com essa função, podemos analisar os dados em um app de visualização em um b
 
 Buscamos gerar visualizações dos dados - assim como os dados tabulares, arquivados em formato `.csv` - para cada uma das categorias supracitadas.
 
-As visualizações podem ser encontrados [aqui](bibliometrix/visualizations/) e os dados tabulares podem ser encontrados [aqui](bibliometrix/csvs).
+As visualizações podem ser encontrados [aqui](https://github.com/ericbrasiln/git-gh-workflow/tree/main/bibliography/bibliometrix/visualizations) e os dados tabulares podem ser encontrados [aqui](https://github.com/ericbrasiln/git-gh-workflow/tree/main/bibliography/bibliometrix/csvs).
 
 É possível perceber o crescimento de publicações que referenciam o *PH* a partir de 2019, com destaque para o ano de 2021 (Figura 1).
 
@@ -275,7 +275,7 @@ Importante notar que entre os códigos referentes à análise do conteúdo, os m
 |PH::LESSONS|2|
 |PH::NOVICE-FRIENDLY|1|
 
-Para acessar os dados completos da codificação, ver [esse arquivo](bibliography/qualcoder/../../../bibliography/qualcoder/Code_frequencies_0.csv)
+Para acessar os dados completos da codificação, ver [esse arquivo](https://github.com/ericbrasiln/git-gh-workflow/blob/main/bibliography/qualcoder/Code_frequencies_0.csv)
 
 Aqui também percebemos, como no tópico anterior, que os debates principais dos artigos recaem sobre os aspectos técnicos e metodológicos do *PH*, e praticamente não encontramos produções sobre temas e problemas da historiografia. Entretanto, nesse caso, isso era de se esperar pelo caráter da busca realizada. Ao encontrar trabalhos cujo título possuía a expressão "programming historian", o conjunto de dados estaria sobremaneira direcionado para a reflexão acerco do caráter do próprio projeto.
 
@@ -338,7 +338,7 @@ Após as alterações terem sido realizadas, é necessário abrir um Pull Reques
 
 Caso o PR não apresente conflitos e o revisor aprove, é possível realizar o *merge* e o site será atualizado automaticamente.
 
-Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_sugestoes/Site/). A lista de propostas de correções e melhorias que serão convertidas em issues e PR no repositório jekyll podem encontradas no tópico [Propostas](#propostas).
+Os erros e sugestões referentes ao site podem ser encontradas [aqui](https://github.com/ericbrasiln/git-gh-workflow/tree/main/PH_workflow/erros_sugestoes/Site). A lista de propostas de correções e melhorias que serão convertidas em issues e PR no repositório jekyll podem encontradas no tópico Propostas, abaixo.
 
 ### ph-submissions
 
@@ -353,7 +353,7 @@ De forma resumida, o fluxo consiste em:
 3. Após a submissão da proposta, o editor entrará em contato com revisores e inicia o processo de revisão com a criação de um issue específica para o tal. 
 4. OS editores devem cumprir uma série de tarefas técnicas importantes para a publicação da lição: verificar nomes dos ficheiros e das imagens, datasets e vídeos/gfs; editar os metadados e editar o front matter YAML da lição, entre outras. O processo detalhado e as tarefas do editor podem ser encontradas [aqui](https://programminghistorian.org/pt/directrizes-editor).
 
-O caráter aberto e colaborativo, e que utiliza o controle de versões, é um destaque no processo de avaliação e publicação pelo *PH*, garantindo a implementação de uma política de ciência aberta eficiente. Entretanto, o fluxo constante de submissões e revisões de lições e traduções, simultaneamente em quatro idiomas, torna complexo o rastreamento e visualização das tarefas, etapas e demandas de cada editor e equipe de idioma. As etiquetas ajudam a filtrar e visualizar a lista de lições, mas com o crescente número de issues abertas e sua variedade, não são suficientes. Assim, foram criados projeto de quadro *Kanban* no GitHub para as equipes em inglês, francês e espanhol vinculados ao repositório [jekyll](https://github.com/programminghistorian/jekyll/projects?type=classic). Um quadro nesse modelo é uma ferramenta importante para a gestão do fluxo de trabalho para a equipe em português. Nesse sentido, propus a sua criação na [issue #2670](https://github.com/programminghistorian/jekyll/issues/2670) e os debates avançaram para uma nova proposta de criação de um único Projeto *Kanban* para todas as equipes de idiomas. Um detalhamento dessa proposta pode ser encontrado [aqui](./erros_sugestoes/jekyll/sugestao_jekyll_projects.md).
+O caráter aberto e colaborativo, e que utiliza o controle de versões, é um destaque no processo de avaliação e publicação pelo *PH*, garantindo a implementação de uma política de ciência aberta eficiente. Entretanto, o fluxo constante de submissões e revisões de lições e traduções, simultaneamente em quatro idiomas, torna complexo o rastreamento e visualização das tarefas, etapas e demandas de cada editor e equipe de idioma. As etiquetas ajudam a filtrar e visualizar a lista de lições, mas com o crescente número de issues abertas e sua variedade, não são suficientes. Assim, foram criados projeto de quadro *Kanban* no GitHub para as equipes em inglês, francês e espanhol vinculados ao repositório [jekyll](https://github.com/programminghistorian/jekyll/projects?type=classic). Um quadro nesse modelo é uma ferramenta importante para a gestão do fluxo de trabalho para a equipe em português. Nesse sentido, propus a sua criação na [issue #2670](https://github.com/programminghistorian/jekyll/issues/2670) e os debates avançaram para uma nova proposta de criação de um único Projeto *Kanban* para todas as equipes de idiomas. Um detalhamento dessa proposta pode ser encontrado [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/jekyll/sugestao_jekyll_projects.md).
 
 Ao analisar a estrutura e fluxo de trabalho nesse repositório, foram identificadas algumas questões que merecem atenção. 
 
@@ -371,14 +371,14 @@ Ao analisar a estrutura e fluxo de trabalho nesse repositório, foram identifica
     └── translation-list.md/lista-de-traducciones.md/liste-traductions.md/lista-de-traducoes.md
     ```
 
-Uma avaliação mais detalhada da proposta pode ser encontrada [aqui](./erros_sugestoes/ph-submissions/ph-submissions_folder_analyzis.md). 
+Uma avaliação mais detalhada da proposta pode ser encontrada [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/ph-submissions/ph-submissions_folder_analyzis.md). 
 
 
 2. O ficheiro [index.html](https://github.com/programminghistorian/ph-submissions/blob/gh-pages/index.md) foi atualizado pela última vez há cinco anos. E não condiz com o README.md do repositório [ph-submissions](https://github.com/programminghistorian/ph-submissions/blob/gh-pages/README.md).
 
 3. Não há política de proteção do branch `gh-pages`.
 
-4. Issue Templates: está apenas em inglês e parece desatualizado. Seria importante, pensando a automatização e redução das etapas de trabalho para editores, seguindo a proposta de Lincoln (2022) e colaboradores par realocar a complexidade dos processos [^lincoln], a criação de um conjunto de templates que contemple os quatro idiomas. Uma proposta geral de templates pode ser encontrada [aqui](erros_sugestoes/ph-submissions/issue_templates_proposal.md).
+4. Issue Templates: está apenas em inglês e parece desatualizado. Seria importante, pensando a automatização e redução das etapas de trabalho para editores, seguindo a proposta de Lincoln (2022) e colaboradores par realocar a complexidade dos processos [^lincoln], a criação de um conjunto de templates que contemple os quatro idiomas. Uma proposta geral de templates pode ser encontrada [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/ph-submissions/issue_templates_proposal.md).
 
 ### jekyll
 
@@ -389,7 +389,7 @@ As alterações e commits realizados nele precisam ser aprovadas por algum revis
 Destaco três questões para avaliação:
 
 1. Contributing.md: O documento foi atualizado pela última vez em maio de 2017 (Latest commit [0389b43](https://github.com/programminghistorian/jekyll/commit/0389b438144dcc6fe8b87360982771fb297ec89a) on 6 May 2017) e ainda consta o nome de Amanda Visconti como Ombudsperson. Não constam os nomes dos Ombudsperson da equipe em francês e português.
-2. Issue Template: O modelo foi atualizado pela última vez em 2016 (Latest commit [4a8ad0f](https://github.com/programminghistorian/jekyll/commit/4a8ad0f3c4069221c5ea9af18ce36345588a9669) on 27 Jun 2016) e sua sintaxe está fora do padrão atual do GH. Proponho uma atualização que pode ser vista [aqui](erro_sugestoes/ph-submissions/sugestao_jekyll_issue_template.md).
+2. Issue Template: O modelo foi atualizado pela última vez em 2016 (Latest commit [4a8ad0f](https://github.com/programminghistorian/jekyll/commit/4a8ad0f3c4069221c5ea9af18ce36345588a9669) on 27 Jun 2016) e sua sintaxe está fora do padrão atual do GH. Proponho uma atualização que pode ser vista [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/jekyll/sugestao_jekyll_issue_template.md).
 3. Projetos Kanban para idioma português: essa questão foi endereçada na [issue #2670](https://github.com/programminghistorian/jekyll/issues/2670).
 
 ### organization
@@ -404,34 +404,34 @@ O perfil da organização Programming Historian no GitHub é a página inicial o
 
 1. Site
 
-- [ ] Criar **Issue A** no programminghistorian/jekyll: Correção de erros de links nas diretrizes para tradutores em português. [Ver descrição](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Contribua.md)
+- [ ] Criar **Issue A** no programminghistorian/jekyll: Correção de erros de links nas diretrizes para tradutores em português. [Ver descrição](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/Site/Erros%20-%20Contribua.md)
   - [ ] Criar **Branch "Issue-A** no programminghistorian/jekyll e realizar alterações. 
   - [ ] Criar **Pull Request** do branch "Issue-A" no programminghistorian/jekyll e solicitar revisão.
-- [ ] Criar **Issue B** no programminghistorian/jekyll: Inclusão e correção de links na pagina Contribua e Diretrizes para editores nos quatro idiomas. Ver descrição [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20tradutores.md) e [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20editores.md)
+- [ ] Criar **Issue B** no programminghistorian/jekyll: Inclusão e correção de links na pagina Contribua e Diretrizes para editores nos quatro idiomas. Ver descrição [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20tradutores.md) e [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/Site/Erros%20-%20Directrizes%20pra%20editores.md)
   - [ ] Criar **Branch "Issue-B** no programminghistorian/jekyll e realizar alterações.
   - [ ] Criar **Pull Request** do branch "Issue-B" no programminghistorian/jekyll e solicitar revisão.
 
 1. ph-submissions
 
-- [x] Proposta de reestruturação das pastas de idiomas: reunião com Anisa Hawes para apresentação da [proposta](erros_sugestoes/ph-submissions/ph-submissions_folder_analyzis.md).
+- [x] Proposta de reestruturação das pastas de idiomas: reunião com Anisa Hawes para apresentação da [proposta](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/ph-submissions/ph-submissions_folder_analyzis.md).
 - [ ] Proposta de criação de conjunto de templates para issues: 
   - [x] reunião com Anisa Hawes para apresentação geral do tema.
-  - [x] Criação de [repositório de exemplo](https://github.com/ericbrasiln/issue_templates_test) com a [proposta](erros_sugestoes/ph-submissions/issue_templates_proposal.md) já definida para avaliação.
+  - [x] Criação de [repositório de exemplo](https://github.com/ericbrasiln/issue_templates_test) com a [proposta](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/ph-submissions/issue_templates_proposal.md) já definida para avaliação.
   - [x] Convidar Anisa Hawes para ser colaboradora no repositório de exemplo.
   - [ ] Criar **Issue C** no programminghistorian/ph-submission com a proposta
   - [ ] Criar **Branch "Issue-C** no programminghistorian/ph-submission e realizar a alteração nos arquivos.
   - [ ] Criar **Pull Request** do branch "Issue-C" no programminghistorian/ph-submission e solicitar revisão. 
 
-3. jekyll
+1. jekyll
    
-- [ ] Criar **Issue D** no programminghistorian/jekyll: Atualização do documento Contributing.md. [Ver proposta](erros_sugestoes/jekyll/sugestao_jekyll_contributing.md)
+- [ ] Criar **Issue D** no programminghistorian/jekyll: Atualização do documento Contributing.md. [Ver proposta](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/jekyll/sugestao_jekyll_contributing.md)
   - [ ] Criar **Branch "Issue-D** no programminghistorian/jekyll e realizar alterações.
   - [ ] Criar **Pull Request** do branch "Issue-D" no programminghistorian/jekyll e solicitar revisão.
-- [ ] Criar **Issue E** no programminghistorian/jekyll: Atualização do modelo de issue template. [Ver proposta](erros_sugestoes/jekyll/sugestao_jekyll_issue_template.md)
+- [ ] Criar **Issue E** no programminghistorian/jekyll: Atualização do modelo de issue template. [Ver proposta](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/jekyll/sugestao_jekyll_issue_template.md)
   - [ ] Criar **Branch "Issue-E** no programminghistorian/jekyll e realizar alterações.
   - [ ] Criar **Pull Request** do branch "Issue-E" no programminghistorian/jekyll e solicitar revisão.
 
-4. organization
+1. organization
 
 - [x] Participar da criação e teste de um projeto kanban geral para a organização com a nova versão do GitHub Projects.
 - [ ] Inclusão a página do twitter do PH no perfil da organização.

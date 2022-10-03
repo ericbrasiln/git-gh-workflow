@@ -4,7 +4,7 @@ subtitle: Análise do Workflow, Estrutura e Diretrizes do Programming Historian
 author: Eric Brasil
 date: 2022-10-03
 abstract: Este relatório apresenta as etapas da pesquisa e seus resultados entre 20 de julho de 23 de setembro de 2022. Ao longo desses dois meses de trabalho foi realizado levantamento bibliográfico sobre o Programming Historian, análise das estruturas e workflow, assim como das diretrizes que formam o projeto. A pesquisa esteve centrada na versão em português do PH, porém não esteve restrita a ela. Como resultados apresento uma série de relatórios que mapearam erros e apontam possíveis soluções - com destaque para a análise da estrutura de pastas dos quatro idiomas no repositório ph-submissions,  a proposta de Projeto Kanban para a versão em português, o conjunto de templates para issues e correções de erros e incoerências no site do PH - e uma breve análise do levantamento bibliográfico realizado.
-...
+--- 
 # Relatório da Análise do Workflow, Estrutura e Diretrizes do Programming Historian
 
 Eric Brasil
@@ -17,13 +17,13 @@ Ao longo desses dois meses de trabalho foi realizado levantamento bibliográfico
 
 Como resultados apresento uma série de relatórios que mapearam erros e apontam possíveis soluções - com destaque para a análise da estrutura de pastas dos quatro idiomas no repositório ph-submissions,  a proposta de Projeto Kanban para a versão em português, o conjunto de templates para issues e correções de erros e incoerências no site do PH - e uma breve análise do levantamento bibliográfico realizado.
 
-Uma representação gráfica e textual de todas as alterações realizadas no repositório `git-gh_workflow` entre 20 de julho de 23 de setembro de 2022 pode ser acessada [aqui](git_log_full_graph.txt). Nesse arquivo estão registrados todos os commits realizados, sendo possível encontrar os dados completos sobre cada alteração. O arquivo foi gerado através do seguinte comando no Git[^1]:
+Uma representação gráfica e textual de todas as alterações realizadas no repositório `git-gh_workflow` entre 20 de julho de 23 de setembro de 2022 pode ser acessada [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/git_logs/git_log_full_graph.txt). Nesse arquivo estão registrados todos os commits realizados, sendo possível encontrar os dados completos sobre cada alteração. O arquivo foi gerado através do seguinte comando no Git[^1]:
 
 ```bash
 $ git log --pretty=full --graph > git_log_full_graph.txt
 ```
 
-Também é possível acessar uma versão em `csv` dos dados, clicando [aqui](git_log_oneline.csv). Essa versão mostra a *hash* abreviada do *commit*, o nome do autor, a data e o assunto. Esse arquivo foi gerado com o seguinte comando:
+Também é possível acessar uma versão em `csv` dos dados, clicando [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/git_logs/git_log_oneline.csv). Essa versão mostra a *hash* abreviada do *commit*, o nome do autor, a data e o assunto. Esse arquivo foi gerado com o seguinte comando:
 
 ```bash
 $ git log --date=format:'%Y-%m-%d %H:%M:%S'\
@@ -47,7 +47,7 @@ Buscamos publicações que contenham as palavras "programming historian" nas ref
 2. Logado com a conta de estudante da NOVA
 3. data da busca: 2022-08-16
 4. parâmetro: `REF ( "programming Historian" )`
-5. Resultado: 130 documentos - todos podem ser consultados [aqui](scopus.bib)
+5. Resultado: 130 documentos - todos podem ser consultados [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/bibliography/scopus.bib)
     1. journal: 86
     2. conference proceedings: 25
     3. Book: 13
@@ -61,7 +61,7 @@ Buscamos publicações que contenham as palavras "programming historian" em seu 
 2. data da busca: 2022-08-04
 3. parâmetro utilizado: `allintitle:"programming historian"`
 4. Exclusão de citações
-5. Resultados: 15 documentos - todos podem ser consultados [aqui](scholar.bib)
+5. Resultados: 15 documentos - todos podem ser consultados [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/bibliography/scholar.bib)
 
 Todos as publicações encontradas foram armazenadas em formato `.bib` e também foram incluídas em uma coleção específica no *Zotero*. A coleção, assim como toda bibliografia restante que será utilizada nesse plano de trabalho, forma uma biblioteca pública de referências disponível para consulta on-line, intitulada *Biblioteca Programming Historian - publicações, diretrizes e documentação no Zotero* e pode ser acessada nesse [link](https://www.zotero.org/groups/4765521/programming_historian_-_publicaes_diretrizes_e_documentao/).
 
@@ -113,7 +113,7 @@ Com essa função, podemos analisar os dados em um app de visualização em um b
 
 Buscamos gerar visualizações dos dados - assim como os dados tabulares, arquivados em formato `.csv` - para cada uma das categorias supracitadas.
 
-As visualizações podem ser encontrados [aqui](bibliometrix/visualizations/) e os dados tabulares podem ser encontrados [aqui](bibliometrix/csvs).
+As visualizações podem ser encontrados [aqui](./../biblography/bibliometrix/visualizations/) e os dados tabulares podem ser encontrados [aqui](./../biblography/bibliometrix/csvs).
 
 É possível perceber o crescimento de publicações que referenciam o *PH* a partir de 2019, com destaque para o ano de 2021.
 
@@ -378,7 +378,7 @@ As alterações e commits realizados nele precisam ser aprovadas por algum revis
 Destaco três questões para avaliação:
 
 1. Contributing.md: O documento foi atualizado pela última vez em maio de 2017 (Latest commit [0389b43](https://github.com/programminghistorian/jekyll/commit/0389b438144dcc6fe8b87360982771fb297ec89a) on 6 May 2017) e ainda consta o nome de Amanda Visconti como Ombudsperson. Não constam os nomes dos Ombudsperson da equipe em francês e português.
-2. Issue Template: O modelo foi atualizado pela última vez em 2016 (Latest commit [4a8ad0f](https://github.com/programminghistorian/jekyll/commit/4a8ad0f3c4069221c5ea9af18ce36345588a9669) on 27 Jun 2016) e sua sintaxe está fora do padrão atual do GH. Proponho uma atualização que pode ser vista [aqui](erro_sugestoes/ph-submissions/sugestao_jekyll_issue_template.md).
+2. Issue Template: O modelo foi atualizado pela última vez em 2016 (Latest commit [4a8ad0f](https://github.com/programminghistorian/jekyll/commit/4a8ad0f3c4069221c5ea9af18ce36345588a9669) on 27 Jun 2016) e sua sintaxe está fora do padrão atual do GH. Proponho uma atualização que pode ser vista [aqui](./../PH_workflow/erro_sugestoes/jekyll/sugestao_jekyll_issue_template.md).
 3. Projetos Kanban para idioma português: essa questão foi endereçada na [issue #2670](https://github.com/programminghistorian/jekyll/issues/2670).
 
 ### organization
@@ -396,7 +396,7 @@ O perfil da organização Programming Historian no GitHub é a página inicial o
 - [ ] Criar **Issue A** no programminghistorian/jekyll: Correção de erros de links nas diretrizes para tradutores em português. [Ver descrição](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Contribua.md)
   - [ ] Criar **Branch "Issue-A** no programminghistorian/jekyll e realizar alterações. 
   - [ ] Criar **Pull Request** do branch "Issue-A" no programminghistorian/jekyll e solicitar revisão.
-- [ ] Criar **Issue B** no programminghistorian/jekyll: Inclusão e correção de links na pagina Contribua e Diretrizes para editores nos quatro idiomas. Ver descrição [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20tradutores.md) e [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20editores.md)
+- [ ] Criar **Issue B** no programminghistorian/jekyll: Inclusão e correção de links na pagina Contribua e Diretrizes para editores nos quatro idiomas. Ver descrição [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20tradutores.md) e [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20pra%20editores.md)
   - [ ] Criar **Branch "Issue-B** no programminghistorian/jekyll e realizar alterações.
   - [ ] Criar **Pull Request** do branch "Issue-B" no programminghistorian/jekyll e solicitar revisão.
 
