@@ -411,7 +411,7 @@ O perfil da organização Programming Historian no GitHub é a página inicial o
   - [ ] Criar **Branch "Issue-B** no programminghistorian/jekyll e realizar alterações.
   - [ ] Criar **Pull Request** do branch "Issue-B" no programminghistorian/jekyll e solicitar revisão.
 
-1. ph-submissions
+2. ph-submissions
 
 - [x] Proposta de reestruturação das pastas de idiomas: reunião com Anisa Hawes para apresentação da [proposta](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/ph-submissions/ph-submissions_folder_analyzis.md).
 - [ ] Proposta de criação de conjunto de templates para issues: 
@@ -422,7 +422,7 @@ O perfil da organização Programming Historian no GitHub é a página inicial o
   - [ ] Criar **Branch "Issue-C** no programminghistorian/ph-submission e realizar a alteração nos arquivos.
   - [ ] Criar **Pull Request** do branch "Issue-C" no programminghistorian/ph-submission e solicitar revisão. 
 
-1. jekyll
+3. jekyll
    
 - [ ] Criar **Issue D** no programminghistorian/jekyll: Atualização do documento Contributing.md. [Ver proposta](https://github.com/ericbrasiln/git-gh-workflow/blob/main/PH_workflow/erros_sugestoes/jekyll/sugestao_jekyll_contributing.md)
   - [ ] Criar **Branch "Issue-D** no programminghistorian/jekyll e realizar alterações.
@@ -431,7 +431,7 @@ O perfil da organização Programming Historian no GitHub é a página inicial o
   - [ ] Criar **Branch "Issue-E** no programminghistorian/jekyll e realizar alterações.
   - [ ] Criar **Pull Request** do branch "Issue-E" no programminghistorian/jekyll e solicitar revisão.
 
-1. organization
+4. organization
 
 - [x] Participar da criação e teste de um projeto kanban geral para a organização com a nova versão do GitHub Projects.
 - [ ] Inclusão a página do twitter do PH no perfil da organização.
