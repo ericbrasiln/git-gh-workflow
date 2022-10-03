@@ -15,9 +15,13 @@ O plano de trabalho está inserido no projeto Programming Historian em Portuguê
 
 ---
 
+## Relatório da pesquisa
+
+- [Relatório de pesquisa: Análise do Workflow, Estrutura e Diretrizes do Programming Historian](/PH_workflow/report_wrokflow.md)
+
 ## Análise bibliográfica sobre o Programming Historian (2008-2022)
 
-Veja mais detalhes [aqui](bib/README.md)
+Veja mais detalhes [aqui](/bibliography/README.md)
 
 ## Análise da estrutura, diretrizes e fluxos de trabalho do Programming Historian
 
@@ -25,7 +29,7 @@ Veja mais detalhes [aqui](PH_workflow/README.md)
 
 ## Proposta de lição em português para o PH
 
-Veja mais detalhes [aqui](Proposta-lição-PH/README.md)
+Veja mais detalhes [aqui](lesson-proposal/README.md)
 
 ## Biblioteca Online no Zotero
 
