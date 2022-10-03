@@ -372,11 +372,23 @@ Uma avaliação mais detalhada da proposta pode ser encontrada [aqui](./erros_su
 
 ### jekyll
 
-Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_sugestoes/GH_pjekyll/). A lista de propostas de correções e melhorias que serão convertidas em issues e PR no repositório jekyll podem encontradas no tópico [Propostas](#propostas).
+O repositório jekyll hospeda todos os arquivos relativos ao site do *PH* e os principais debates, discussões e propostas do projeto (através da página de [issues](https://github.com/programminghistorian/jekyll/issues/).
+
+As alterações e commits realizados nele precisam ser aprovadas por algum revisor, e passar nos testes automáticos no GitHub. O repositório possui um workflow de integração contínua que executa testes de validação de código e de links para que não haja erros na publicação do site após a aceitação das alterações propostas.
+
+Destaco três questões para avaliação:
+
+1. Contributing.md: O documento foi atualizado pela última vez em maio de 2017 (Latest commit [0389b43](https://github.com/programminghistorian/jekyll/commit/0389b438144dcc6fe8b87360982771fb297ec89a) on 6 May 2017) e ainda consta o nome de Amanda Visconti como Ombudsperson. Não constam os nomes dos Ombudsperson da equipe em francês e português.
+2. Issue Template: O modelo foi atualizado pela última vez em 2016 (Latest commit [4a8ad0f](https://github.com/programminghistorian/jekyll/commit/4a8ad0f3c4069221c5ea9af18ce36345588a9669) on 27 Jun 2016) e sua sintaxe está fora do padrão atual do GH. Proponho uma atualização que pode ser vista [aqui](erro_sugestoes/ph-submissions/sugestao_jekyll_issue_template.md).
+3. Projetos Kanban para idioma português: essa questão foi endereçada na [issue #2670](https://github.com/programminghistorian/jekyll/issues/2670).
 
 ### organization
 
-Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_sugestoes/GH_ORG_/). A lista de propostas de correções e melhorias que serão convertidas em issues e PR no repositório jekyll podem encontradas no tópico [Propostas](#propostas).
+O perfil da organizção Programming Historian no GitHub é a página inicial onde estão listados os repositórios e demais informações, como equipe, colaboradores, projetos, etc.
+
+1. Não há README.md para a organização (nem público nem privado). Seria uma opção interessante para tornar a página inicial da organização no GH mais profissional.
+2. Não há indicação do perfil do twitter do PH
+3. Criação de um Project Kanban reunindo todos os idiomas vinculado diretamente na organização: reunião com Anisa Hawes
 
 ### Propostas
 
@@ -385,7 +397,13 @@ Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_su
 - [ ] Issue 1: Correção de erros de links nas diretrizes para tradutores em português. [Ver descrição](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Contribua.md)
 - [ ] Issue 2: Inclusão e correção de links na pagina Contribua e Diretrizes para editores nos quatro idiomas. Ver descrição [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20tradutores.md) e [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20editores.md)
 
-1. 
+2. ph-submissions
+
+- [ ] Issue 3:
+- [ ] 
+
+---
+
 [^1]: Para mais informações sobre o Git, consulte o [Manual do Git](https://git-scm.com/docs) e o livro [Pro Git](https://git-scm.com/book/pt-br/v2) de Scott Chacon e Ben Straub, especialmente o tópico [2.3 Fundamentos de Git - Vendo o histórico de Commits](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Vendo-o-hist%C3%B3rico-de-Commits).
 
 [^2]: Aria, Massimo, e Corrado Cuccurullo. “Bibliometrix: An R-Tool for Comprehensive Science Mapping Analysis”. *Journal of Informetrics 11*, nº 4 (1º de novembro de 2017): 959–75. https://doi.org/10.1016/j.joi.2017.08.007.
