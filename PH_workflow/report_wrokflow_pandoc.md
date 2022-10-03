@@ -4,10 +4,23 @@ subtitle: Análise do Workflow, Estrutura e Diretrizes do Programming Historian
 author: Eric Brasil
 date: 2022-10-03
 abstract: Este relatório apresenta as etapas da pesquisa e seus resultados entre 20 de julho de 23 de setembro de 2022. Ao longo desses dois meses de trabalho foi realizado levantamento bibliográfico sobre o Programming Historian, análise das estruturas e workflow, assim como das diretrizes que formam o projeto. A pesquisa esteve centrada na versão em português do PH, porém não esteve restrita a ela. Como resultados apresento uma série de relatórios que mapearam erros e apontam possíveis soluções - com destaque para a análise da estrutura de pastas dos quatro idiomas no repositório ph-submissions,  a proposta de Projeto Kanban para a versão em português, o conjunto de templates para issues e correções de erros e incoerências no site do PH - e uma breve análise do levantamento bibliográfico realizado.
+toc: True
+papersize: a4
+documentclass: article
+geometry: margin=1in
+linestretch: 1.15
+monofont: "JetBrains Mono"
+lang: pt-BR
+header-includes:
+    \usepackage{titling}
+    \usepackage{fancyhdr}
+    \fancyhead{}
+    \lhead{\theauthor}
+    \chead{\thetitle}
+    \rhead{\today}
+    \pagestyle{fancy}
 ...
-# Relatório da Análise do Workflow, Estrutura e Diretrizes do Programming Historian
-
-Eric Brasil
+\newpage
 
 ## Introdução
 
@@ -31,6 +44,8 @@ $ git log --date=format:'%Y-%m-%d %H:%M:%S'\
 ```
 
 No decorrer do relatório, serão apresentados os resultados de cada etapa da pesquisa, assim como as principais conclusões e recomendações.
+
+\newpage
 
 ## Levantamento Bibliográfico
 
@@ -115,11 +130,11 @@ Buscamos gerar visualizações dos dados - assim como os dados tabulares, arquiv
 
 As visualizações podem ser encontrados [aqui](bibliometrix/visualizations/) e os dados tabulares podem ser encontrados [aqui](bibliometrix/csvs).
 
-É possível perceber o crescimento de publicações que referenciam o *PH* a partir de 2019, com destaque para o ano de 2021.
+É possível perceber o crescimento de publicações que referenciam o *PH* a partir de 2019, com destaque para o ano de 2021 (Figura 1).
 
 ![Annual SCientific Production](../bibliography/bibliometrix/visualizations/imgs/AnnualScientificProduction-2022-08-17.png)
 
-Os países dos autores com maior relevância nesse recorte foram EUA, Reino Unido, Canadá e Finlândia.
+Os países dos autores com maior relevância nesse recorte foram EUA, Reino Unido, Canadá e Finlândia (Figura 2).
 
 ![MostRelevantCountries](../bibliography/bibliometrix/visualizations/imgs/MostRelevantCountries-2022-08-17.png)
 
@@ -138,9 +153,7 @@ Entretanto, no que se refere às publicações, os números são mais equilibrad
 |INTERNATIONAL JOURNAL OF HUMANITIES AND ARTS COMPUTING|2|
 |JOURNAL OF VICTORIAN CULTURE|2|
 
-![MostRelevantSources](../bibliography/bibliometrix/visualizations/imgs/MostRelevantSources-2022-08-17.png)
-
-Nesse conjunto de dados, o autor mais relevante, ou seja, com o maior número de artigos publicados que citam o *PH* em suas referências é Ian Milligan, com 3.8% dos artigos.
+Nesse conjunto de dados, o autor mais relevante, ou seja, com o maior número de artigos publicados que citam o *PH* em suas referências é Ian Milligan, com 3.8% dos artigos (Figura 3).
 
 ![Most Relevant Authors](../bibliography/bibliometrix/visualizations/imgs/MostRelevantAuthors-2022-08-17.png)
 
@@ -159,8 +172,6 @@ E as filiações institucionais mais relevantes (contando mais de 1 ocorrência)
 |UNIVERSITY OF SUSSEX|3|
 |UNIVERSITY OF TEXAS AT AUSTIN|3|
 
-![Most Relevant Affiliations](../bibliography/bibliometrix/visualizations/imgs/MostRelevantAffiliations-2022-08-17.png)
-
 Ao analisarmos os autores, países e documentos mais citados podemos ter uma noção de como o *PH* tem sido usado.
 
 Autores mais citados:
@@ -178,15 +189,15 @@ Autores mais citados:
 |TUOMINEN J|3|0.46|
 |BAHAWERES RB|2|0.50|
 
-O país mais citado no trabalhos que incluem o *PH* em suas referências é Reino Unido, com uma quantidade quatro vezes maior do que a China, a segunda colocada.
+O país mais citado no trabalhos que incluem o *PH* em suas referências é Reino Unido, com uma quantidade quatro vezes maior do que a China, a segunda colocada (Figura 4).
 
 ![Most Cited Countries](../bibliography/bibliometrix/visualizations/imgs/MostCitedCountries-2022-08-17.png)
 
-Abaixo, vemos os documentos mais citados nesses artigos:
+Na Figura 5, vemos os documentos mais citados nesses artigos.
 
 ![Most Cited Documents](../bibliography/bibliometrix/visualizations/imgs/MostGlobalCitedDocuments-2022-08-17.png)
 
-É interessante avaliar quais as palavras com maior frequência nesse conjunto de dados. Ao olharmos para as palavras-chaves definidas pelos próprios autores, percebemos que *Digital Humanities* e *Digital History* se destacam.
+É interessante avaliar quais as palavras com maior frequência nesse conjunto de dados. Ao olharmos para as palavras-chaves definidas pelos próprios autores, percebemos que *Digital Humanities* e *Digital History* se destacam (Figura 6).
 
 ![Most Relevant Words](../bibliography/bibliometrix/visualizations/imgs/MostRelevantWords-2022-08-17.png)
 
@@ -222,11 +233,11 @@ Já nos resumos, analisando os bigramas, encontramos:
 
 Como podemos perceber, os dados de frequência de palavras nos títulos, resumos e palavras-chaves indicam que o *PH* tem sido referenciado em trabalhos cujo debate principal é a aplicação de métodos computacionais para a análise de dados históricos. Entretanto, a ausência de termos e bigramas relativos a temas e questões históricas mais específicas também nos indica que parte significativa desses trabalhos apresentam reflexões metodológicas e/ou teóricas sobre os usos de ferramentas e técnicas digitais, mas não representam trabalhos que apresentam resultados historiográficos a partir do seu uso.
 
-É importante destacar também a rede de colaboração presente nesses 92 artigos. É notável uma centralização entre países da Estados Unidos, Canadá e países da Europa Ocidental, como Reino Unido, Alemanha e Espanha.
+É importante destacar também a rede de colaboração presente nesses 92 artigos. É notável uma centralização entre países da Estados Unidos, Canadá e países da Europa Ocidental, como Reino Unido, Alemanha e Espanha (Figura 7).
 
 ![Country Collaboration Map](../bibliography/bibliometrix/visualizations/imgs/CountryCollaborationMap-2022-08-17.png)
 
-Por fim, gostaria de caracterizar a rede de co-citações de autores gerada a partir desse conjunto de dados. Podemos perceber com precisão três agrupamentos de co-citação. A primeira delas está centralizada pelos trabalhos de Graham, nomeadamente seu livro com Ian Milligan e Scot Weingart, *Exploring big historical data* (2015).
+Por fim, gostaria de caracterizar a rede de co-citações de autores gerada a partir desse conjunto de dados (Figura 8). Podemos perceber com precisão três agrupamentos de co-citação. A primeira delas está centralizada pelos trabalhos de Graham, nomeadamente seu livro com Ian Milligan e Scot Weingart, *Exploring big historical data* (2015).
 
 A segunda tem citações mais bem distribuídas e podemos perceber um conjunto de autores bastante ligado ao *PH*, como Adam Crymble, James Turkel, o próprio Ian Milligan e autores importantes para as Humanidades Digitais como Roy Rosenzwieg, Dan Cohen e Moretti.
 
@@ -272,13 +283,13 @@ Aqui também percebemos, como no tópico anterior, que os debates principais dos
 
 A partir dos dados produzidos nessa etapa de levantamento bibliográfico, foi criada uma biblioteca de referências no Zotero intitulada [*Programming Historian - publicações, diretrizes e documentação*](https://www.zotero.org/groups/4765521/programming_historian_-_publicaes_diretrizes_e_documentao/).
 
-<img src="./../img/bib_zot.png" alt="logo" width="250"/>
-
 Seu objetivo é organizar, categorizar e classificar criticamente a as publicações acadêmicas aqui trabalhadas, mas também incluir toda a documentação do projeto Programming Historian presente no GitHub no Site, que foram analisadas e categorizadas na fase dois dessa pesquisa (e serão detalhadas no próximo tópico).
 
 O *Zotero* é "uma ferramenta livre, fácil de usar para ajudá-lo a coletar, organizar, anotar, citar e compartilhar sua pesquisa"[^4]. A ferramenta nos permite, portanto, gerenciar referências bibliográficas e desenvolver variadas estratégias de organização e análise, além de possibilitar o compartilhamento dos dados em bibliotecas colaborativas on-line.
 
 A biblioteca relativa à essa pesquisa está organizada em duas subcoleções principais: *Documentação* e *Publicações*. Foram criadas subcoleções e etiquetas organizadoras, que podem servir de filtro em buscas, assim como, os itens relativos à documentação receberam notas explicativas e de erros/sugestões.
+
+\newpage
 
 ## Análise das estruturas, workflow e diretrizes do Programming Historian
 
@@ -425,6 +436,8 @@ O perfil da organização Programming Historian no GitHub é a página inicial o
 - [x] Participar da criação e teste de um projeto kanban geral para a organização com a nova versão do GitHub Projects.
 - [ ] Inclusão a página do twitter do PH no perfil da organização.
 - [ ] Criação de um README.md para a organização.
+
+---
 
 [^1]: Para mais informações sobre o Git, consulte o [Manual do Git](https://git-scm.com/docs) e o livro [Pro Git](https://git-scm.com/book/pt-br/v2) de Scott Chacon e Ben Straub, especialmente o tópico [2.3 Fundamentos de Git - Vendo o histórico de Commits](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Vendo-o-hist%C3%B3rico-de-Commits).
 
