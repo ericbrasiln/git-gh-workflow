@@ -1,9 +1,10 @@
 ---
-title: Relatório da Análise do Workflow, Estrutura e Diretrizes do Programming Historian
+title: Relatório de pesquisa
+subtitle: Análise do Workflow, Estrutura e Diretrizes do Programming Historian
 author: Eric Brasil
-date: 2022-09-26
+date: 2022-10-03
 abstract: Este relatório apresenta as etapas da pesquisa e seus resultados entre 20 de julho de 23 de setembro de 2022. Ao longo desses dois meses de trabalho foi realizado levantamento bibliográfico sobre o Programming Historian, análise das estruturas e workflow, assim como das diretrizes que formam o projeto. A pesquisa esteve centrada na versão em português do PH, porém não esteve restrita a ela. Como resultados apresento uma série de relatórios que mapearam erros e apontam possíveis soluções - com destaque para a análise da estrutura de pastas dos quatro idiomas no repositório ph-submissions,  a proposta de Projeto Kanban para a versão em português, o conjunto de templates para issues e correções de erros e incoerências no site do PH - e uma breve análise do levantamento bibliográfico realizado.
----
+...
 # Relatório da Análise do Workflow, Estrutura e Diretrizes do Programming Historian
 
 Eric Brasil
@@ -114,8 +115,6 @@ Buscamos gerar visualizações dos dados - assim como os dados tabulares, arquiv
 
 As visualizações podem ser encontrados [aqui](bibliometrix/visualizations/) e os dados tabulares podem ser encontrados [aqui](bibliometrix/csvs).
 
-Para essa análise preliminar, filtramos nosso data set para conter apenas artigos de periódicos.
-
 É possível perceber o crescimento de publicações que referenciam o *PH* a partir de 2019, com destaque para o ano de 2021.
 
 ![Annual SCientific Production](../bibliography/bibliometrix/visualizations/imgs/AnnualScientificProduction-2022-08-17.png)
@@ -128,16 +127,16 @@ Entretanto, no que se refere às publicações, os números são mais equilibrad
 
 |Sources|Articles|
 |-------|--------|
-|ACM INTERNATIONAL CONFERENCE PROCEEDING SERIES                                              |3|
-|DIGITAL HUMANITIES QUARTERLY                                                                |3|
-|HISTORY OF PSYCHOLOGY                                                                       |3|
-|ACADIENSIS                                                                                  |2|
-|BIJDRAGEN EN MEDEDELINGEN BETREFFENDE DE GESCHIEDENIS DER NEDERLANDEN                       |2|
-|FOLIA LINGUISTICA                                                                           |2|
-|HISPANIA                                                                                    |2|
+|ACM INTERNATIONAL CONFERENCE PROCEEDING SERIES|3|
+|DIGITAL HUMANITIES QUARTERLY|3|
+|HISTORY OF PSYCHOLOGY|3|
+|ACADIENSIS|2|
+|BIJDRAGEN EN MEDEDELINGEN BETREFFENDE DE GESCHIEDENIS DER NEDERLANDEN|2|
+|FOLIA LINGUISTICA|2|
+|HISPANIA|2|
 |INTERNATIONAL CONFERENCE ON ELECTRICAL ENGINEERING, COMPUTER SCIENCE AND INFORMATICS (EECSI)|2|
-|INTERNATIONAL JOURNAL OF HUMANITIES AND ARTS COMPUTING                                      |2|
-|JOURNAL OF VICTORIAN CULTURE                                                                |2|
+|INTERNATIONAL JOURNAL OF HUMANITIES AND ARTS COMPUTING|2|
+|JOURNAL OF VICTORIAN CULTURE|2|
 
 ![MostRelevantSources](../bibliography/bibliometrix/visualizations/imgs/MostRelevantSources-2022-08-17.png)
 
@@ -149,15 +148,15 @@ E as filiações institucionais mais relevantes (contando mais de 1 ocorrência)
 
 |Affiliation                  |Articles|
 |-----------------------------|--------|
-|UNIVERSITY OF WATERLOO       |6|
-|UNIVERSIDAD DE LA SALLE      |4|
-|YORK UNIVERSITY              |4|
-|AALTO UNIVERSITY             |3|
-|CALIFORNIA STATE UNIVERSITY  |3|
-|CARLETON UNIVERSITY          |3|
-|NOTREPORTED                  |3|
-|UNIVERSITAT DE BARCELONA     |3|
-|UNIVERSITY OF SUSSEX         |3|
+|UNIVERSITY OF WATERLOO|6|
+|UNIVERSIDAD DE LA SALLE|4|
+|YORK UNIVERSITY|4|
+|AALTO UNIVERSITY|3|
+|CALIFORNIA STATE UNIVERSITY|3|
+|CARLETON UNIVERSITY|3|
+|NOTREPORTED|3|
+|UNIVERSITAT DE BARCELONA|3|
+|UNIVERSITY OF SUSSEX|3|
 |UNIVERSITY OF TEXAS AT AUSTIN|3|
 
 ![Most Relevant Affiliations](../bibliography/bibliometrix/visualizations/imgs/MostRelevantAffiliations-2022-08-17.png)
@@ -179,7 +178,7 @@ Autores mais citados:
 |TUOMINEN J|3|0.46|
 |BAHAWERES RB|2|0.50|
 
-Os países mais citados no trabalhos que referência o *PH* são Reino Unido, China...
+O país mais citado no trabalhos que incluem o *PH* em suas referências é Reino Unido, com uma quantidade quatro vezes maior do que a China, a segunda colocada.
 
 ![Most Cited Countries](../bibliography/bibliometrix/visualizations/imgs/MostCitedCountries-2022-08-17.png)
 
@@ -191,7 +190,7 @@ Abaixo, vemos os documentos mais citados nesses artigos:
 
 ![Most Relevant Words](../bibliography/bibliometrix/visualizations/imgs/MostRelevantWords-2022-08-17.png)
 
-Nos títulos, encontramos a seguinte distribuição:
+Nos títulos, encontramos a seguinte frequência de palavras (simples):
 
 |Terms|Frequency|
 |-----|---------|
@@ -273,7 +272,7 @@ Aqui também percebemos, como no tópico anterior, que os debates principais dos
 
 A partir dos dados produzidos nessa etapa de levantamento bibliográfico, foi criada uma biblioteca de referências no Zotero intitulada [*Programming Historian - publicações, diretrizes e documentação*](https://www.zotero.org/groups/4765521/programming_historian_-_publicaes_diretrizes_e_documentao/).
 
-![logo-bib](./../img/bib_zot.png)
+<img src="./../img/bib_zot.png" alt="logo" width="250"/>
 
 Seu objetivo é organizar, categorizar e classificar criticamente a as publicações acadêmicas aqui trabalhadas, mas também incluir toda a documentação do projeto Programming Historian presente no GitHub no Site, que foram analisadas e categorizadas na fase dois dessa pesquisa (e serão detalhadas no próximo tópico).
 
@@ -300,7 +299,7 @@ Um conjunto de etiquetas (*tags*) foi criado para a análise, organização e fi
 
 O site do Programming Historian é um site estático baseado em Jekyll[^jekyll], cujo conjunto de dados e arquivos está hospedado no repositório programminghistorian/jekyll[^jekyll-gh]. O site é gerado a partir desses arquivos e dados (a maioria escritos em linguagem de marcação Markdown), e hospedado no GitHub Pages[^gh-pages]. 
 
-A complexidade e sofisticação técnica e estrutural para a manutenção de um site multilinguístico que permita sua constante atualização e expansão, seja com a publicação de novas lições e traduções nos quatro idiomas, seja com a incorporação de novos colaboradores ao longo do tempo, é um desafio que tem sido enfrentado pelo projeto nos últimos anos. Nas palavras de Lincoln e colaboradores,  
+A complexidade e sofisticação técnica e estrutural para a manutenção de um site multilinguístico que permita sua constante atualização e expansão, seja com a publicação de novas lições e traduções nos quatro idiomas, seja com a incorporação de novos colaboradores ao longo do tempo, é um desafio que tem sido enfrentado pelo projeto nos últimos anos. Nas palavras de Lincoln e colaboradores (2022),  
 
 >Throughout the process of onboarding new editors from multiple backgrounds and publishing lessons in several languages, both originals and translations, the team came to discuss ways to better reach our global audience and enhance language accessibility. These goals have relied on the malleable Jekyll-based site to create a more accessible journal, but have also tested the limits of both the technology as well as our team’s processes.[^lincoln] 
 
@@ -347,19 +346,19 @@ O caráter aberto e colaborativo, e que utiliza o controle de versões, é um de
 
 Ao analisar a estrutura e fluxo de trabalho nesse repositório, foram identificadas algumas questões que merecem atenção. 
 
-1. Estrutura de pastas dos idiomas: `en`, `pt`, `es`, `fr`. Essa estrutura apresenta incoerências que dificultam a compreensão e manutenção do repositório. Cada pasta de idioma está atualmante com um conjunto de subpastas específico, e por isso proponho uma padronização geral. Abaixo, a proposta de nova estrutura para as pastas:
+1. Estrutura de pastas dos idiomas: `en`, `pt`, `es`, `fr`. Essa estrutura apresenta incoerências que dificultam a compreensão e manutenção do repositório. Cada pasta de idioma está atualmente com um conjunto de subpastas específico, e por isso proponho uma padronização geral. Abaixo, a proposta de nova estrutura para as pastas:
 
-```
-en/es/fr/pt
-├── drafts/borradores/en-cours/rascunhos
-│   ├── originals/originales/originales/originais
-│   ├── translations/traducciones/traductions/traducoes
-├── published/publicadas/publiees/publicadas
-│   ├── originals/originales/originales/originais
-│   ├── translations/traducciones/traductions/traducoes
-├── README.md
-├── translation-list.md/lista-de-traducciones.md/liste-traductions.md/lista-de-traducoes.md
-```
+    ```
+    en/es/fr/pt
+    ├── drafts/borradores/en-cours/rascunhos
+    │   ├── originals/originales/originales/originais
+    │   └── translations/traducciones/traductions/traducoes
+    ├── published/publicadas/publiees/publicadas
+    │   ├── originals/originales/originales/originais
+    │   └── translations/traducciones/traductions/traducoes
+    ├── README.md
+    └── translation-list.md/lista-de-traducciones.md/liste-traductions.md/lista-de-traducoes.md
+    ```
 
 Uma avaliação mais detalhada da proposta pode ser encontrada [aqui](./erros_sugestoes/ph-submissions/ph-submissions_folder_analyzis.md). 
 
@@ -384,25 +383,48 @@ Destaco três questões para avaliação:
 
 ### organization
 
-O perfil da organizção Programming Historian no GitHub é a página inicial onde estão listados os repositórios e demais informações, como equipe, colaboradores, projetos, etc.
+O perfil da organização Programming Historian no GitHub é a página inicial onde estão listados os repositórios e demais informações, como equipe, colaboradores, projetos, etc.
 
 1. Não há README.md para a organização (nem público nem privado). Seria uma opção interessante para tornar a página inicial da organização no GH mais profissional.
 2. Não há indicação do perfil do twitter do PH
-3. Criação de um Project Kanban reunindo todos os idiomas vinculado diretamente na organização: reunião com Anisa Hawes
+3. Criação de um Project Kanban reunindo todos os idiomas vinculado diretamente na organização: essa questão foi endereçada na [issue #2670](https://github.com/programminghistorian/jekyll/issues/2670) e em reunião com Anisa Hawes.
 
 ### Propostas
 
 1. Site
 
-- [ ] Issue 1: Correção de erros de links nas diretrizes para tradutores em português. [Ver descrição](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Contribua.md)
-- [ ] Issue 2: Inclusão e correção de links na pagina Contribua e Diretrizes para editores nos quatro idiomas. Ver descrição [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20tradutores.md) e [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20editores.md)
+- [ ] Criar **Issue A** no programminghistorian/jekyll: Correção de erros de links nas diretrizes para tradutores em português. [Ver descrição](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Contribua.md)
+  - [ ] Criar **Branch "Issue-A** no programminghistorian/jekyll e realizar alterações. 
+  - [ ] Criar **Pull Request** do branch "Issue-A" no programminghistorian/jekyll e solicitar revisão.
+- [ ] Criar **Issue B** no programminghistorian/jekyll: Inclusão e correção de links na pagina Contribua e Diretrizes para editores nos quatro idiomas. Ver descrição [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20tradutores.md) e [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20editores.md)
+  - [ ] Criar **Branch "Issue-B** no programminghistorian/jekyll e realizar alterações.
+  - [ ] Criar **Pull Request** do branch "Issue-B" no programminghistorian/jekyll e solicitar revisão.
 
-2. ph-submissions
+1. ph-submissions
 
-- [ ] Issue 3:
-- [ ] 
+- [x] Proposta de reestruturação das pastas de idiomas: reunião com Anisa Hawes para apresentação da [proposta](erros_sugestoes/ph-submissions/ph-submissions_folder_analyzis.md).
+- [ ] Proposta de criação de conjunto de templates para issues: 
+  - [x] reunião com Anisa Hawes para apresentação geral do tema.
+  - [x] Criação de [repositório de exemplo](https://github.com/ericbrasiln/issue_templates_test) com a [proposta](erros_sugestoes/ph-submissions/issue_templates_proposal.md) já definida para avaliação.
+  - [x] Convidar Anisa Hawes para ser colaboradora no repositório de exemplo.
+  - [ ] Criar **Issue C** no programminghistorian/ph-submission com a proposta
+  - [ ] Criar **Branch "Issue-C** no programminghistorian/ph-submission e realizar a alteração nos arquivos.
+  - [ ] Criar **Pull Request** do branch "Issue-C" no programminghistorian/ph-submission e solicitar revisão. 
 
----
+3. jekyll
+   
+- [ ] Criar **Issue D** no programminghistorian/jekyll: Atualização do documento Contributing.md. [Ver proposta](erros_sugestoes/jekyll/sugestao_jekyll_contributing.md)
+  - [ ] Criar **Branch "Issue-D** no programminghistorian/jekyll e realizar alterações.
+  - [ ] Criar **Pull Request** do branch "Issue-D" no programminghistorian/jekyll e solicitar revisão.
+- [ ] Criar **Issue E** no programminghistorian/jekyll: Atualização do modelo de issue template. [Ver proposta](erros_sugestoes/jekyll/sugestao_jekyll_issue_template.md)
+  - [ ] Criar **Branch "Issue-E** no programminghistorian/jekyll e realizar alterações.
+  - [ ] Criar **Pull Request** do branch "Issue-E" no programminghistorian/jekyll e solicitar revisão.
+
+4. organization
+
+- [x] Participar da criação e teste de um projeto kanban geral para a organização com a nova versão do GitHub Projects.
+- [ ] Inclusão a página do twitter do PH no perfil da organização.
+- [ ] Criação de um README.md para a organização.
 
 [^1]: Para mais informações sobre o Git, consulte o [Manual do Git](https://git-scm.com/docs) e o livro [Pro Git](https://git-scm.com/book/pt-br/v2) de Scott Chacon e Ben Straub, especialmente o tópico [2.3 Fundamentos de Git - Vendo o histórico de Commits](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Vendo-o-hist%C3%B3rico-de-Commits).
 
