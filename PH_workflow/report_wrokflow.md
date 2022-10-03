@@ -332,7 +332,43 @@ Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_su
 
 ### ph-submissions
 
-Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_sugestoes/GH_ph-submissions/). A lista de propostas de correções e melhorias que serão convertidas em issues e PR no repositório jekyll podem encontradas no tópico [Propostas](#propostas).
+O repositório [programminghistorian/ph-submissions](https://github.com/programminghistorian/ph-submissions) reúne todos os arquivos e diretrizes relacionadas às propostas de lições novas e traduções. 
+
+O workflow desse processo é realizado por completo na página de _issues_, sendo organizadas por etiquetas (labels), responsáveis (assignees) e revisores (reviewers). Assim os procedimentos são abertos e cada alteração é registrada e as versões devidamente controladas.
+
+De forma resumida, o fluxo consiste em:
+
+1. O autor entra em contato com o Editor-chefe do idioma específico, e envia o [formulário de proposta de lição](https://programminghistorian.org/assets/forms/formulario.proposta.licao.txt) preenchido ou a proposta de lição a ser traduzida.
+2. Caso seja aprovada, o Editor-chefe designa um editor para a lição/tradução. E este criará uma _issue_ no repositório para receber e acompanhar a proposta. O prazo para envio da lição é de 90 dias após a criação da _issue_.
+3. Após a submissão da proposta, o editor entrará em contato com revisores e inicia o processo de revisão com a criação de um issue específica para o tal. 
+4. OS editores devem cumprir uma série de tarefas técnicas importantes para a publicação da lição: verificar nomes dos ficheiros e das imagens, datasets e vídeos/gfs; editar os metadados e editar o front matter YAML da lição, entre outras. O processo detalhado e as tarefas do editor podem ser encontradas [aqui](https://programminghistorian.org/pt/directrizes-editor).
+
+O caráter aberto e colaborativo, e que utiliza o controle de versões, é um destaque no processo de avaliação e publicação pelo *PH*, garantindo a implementação de uma política de ciência aberta eficiente. Entretanto, o fluxo constante de submissões e revisões de lições e traduções, simultaneamente em quatro idiomas, torna complexo o rastreamento e visualização das tarefas, etapas e demandas de cada editor e equipe de idioma. As etiquetas ajudam a filtrar e visualizar a lista de lições, mas com o crescente número de issues abertas e sua variedade, não são suficientes. Assim, foram criados projeto de quadro *Kanban* no GitHub para as equipes em inglês, francês e espanhol vinculados ao repositório [jekyll](https://github.com/programminghistorian/jekyll/projects?type=classic). Um quadro nesse modelo é uma ferramenta importante para a gestão do fluxo de trabalho para a equipe em português. Nesse sentido, propus a sua criação na [issue #2670](https://github.com/programminghistorian/jekyll/issues/2670) e os debates avançaram para uma nova proposta de criação de um único Projeto *Kanban* para todas as equipes de idiomas. Um detalhamento dessa proposta pode ser encontrado [aqui](./erros_sugestoes/jekyll/sugestao_jekyll_projects.md).
+
+Ao analisar a estrutura e fluxo de trabalho nesse repositório, foram identificadas algumas questões que merecem atenção. 
+
+1. Estrutura de pastas dos idiomas: `en`, `pt`, `es`, `fr`. Essa estrutura apresenta incoerências que dificultam a compreensão e manutenção do repositório. Cada pasta de idioma está atualmante com um conjunto de subpastas específico, e por isso proponho uma padronização geral. Abaixo, a proposta de nova estrutura para as pastas:
+
+```
+en/es/fr/pt
+├── drafts/borradores/en-cours/rascunhos
+│   ├── originals/originales/originales/originais
+│   ├── translations/traducciones/traductions/traducoes
+├── published/publicadas/publiees/publicadas
+│   ├── originals/originales/originales/originais
+│   ├── translations/traducciones/traductions/traducoes
+├── README.md
+├── translation-list.md/lista-de-traducciones.md/liste-traductions.md/lista-de-traducoes.md
+```
+
+Uma avaliação mais detalhada da proposta pode ser encontrada [aqui](./erros_sugestoes/ph-submissions/ph-submissions_folder_analyzis.md). 
+
+
+2. O ficheiro [index.html](https://github.com/programminghistorian/ph-submissions/blob/gh-pages/index.md) foi atualizado pela última vez há cinco anos. E não condiz com o README.md do repositório [ph-submissions](https://github.com/programminghistorian/ph-submissions/blob/gh-pages/README.md).
+
+3. Não há política de proteção do branch `gh-pages`.
+
+4. Issue Templates: está apenas em inglês e parece desatualizado. Seria importante, pensando a automatização e redução das etapas de trabalho para editores, seguindo a proposta de Lincoln (2022) e colaboradores par realocar a complexidade dos processos [^lincoln], a criação de um conjunto de templates que contemple os quatro idiomas. Uma proposta geral de templates pode ser encontrada [aqui](erros_sugestoes/ph-submissions/issue_templates_proposal.md).
 
 ### jekyll
 
@@ -346,10 +382,10 @@ Os erros e sugestões referentes ao site podem ser encontradas [aqui](./erros_su
 
 1. Site
 
-- [ ] Issue 1: Correção de erros de links nas diretrizes para tradutores em português. [Ver descrição](https://github.com/ericbrasiln/git-gh-workflow/blob/2396771754790ee167408b5632e48dda67639a24/PH_workflow/erros_sugestoes/Site/Erros - Diretrizes para tradutores.md)
-- [ ] Issue 2: Inclusão e correção de links na pagina Contribua e Diretrizes para editores nos quatro idiomas. Ver descrição [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/2396771754790ee167408b5632e48dda67639a24/PH_workflow/erros_sugestoes/Site/Erros - Diretrizes para tradutores.md) e [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/2396771754790ee167408b5632e48dda67639a24/PH_workflow/erros_sugestoes/Site/Erros - Directrizes pra editores.md)
+- [ ] Issue 1: Correção de erros de links nas diretrizes para tradutores em português. [Ver descrição](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Contribua.md)
+- [ ] Issue 2: Inclusão e correção de links na pagina Contribua e Diretrizes para editores nos quatro idiomas. Ver descrição [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20tradutores.md) e [aqui](./../PH_workflow/erros_sugestoes/Site/Erros%20-%20Diretrizes%20para%20editores.md)
 
-2. 
+1. 
 [^1]: Para mais informações sobre o Git, consulte o [Manual do Git](https://git-scm.com/docs) e o livro [Pro Git](https://git-scm.com/book/pt-br/v2) de Scott Chacon e Ben Straub, especialmente o tópico [2.3 Fundamentos de Git - Vendo o histórico de Commits](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Vendo-o-hist%C3%B3rico-de-Commits).
 
 [^2]: Aria, Massimo, e Corrado Cuccurullo. “Bibliometrix: An R-Tool for Comprehensive Science Mapping Analysis”. *Journal of Informetrics 11*, nº 4 (1º de novembro de 2017): 959–75. https://doi.org/10.1016/j.joi.2017.08.007.
