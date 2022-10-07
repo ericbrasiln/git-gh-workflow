@@ -15,7 +15,7 @@ If you are reporting a problem with a lesson, please try to provide us with the 
 If you'd like, you can delete this template text before posting your issue.
 ```
 
-Minha sugestão de atualização:
+Minha sugestão de atualização: (CONCORDO)
 
 ```
 ---
