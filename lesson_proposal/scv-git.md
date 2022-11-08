@@ -48,10 +48,30 @@ Quem nunca passou por isso?
 
 ### Instalação
 
-### Configuração Básica
+### Configuração Global
 
-- autor, email
-- editor de texto
+É importante configurar o Git com os dados de autoria e e-mail. Com essas informações, o Git é capaz de registrar quem realizou as alterações em dado momento. Neste tutorial, aprenderemos como definir essas informações globalmente para o computador utilizado. O git possui um arquivo de configuração intitulado `.gitconfig`. Ele armazena uma série de configurações importantes e pode ser acessado através do comando `git config --global --edit`. Para definir o nome do autor e o e-mail, é necessário executar os seguitnes comandos:
+
+- Autor
+
+```bash
+~$ git.config --global user.name "Edward Palmer Thompson"
+```
+
+- Email
+
+```bash
+~$ git.config --global user.email "epthompson@hist.com"
+```
+
+Esses comandos estão solicitando que o Git acesse o arquivo de configuração global (`git.config`), em seguida passamos a opção `--global`, definind que as configurações valem para todos que utilizarem esse computador; por fim indicamos qual parâmetro queremos alterar, nesse caso, nome e email do autor: `user.name` e `user.email`.
+
+- Configurar o editor de texto
+
+```bash
+~$ git.config --global core.editor "vim"
+```
+
 
 ### Iniciar um repositório
 
