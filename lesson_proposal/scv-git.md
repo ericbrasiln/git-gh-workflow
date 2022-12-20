@@ -71,7 +71,16 @@ Esses comandos estão solicitando que o Git acesse o arquivo de configuração g
 ```bash
 ~$ git.config --global core.editor "vim"
 ```
+Você pode listar todas as configurações globais com o comando `git config --global --list`.
 
+A seguinte saída deve ser exibida em no terminal:
+
+```bash
+user.name=Edward Palmer Thompson
+user.email=epthompson@hist.com
+init.defaultbranch=main
+core.editor=vim
+```
 
 ### Iniciar um repositório
 
@@ -127,11 +136,11 @@ A estrutura de diretórios criada pelo Git é complexa e não será abordada a f
 .  ..  branches  config  description  HEAD  hooks  info  objects  refs
 ```
 
-Nesse conjunto de diretórios e arquivos, o Git armazena as informações sobre o repositório: desde as alterações realizadas até os dados de configuração e fluxo de trabalho. O Git é um sistema de controle de versões distribuído, ou seja, cada cópia do repositório é uma cópia completa.
+Nesse conjunto de diretórios e arquivos o Git armazena as informações sobre o repositório: desde as alterações realizadas até os dados de configuração e fluxo de trabalho. O Git é um sistema de controle de versões distribuído, ou seja, cada cópia do repositório é uma cópia completa.
 
-Após iniciar seu repositório com o comando `git init`, podemos criar um ficheiro no seu interior e iniciar o registro das alterações. Assim poderemos compreender com mais clareza o funcionamneto do programa.
+Após iniciar seu repositório com o comando `git init`, podemos criar um novo ficheiro e iniciar o registro das alterações. Assim poderemos compreender com mais clareza o funcionamento do programa.
 
-Vamos criar um arquivo chamado `README.md`, com o conteúdo `# Exemplo para a lição` no interior de nosso diretório `projeto-de-pesquisa`. Você pode fazer isso de várias formas - com editores de texto, por exemplo. Aqui utilizarei o terminal e o comando `echo`.
+Vamos criar um arquivo chamado `README.md`, com o conteúdo `# Exemplo para a lição` no interior de nosso diretório `projeto-de-pesquisa`. Você pode fazer isso de várias formas - com editores de texto, por exemplo. Aqui utilizarei o terminal e o comando `echo`. [^echo]
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ echo "# Exemplo para a lição" > README.md
@@ -144,10 +153,118 @@ Se você executar o comando `ls`, verá que o arquivo foi criado com sucesso.
 README.md
 ```
 
-Portanto, realizamos uma alteração em nosso repositório. Vamos verificar se o Git percebeu a mudança que fizemos? Para isso, executamos o comando `git status`.
+Portanto, realizamos uma alteração em nosso repositório. Vamos verificar se o Git percebeu a mudança? Para isso, executamos o comando `git status`.
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git status
+```
+
+A mensagem retornada pelo Git é a seguinte:
+
+```bash
+No ramo main
+
+No commits yet
+
+Arquivos não monitorados:
+  (utilize "git add <arquivo>..." para incluir o que será submetido)
+	README.md
+
+nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
+```
+
+Vamos entender o que o Git está nos dizendo. Ao passarmos o comando `status` para o Git, ele nos informa a situação atual do repositório. Nesse momento, o Git nos informa que estamos no ramo (ou *branch*) `main`: `No ramo main`. Em seguida nos informa que não existem submissões (*commits*) ainda: `No commits yet`. Mais abaixo veremos o que são *commits* e sua importância metodológica para nossas pesquisas.
+
+Em seguida temos a mensagem: 
+
+```bash
+Arquivos não monitorados: (utilize "git add <arquivo>..." para incluir o que será submetido)
+	README.md
+nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)	
+```
+O Git nos informa que existe um ficheiro chamado `README.md` dentro do nosso diretório que ainda não está sendo monitorado pelo sistema de controle de versões. Ou seja, o ficheiro ainda precisa ser adicionado ao repositório Git para que as alterações efetuadas nele sejam registradas.
+
+O próprio Git nos informa o comando que devemos utilizar para registrar o ficheiro: `git add <arquivo>`. No nosso caso, devemos executar o seguinte:
+
+``` bash
+~/Documentos/projeto-de-pesquisa$ git add README.md
+```
+
+Ao solicitarmos o status do repositório agora, receberemos uma mensagem diferente:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git status
+No ramo main
+
+No commits yet
+
+Mudanças a serem submetidas:
+  (utilize "git rm --cached <arquivo>..." para não apresentar)
+	new file:   README.md
+```
+
+Mais uma vez percebemos que estamos no ramo `main` e ainda não realizamos nenhuma submissão (*commits*) para esse ramo. Entretanto, não existem mais ficheiros/arquivos no estágio *não monitorados*. Nosso ficheiro `README.md`mudou de status, agora está como um novo ficheiro (*new file*) estágio `Mudanças a serem submetidas`.
+
+[Explicar: `git rm --cached <arquivo>`. remove do index do git, mas mantém o arquivo no seu diretório de trabalho.]
+
+Agora, as alterações que realizamos estão preparadas para serem submetidas (*commited*) ao repositório. Para isso, usamos o comando `git commit`. É importante destacar a necessidade de incluir uma mensagem para cada *commit*. [Apontar isso como elemento central para essa lição]. Existem duas formas de incluir uma mensagem ao commit. A primeira delas é mais simples e é realizada diretamente no comando `commit`:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git commit -m "Commit inicial"
+
+[main (root-commit) 28bc6b6] Commit inicial
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+```
+
+Nesse caso, adicionamos a opção `-m` ao comando `commit` e em seguida passado o conteúdo da mensagem entre `"`. Essa opção é mais prática, mas possui limitações, como a impossibilidade de criar mensagens mais detalhadas e com quebras de linha.
+
+Se desejarmos elaborar uma mensagem mais detalhada, utilizamos o comando `git commit`, sem a inclusão da opção `-m`. Nesse caso, o Git abrirá o editor de texto definido em suas configurações para que possamos escrever a mensagem. 
+
+Como já havíamos realizado o commit das alterações, o Git nos informa que não há nada a ser submetido:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git commit
+
+nothing to commit, working tree clean
+```
+
+Mas se ainda assim quisermos corrigir a mensagem do último commit, podemos utilizar a opção `--amend`:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git commit --amend
+```
+
+O Git abrirá o editor de texto para que possamos editar a mensagem do último commit. Após a edição, basta salvar e fechar o editor. No meu caso, o editor é o `vim`. Para sair do editor, basta digitar `:wq` e pressionar a tecla `Enter`.[^vim] É importante destacas que ao configurar a mensagem de commit com o editor de texto, é possível definir o título e o corpo da mensagem. 
+
+O git considera a primeira linha da mensagem como título, e ele deve ter no máximo 50 caracteres. O restante da mensagem é considerado o corpo da mensagem e deve ser separado do título por uma linha em branco. Como no exemplo abaixo:
+
+```bash
+Criação de README.md
+
+Este commit cria o arquivo README.md com o objetivo de explicar o funcionamento do Git.
+```
+
+Após salvar e fechar o editor, o Git nos informa que o commit foi realizado com sucesso:
+
+```bash
+[main 3588e34] Criação de README.md
+ Date: Tue Dec 20 11:14:04 2022 +0000
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+```
+
+Pronto, criamos nosso ficheiro `README.md` e o adicionamos ao repositório Git com sucesso. Para isso, utilizamos o comando `git add` para adicionar o ficheiro ao *index* do Git [^git-index], e o comando `git commit` para submeter as alterações ao repositório. Vimos também como incluir a mensagem de commit diretamente na linha de comando (`git commit -m "mensagem"`) e como editar a mensagem do último commit (`git commit --amend`).
+
+Se executarmos git status novamente, veremos que não há mais nada a ser submetido:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git status
+
+No ramo main
+
+nothing to commit, working tree clean
 ```
 
 ### Estágios de um arquivo
@@ -158,3 +275,5 @@ Portanto, realizamos uma alteração em nosso repositório. Vamos verificar se o
 - Comitado (*commited*)
 
 [^terminal]: Ver a melhor forma de falar sobre ele. Indicar a lição sobre bash no PH.
+[^echo]: Explorar melhor o comando echo.
+[^vim]: Ver a lição sobre o editor de texto vim.
