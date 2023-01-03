@@ -138,6 +138,8 @@ A estrutura de diretórios criada pelo Git é complexa e não será abordada a f
 
 Nesse conjunto de diretórios e arquivos o Git armazena as informações sobre o repositório: desde as alterações realizadas até os dados de configuração e fluxo de trabalho. O Git é um sistema de controle de versões distribuído, ou seja, cada cópia do repositório é uma cópia completa.
 
+### Comandos básicos
+
 Após iniciar seu repositório com o comando `git init`, podemos criar um novo ficheiro e iniciar o registro das alterações. Assim poderemos compreender com mais clareza o funcionamento do programa.
 
 Vamos criar um arquivo chamado `README.md`, com o conteúdo `# Exemplo para a lição` no interior de nosso diretório `projeto-de-pesquisa`. Você pode fazer isso de várias formas - com editores de texto, por exemplo. Aqui utilizarei o terminal e o comando `echo`. [^echo]
@@ -152,6 +154,8 @@ Se você executar o comando `ls`, verá que o arquivo foi criado com sucesso.
 ~/Documentos/projeto-de-pesquisa$ ls
 README.md
 ```
+
+#### Git Status
 
 Portanto, realizamos uma alteração em nosso repositório. Vamos verificar se o Git percebeu a mudança? Para isso, executamos o comando `git status`.
 
@@ -182,6 +186,8 @@ Arquivos não monitorados: (utilize "git add <arquivo>..." para incluir o que se
 	README.md
 nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)	
 ```
+
+#### Git Add
 O Git nos informa que existe um ficheiro chamado `README.md` dentro do nosso diretório que ainda não está sendo monitorado pelo sistema de controle de versões. Ou seja, o ficheiro ainda precisa ser adicionado ao repositório Git para que as alterações efetuadas nele sejam registradas.
 
 O próprio Git nos informa o comando que devemos utilizar para registrar o ficheiro: `git add <arquivo>`. No nosso caso, devemos executar o seguinte:
@@ -206,6 +212,8 @@ Mudanças a serem submetidas:
 Mais uma vez percebemos que estamos no ramo `main` e ainda não realizamos nenhuma submissão (*commits*) para esse ramo. Entretanto, não existem mais ficheiros/arquivos no estágio *não monitorados*. Nosso ficheiro `README.md`mudou de status, agora está como um novo ficheiro (*new file*) estágio `Mudanças a serem submetidas`.
 
 [Explicar: `git rm --cached <arquivo>`. remove do index do git, mas mantém o arquivo no seu diretório de trabalho.]
+
+#### Git Commit
 
 Agora, as alterações que realizamos estão preparadas para serem submetidas (*commited*) ao repositório. Para isso, usamos o comando `git commit`. É importante destacar a necessidade de incluir uma mensagem para cada *commit*. [Apontar isso como elemento central para essa lição]. Existem duas formas de incluir uma mensagem ao commit. A primeira delas é mais simples e é realizada diretamente no comando `commit`:
 
@@ -269,10 +277,133 @@ nothing to commit, working tree clean
 
 ### Estágios de um arquivo
 
-- Não monitorado (*untracked*)
-- Modificado (*modified*) e não preparado (*not staged*)
-- Preparado (*staged*) para ser submetido (*commited*)
-- Comitado (*commited*)
+Agora que já sabemos como adicionar um ficheiro ao repositório Git e como submeter alterações acompanhadas de mensagens, vamos detalhar e analisar os diferentes estágios de um arquivo no Git. Para isso vamos criar um arquivo novo chamado `resumo.txt` e salvá-lo no diretório `projeto-de-pesquisa`. 
+
+```bash
+~/Documentos/projeto-de-pesquisa$ touch resumo.txt
+```
+
+A ferramenta `touch` permite criar um ficheiro com o nome especificado, mas você pode criar esse ficheiro utilizando qualquer outro método. 
+
+Se listarmos o conteúdo do diretório `projeto-de-pesquisa` veremos que agora existem dois ficheiros:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ ls
+README.md  resumo.txt
+```
+
+Como vimos anteriormente, um ficheiro recém criado em nosso diretório de trabalho se encontra no estágio **não monitorado** (*untracked*) e precisa ser **preparado** (*staged*) para ser **submetido** (*commited*). Podemos ver sua situação com um `git status`.
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git status
+No ramo main
+Arquivos não monitorados:
+  (utilize "git add <arquivo>..." para incluir o que será submetido)
+	resumo.txt
+
+nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
+
+```
+
+Para preparar o ficheiro, utilizamos `git add <nome do ficheiro>`.
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git add resumo.txt
+```
+
+A partir do momento que o ficheiro foi registrado (*staged*) no Git, ele muda de estágio e está pronto para ser submetido (*commit*), como podemos ver executando um `git status`.
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git status
+No ramo main
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   resumo.txt
+```
+
+Ou seja, `resumo.txt` é um novo ficheiro que está pronto para ser submetido ao index do Git. 
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git commit -m "Criação do ficheiro para o resumo do tutorial"
+[main 3b9a93d] Criação do ficheiro para o resumo do tutorial
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 resumo.txt
+```
+
+A mensagem retornada nos informa que um ficheiro foi criado, sem nenhuma inserção ou exclusão de conteúdos.
+
+A partir de agora, o ficheiro `resumo.txt`, assim como o `README.md`, está inserido no repositório Git que realizado o controle de versões, ou seja, registra e avalia todas as mudanças que são realizadas. 
+
+Vamos alterar o conteúdo dos dois ficheiros para entendermos esse processo.
+
+Primeiro vamos inserir uma frase no ficheiro `resumo.txt`. Para isso você pode abri-lo em qualquer editor de texto, escrever a frase "Resumo: Esse tutorial pretende apresentar as funções básicas do Git." e salvá-lo. Depois, abra o ficheiro `README.md` e inclua a frase "Lição para o Programming Historian", salvando em seguida. Realizamos alterações em dois ficheiros do nosso diretório de trabalho, ambos registrado e monitorados pelo Git. Vejamos quais informações o comando status nos apresenta:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git status
+No ramo main
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+	modified:   resumo.txt
+
+nenhuma modificação adicionada à submissão (utilize "git add" e/ou "git commit -a")
+```
+
+A mensagem informa que dois ficheiros foram modificados e ainda não foram preparados para submissão (*changes not staged for commit*). Para inserir essas mudanças e prepará-las para o *commit*, devemos utilizar o comando `git add <nome do ficheiro>`. É possível incluir mais de um ficheiro no mesmo comando, por exemplo:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git add README.md resumo.txt
+```
+
+É possível especificar que todos os ficheiros presentes no diretório de trabalho sejam preparados ao mesmo tempo, utilizando `git add .`.
+
+Agora que preparamos as mudanças para submissão, os ficheiros aparecem com o status **modificados** (*modified*):
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git status
+No ramo main
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+	modified:   resumo.txt
+```
+
+Para submeter essas mudanças é preciso utilizar o comando *commit*. Podemos fazer um único commit para as mudanças em todos os ficheiros, ou especificar um commit para cada um deles. Por exemplo:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git commit README.md -m "Atualização dos dados da lição"
+[main 4fdb7f7] Atualização dos dados da lição
+ 1 file changed, 2 insertions(+)
+```
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git commit resumo.txt -m "Inclusão do resumo"
+[main 6cc74b6] Inclusão do resumo
+ 1 file changed, 1 insertion(+)
+``` 
+
+Resumindo: toda vez que um novo ficheiro for criado ele precisa ser preparado (`git add`) e submetido (`git commit`), as submissões devem vir acompanhadas de uma mensagem explicativa sobre o que foi feito. Cada alterações realizada em qualquer ficheiro presente no diretório de trabalho deve ser também preparada e submetida com uma mensagem clara e explicativa. É possível consultar a condição do diretório de trabalho com o `git status`, o que nos possibilita perceber com clareza quais ficheiros são novos, estão modificados ou ainda precisam ser preparados e submetidos.
+
+## Como escrever uma mensagem de commit eficiente?
+
+[explicar]
+
+### Recuperando informações
+
+[Importância para o processo metodológico]
+#### git log
+
+- oneline
+- graph
+- to csv
+
+### Fluxo de trabalho com Branches
+
+[explicar o que é um branch]
+[falar sobre o merge]
+
+---
 
 [^terminal]: Ver a melhor forma de falar sobre ele. Indicar a lição sobre bash no PH.
 [^echo]: Explorar melhor o comando echo.
