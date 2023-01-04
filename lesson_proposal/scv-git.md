@@ -34,15 +34,42 @@ Quem nunca passou por isso?
 
 ## O que é um sistema de controle de versões?
 
+>Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.  
+
+Como se você possuísse uma máquina do tempo, capaz de te levar de volta a qualquer ponto na história de mudanças de uma ficheiro.
+
+### Centralizado X Distribuído
+
+
 [explicar]
 
 ## O que é o Git?
 
+> “Git manages the evolution of a set of files – called a repository or repo – in a sane, highly structured way.” (Bryan, 2018, p. 2)
+> 
+- Sistema de controle de versões
+- Distribuído
+- Repositório Local
+- Livre e gratuito
 ### História
 
 ### Fluxo de trabalho
 
-### vantagens e limitações
+### Vantagens
+
+- Controle de histórico
+- Trabalho em equipe
+- Ramificações (Branches)
+- Segurança
+- Organização
+- Integração com repositórios remotos (como o GitHub)
+
+### Limitações
+
+- Curva de aprendizagem mais elevada
+- Maior dificuldade de lidar com arquivos zippados/compactados
+- Pode gerar históricos muito pesados
+- Repositório Local
 
 ## Usando o Git
 
@@ -453,6 +480,22 @@ Após escrever a mensagem, salve o arquivo e feche o editor. A mensagem de *comm
 
 [explicar o que é um branch]
 [falar sobre o merge]
+
+# Leituras adicionais
+
+Eric Brasil. (2022, May 20). Criação, manutenção e divulgação de projetos de História em meios digitais: git, GitHub e o Programming Historian. Zenodo. https://doi.org/10.5281/zenodo.6566754
+
+James Baker, "Preservar os seus dados de investigação", traduzido por Márcia T. Cavalcanti, Programming Historian em português 1 (2021), https://doi.org/10.46430/phpt0001.
+
+Bird, Christian, Peter C. Rigby, Earl T. Barr, David J. Hamilton, Daniel M. German, e Prem Devanbu. “The promises and perils of mining git”. Em 2009 6th IEEE International Working Conference on Mining Software Repositories, 1–10, 2009. https://doi.org/10.1109/MSR.2009.5069475.
+
+Bryan, Jennifer. “Excuse Me, Do You Have a Moment to Talk About Version Control?” The American Statistician 72, nº 1 (2 de janeiro de 2018): 20–27. https://doi.org/10.1080/00031305.2017.1399928.
+
+Chacon, Scott, e Ben Straub. Pro Git. 2º edição. Apress, 2014.
+
+Loeliger, Jon, e Matthew McCullough. Version Control with Git: Powerful tools and techniques for collaborative software development. 2º edição. Sebastopol, CA: O’Reilly Media, 2012.
+
+Ram, Karthik. “Git can facilitate greater reproducibility and increased transparency in science”. Source Code for Biology and Medicine 8, nº 1 (28 de fevereiro de 2013): 7. https://doi.org/10.1186/1751-0473-8-7.
 
 ---
 
