@@ -387,7 +387,55 @@ Resumindo: toda vez que um novo ficheiro for criado ele precisa ser preparado (`
 
 ## Como escrever uma mensagem de commit eficiente?
 
-[explicar]
+Parte significativa do nosso trabalho de pesquisa, escrita e ensino atualmente é mediado por ferramentas digitais, ao mesmo tempo que dados digitais se tornam cada vez mais centrais para as Ciências Sociais e Humanas. Sejam buscas on-line em repositórios, trocas de mensagens por aplicativos, leitura de informações com editores de texto e planilhas, seja a aplicação de linguagem de programação para análise textual, visualização de dados entrou tantas outras possibilidades. A seleção, coleta, organização e tratamento dos dados que pretendemos utilizar em pesquisa, artigos ou aulas nos demanda atualmente cuidados diferentes e adicionais daqueles para os quais fomos treinados em nossa formação anterior à virada digital. Nas palavras de Fridlunnd, Oiva e Paju:
+
+>Os métodos de pesquisa digital criam demandas novas e às vezes mais rigorosas de precisão, pensamento metodológico, auto-organização e colaboração do que a pesquisa histórica tradicional" (FRIDLUND; OIVA; PAJU, 2020, pos. 543).
+
+Um caminho importante na busca de sanar essas novas demandas, é a transparência metodológica. Nas palavras de Gibbs e Owens:
+
+>novos métodos usados para explorar e interpretar dados históricos exigem um novo nível de transparência metodológica na escrita histórica. Exemplos incluem discussões de consultas de dados, fluxos de trabalho com ferramentas específicas e a produção e interpretação de visualizações de dados. No mínimo, as publicações de pesquisa dos historiadores precisam refletir novas prioridades que explicam o processo de interfacear, explorar e, em seguida, compreender as fontes históricas de uma forma fundamentalmente digital - ou seja, a hermenêutica dos dados. (Gibbs e Owens, 2013: 159)
+
+É fundamental criar um plano para organização, documentação, preservação e compartilhamento dos dados, métodos e resultados da pequisa.
+
+Veja essa lição de James Backer sobre preservação dos dados de investigação para outras estratégias e referências.
+
+- Metadados (como você descreve seus dados, tanto internamente quanto externamente)
+- Documentação (uma descrição narrativa do projeto)
+- Preservação (como os dados podem ser mantidos para uso no futuro)
+
+Podemos enfrentar boa parte desses desafios utilizando programas de controle de versões, como o git.
+
+- Controle de versões (o que fazer se você fizer uma  lambança no processo)
+
+Encarar o processo de documentação como um processo público, mesmo que não seja publicado.
+
+Baker: https://programminghistorian.org/pt/licoes/preservar-os-seus-dados-de-investigacao
+
+>- Fazer documentação que capture de maneira precisa e consistente o conhecimento tácito em torno do processo de pesquisa, seja em relação às notas, geração de dados ou acumulação de evidências visuais.
+>-Simplificar o processo de documentar, usando formatos de ficheiro e práticas de notação independentes da plataforma e legíveis por máquina.
+>- Criar tempo para atualizar e documentar o fluxo de trabalho sem permitir que o trabalho de documentação se torne um fardo.
+>- Investir para deixar um rasto de papel agora e economizar tempo na tentativa de reconstruí-lo no futuro.
+
+Ao escrever uma mensagem de *commit* lembre-se que ela servirá como documentação do seu processo de pesquisa/escrita. Cada alteração ou conjunto de alterações realizada nos ficheiros de seu diretório deve vir acompanhada de uma mensagem que registre as mudanças efetuadas. Essas informações são registradas pela Git com um conjunto de metadados importantes para o acompanhamento metodológico de seu trabalho: nome do autor da mudança, data e hora, mensagem e uma identificação única - uma *hash* de 40 caracteres - que permite a identificação da versão do arquivo.
+
+A melhor forma de escver a mensagem de *commit* é utilizar `git commit` sem a opção `-m`, pois nos permite escrever mensagens mais  longas do que 50 caracteres (limite da opção `-m`) e incluir quebras de linha e um título para nossa mensagem. Como descrito anteriormente, o `git commit` abre o editor de texto padrão do seus sitema operacional - ou o editor que você configurou no git - para que você possa escrever a mensagem de *commit*.
+
+No meu caso, o editor é o vim, e a mensagem de *commit* ficaria assim:
+
+```vim
+Título da mensagem de commit
+
+Descrição da mensagem de commit
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# No ramo main
+# Mudanças a serem submetidas:
+#    modified:   resumo.txt
+#
+```
+
+Após escrever a mensagem, salve o arquivo e feche o editor. A mensagem de *commit* será registrada no repositório local.
 
 ### Recuperando informações
 
@@ -395,7 +443,10 @@ Resumindo: toda vez que um novo ficheiro for criado ele precisa ser preparado (`
 #### git log
 
 - oneline
+- patch
+- grep
 - graph
+- pretty-formats
 - to csv
 
 ### Fluxo de trabalho com Branches
