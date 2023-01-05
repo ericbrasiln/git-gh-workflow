@@ -34,6 +34,8 @@ Quem nunca passou por isso?
 
 ## O que é um sistema de controle de versões?
 
+>All scientists use version control in one form or another at various stages of their research projects, from the data collection all the way to manuscript preparation. This process is often informal and haphazard, where multiple revisions of papers, code, and datasets are saved as duplicate copies with uninformative file names (e.g. draft 1.doc, draft 2.doc). [...] A key feature common to all types of VCS is that ability save versions of files during development along with informative comments which are referred to as commit messages. Every change and accompanying notes are stored independent of the files, which obviates the need for duplicate copies.(Ram, 2013, p. 2)
+
 >Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.  
 
 Como se você possuísse uma máquina do tempo, capaz de te levar de volta a qualquer ponto na história de mudanças de uma ficheiro.
@@ -45,8 +47,10 @@ Como se você possuísse uma máquina do tempo, capaz de te levar de volta a qua
 
 ## O que é o Git?
 
-> “Git manages the evolution of a set of files – called a repository or repo – in a sane, highly structured way.” (Bryan, 2018, p. 2)
-> 
+>Git manages the evolution of a set of files – called a repository or repo – in a sane, highly structured way.” (Bryan, 2018, p. 2)
+
+>Every copy of a Git repository can serve either as the server (a central point for synchronizing changes) or as a client. This ensures that there is no single point of failure. [...] Unlike other VCS, every copy of a Git repository carries a complete history of all changes, including authorship, that can be viewed and searched by anyone. This feature allows new authors to build from any stage of a versioned project. Git also has a small footprint and nearly all operations occur locally. (Ram, 2013, p. 2)
+
 - Sistema de controle de versões
 - Distribuído
 - Repositório Local
@@ -69,8 +73,22 @@ Como se você possuísse uma máquina do tempo, capaz de te levar de volta a qua
 - Curva de aprendizagem mais elevada
 - Maior dificuldade de lidar com arquivos zippados/compactados
 - Pode gerar históricos muito pesados
+
+>With large data files, the best practice would be to exclude them from the repository and only track changes in metadata. This protocol is especially ideal when large datasets do not change often over the course of a study. (Ram, 2013, p. 6)
+
 - Repositório Local
 
+### Vale para os dados comuns em pesquisas de humanidades?
+
+**Manuscritos e notas**
+
+>Version control can operate on any file type including ones most commonly used in academia such as Microsoft Word.However,since these file types are binary,Git cannot examine the contents and highlight sections that have changed between revisions. In such cases, one would have to rely solely on commit messages or scan through file contents. The full power of Git can best be leveraged when working with plain-text files. These include data stored in non-proprietary spreadsheet formats (e.g. comma separated files versus xls), scripts from programming languages, and manuscripts stored in plain text formats (LaTeX and markdown versus Word documents). With such formats, Git not only tracks versions but can also highlight which sections of a file have changed. (Ram, 2013, p. 2)
+
+Quando vc usa o *track changes* do Microsoft Word os registros das alterações desaparecem após serem resolvidas. No Git elas permanecerão, mas em outros arquivos no histórico.
+
+**Dados variados**
+
+Ideal para dados variados: planilhas, notas de campo, transcrições de documentos, imagens, etc...
 ## Usando o Git
 
 ### Instalação
@@ -241,6 +259,8 @@ Mais uma vez percebemos que estamos no ramo `main` e ainda não realizamos nenhu
 [Explicar: `git rm --cached <arquivo>`. remove do index do git, mas mantém o arquivo no seu diretório de trabalho.]
 
 #### Git Commit
+
+>Commits serve as checkpoints where individual files or an entire project can be safely reverted to when necessary. (Ram, 2013, p. 2)
 
 Agora, as alterações que realizamos estão preparadas para serem submetidas (*commited*) ao repositório. Para isso, usamos o comando `git commit`. É importante destacar a necessidade de incluir uma mensagem para cada *commit*. [Apontar isso como elemento central para essa lição]. Existem duas formas de incluir uma mensagem ao commit. A primeira delas é mais simples e é realizada diretamente no comando `commit`:
 
@@ -483,6 +503,9 @@ Após escrever a mensagem, salve o arquivo e feche o editor. A mensagem de *comm
 [Importância para o processo metodológico]
 #### git log
 
+>Git commit logs can provide a highly granular way to track and assess individual author contributions to a project. When projects are tracked using Git, every single action (such as additions, deletions, and changes) is attributed to an author. (Ram, 2013, p. 3)
+
+
 Para recuperarmos as informações submetidas ao repositório local, podemos utilizar o comando `git log`. Esse comando será muito útil para acessarmos as informações sobre o histórico de alterações em nossos ficheiros e avaliarmos o progresso do trabalho.
 
 ```bash
@@ -597,7 +620,7 @@ Date:   Thu Jan 5 11:50:41 2023 +0000
 diff --git a/resumo.txt b/resumo.txt
 new file mode 100644
 index 0000000..e69de29
-
+```
 - oneline
 - path
 - grep
@@ -610,6 +633,12 @@ index 0000000..e69de29
 [explicar o que é um branch]
 [falar sobre o merge]
 
+![Branch workflow](branch-wf.png)
+
+
+# Considerações finais
+
+>With disciplined use of Git, individual scientists and labs can ensure that the entire timeline of events that occur over the development of a research project are securely logged in a system that provides security against data loss and encourages risk-free exploration of new ideas and approaches. (Ram, 2013, p. 6)
 # Leituras adicionais
 
 Eric Brasil. (2022, May 20). Criação, manutenção e divulgação de projetos de História em meios digitais: git, GitHub e o Programming Historian. Zenodo. https://doi.org/10.5281/zenodo.6566754
