@@ -247,10 +247,9 @@ Agora, as alterações que realizamos estão preparadas para serem submetidas (*
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git commit -m "Commit inicial"
 
-[main (root-commit) 28bc6b6] Commit inicial
+[main (root-commit) 861b527] Commit inicial
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
-
 ```
 
 Nesse caso, adicionamos a opção `-m` ao comando `commit` e em seguida passado o conteúdo da mensagem entre `"`. Essa opção é mais prática, mas possui limitações, como a impossibilidade de criar mensagens mais detalhadas e com quebras de linha.
@@ -284,8 +283,8 @@ Este commit cria o arquivo README.md com o objetivo de explicar o funcionamento 
 Após salvar e fechar o editor, o Git nos informa que o commit foi realizado com sucesso:
 
 ```bash
-[main 3588e34] Criação de README.md
- Date: Tue Dec 20 11:14:04 2022 +0000
+[main 93a5660] Criação de README.md
+ Date: Thu Jan 5 11:47:12 2023 +0000
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ```
@@ -352,7 +351,7 @@ Ou seja, `resumo.txt` é um novo ficheiro que está pronto para ser submetido ao
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git commit -m "Criação do ficheiro para o resumo do tutorial"
-[main 3b9a93d] Criação do ficheiro para o resumo do tutorial
+[main 48f3c9d] Criação do ficheiro para o resumo do tutorial
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 resumo.txt
 ```
@@ -396,19 +395,34 @@ Mudanças a serem submetidas:
 	modified:   resumo.txt
 ```
 
-Para submeter essas mudanças é preciso utilizar o comando *commit*. Podemos fazer um único commit para as mudanças em todos os ficheiros, ou especificar um commit para cada um deles. Por exemplo:
+Para submeter essas mudanças é preciso utilizar o comando *commit*. Podemos fazer um único commit para as mudanças em todos os ficheiros e escrever uma mensagem detalhada. Por exemplo:
 
 ```bash
-~/Documentos/projeto-de-pesquisa$ git commit README.md -m "Atualização dos dados da lição"
-[main 4fdb7f7] Atualização dos dados da lição
- 1 file changed, 2 insertions(+)
+~/Documentos/projeto-de-pesquisa$ git commit
+# o editor de texto padrão do sistema operacional será aberto e você poderá escrever a mensagem
 ```
 
-```bash
-~/Documentos/projeto-de-pesquisa$ git commit resumo.txt -m "Inclusão do resumo"
-[main 6cc74b6] Inclusão do resumo
- 1 file changed, 1 insertion(+)
+```vim
+Atualização dos dados da lição
+
+- Inclusão de autoria no README.md
+- Atualização do texto em resumos.txt
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# No ramo main
+# Mudanças a serem submetidas:
+#       modified:   README.md
+#       modified:   resumo.txt
+#
 ``` 
+[Salvar  e fechar o editor]
+
+```bash
+[main 572f33f] Atualização dos dados da lição
+ 2 files changed, 2 insertions(+)
+```
 
 Resumindo: toda vez que um novo ficheiro for criado ele precisa ser preparado (`git add`) e submetido (`git commit`), as submissões devem vir acompanhadas de uma mensagem explicativa sobre o que foi feito. Cada alterações realizada em qualquer ficheiro presente no diretório de trabalho deve ser também preparada e submetida com uma mensagem clara e explicativa. É possível consultar a condição do diretório de trabalho com o `git status`, o que nos possibilita perceber com clareza quais ficheiros são novos, estão modificados ou ainda precisam ser preparados e submetidos.
 
@@ -445,7 +459,7 @@ Baker: https://programminghistorian.org/pt/licoes/preservar-os-seus-dados-de-inv
 
 Ao escrever uma mensagem de *commit* lembre-se que ela servirá como documentação do seu processo de pesquisa/escrita. Cada alteração ou conjunto de alterações realizada nos ficheiros de seu diretório deve vir acompanhada de uma mensagem que registre as mudanças efetuadas. Essas informações são registradas pela Git com um conjunto de metadados importantes para o acompanhamento metodológico de seu trabalho: nome do autor da mudança, data e hora, mensagem e uma identificação única - uma *hash* de 40 caracteres - que permite a identificação da versão do arquivo.
 
-A melhor forma de escver a mensagem de *commit* é utilizar `git commit` sem a opção `-m`, pois nos permite escrever mensagens mais  longas do que 50 caracteres (limite da opção `-m`) e incluir quebras de linha e um título para nossa mensagem. Como descrito anteriormente, o `git commit` abre o editor de texto padrão do seus sitema operacional - ou o editor que você configurou no git - para que você possa escrever a mensagem de *commit*.
+A melhor forma de escrever a mensagem de *commit* é utilizar `git commit` sem a opção `-m`, pois nos permite escrever mensagens mais  longas do que 50 caracteres (limite da opção `-m`) e incluir quebras de linha e um título para nossa mensagem. Como descrito anteriormente, o `git commit` abre o editor de texto padrão do seus sistema operacional - ou o editor que você configurou no git - para que você possa escrever a mensagem de *commit*.
 
 No meu caso, o editor é o vim, e a mensagem de *commit* ficaria assim:
 
@@ -469,8 +483,123 @@ Após escrever a mensagem, salve o arquivo e feche o editor. A mensagem de *comm
 [Importância para o processo metodológico]
 #### git log
 
+Para recuperarmos as informações submetidas ao repositório local, podemos utilizar o comando `git log`. Esse comando será muito útil para acessarmos as informações sobre o histórico de alterações em nossos ficheiros e avaliarmos o progresso do trabalho.
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git log
+commit 572f33fbe94ee6612b29be5bbee81d6672c162fa (HEAD -> main)
+Author: Edward Palmer Thompson <epthompson@hist.com>
+Date:   Thu Jan 5 12:01:16 2023 +0000
+
+    Atualização dos dados da lição
+    
+    - Inclusão de autoria no README.md
+    - Atualização do texto em resumos.txt
+
+commit 48f3c9d3e7e419de8f29a58211dc7e97957c7b2f
+Author: Edward Palmer Thompson <epthompson@hist.com>
+Date:   Thu Jan 5 11:50:41 2023 +0000
+
+    Criação do ficheiro para o resumo do tutorial
+
+commit 93a56606662ee3f37846d9623fb03d29b2f21135
+Author: Edward Palmer Thompson <epthompson@hist.com>
+Date:   Thu Jan 5 11:47:12 2023 +0000
+
+    Criação de README.md
+    
+    Este commit cria o arquivo README.md com o objetivo de explicar o funcionamento do Git.
+```
+
+Podemos perceber que o `git log` nos retorna a lista de commits realizados no repositório local. Os nossos três commits estão detalhados com várias informações importantes. A primeira coisa a se notar é que os commits são listados do mais recente para o mais antigo. Assim, o último commit realizado é o primeiro da lista. Vamos analisá-lo com mais atenção.
+
+Em sua primeira linha, temos a seguinte informação:
+
+```bash
+commit 572f33fbe94ee6612b29be5bbee81d6672c162fa (HEAD -> main)
+```
+
+Encontramos o número de identificação do commit com 40 caracteres. Não se assuste, não há necessidade de ler esse número nem entender como ele é gerado para utilizar o Git. O importante é saber que cada commit possui um identificador único, possibilitando seu acesso e recuperação dentro do banco de dados do sistema de controle de versões. Na verdade, é possível utilizar os 7 primeiros caracteres para encontrar e referenciar commits específicos. Por exemplo, esse commit pode ser identificado por `572f33f` e o Git será capaz de encontrá-lo. A importância dessa identificação única para cada alteração reside justamente na posibilidade de se acessar cada mudança a qualquer momento e, inclusive, retornar o repositório para a condição que se encontrava naquele momento do tempo.
+
+A informação que se segue também é importante, mas fará mais sentido adiante. `(HEAD -> main)` está indicando que o commit mais recente está apontando para o ramo (*branch*) *main*.  Ou seja, você está trabalhando atualmente em uma linha do tempo chamada main, e todas as mudanças que realizar incidirão sobre ela. Mais a frente veremos que é possível criar outras linhas de trabalho ou ramificações, criar alterações nos ficheiros e não afetar as informações contidas em outros ramos.
+
+Nas duas linhas seguintes, temos a autoria e data relativa ao *commit*:
+
+```bash
+Author: Edward Palmer Thompson <epthompson@hist.com>
+Date:   Thu Jan 5 12:01:16 2023 +0000
+```
+
+Os dados do autor - nome e email -  são retirados da configuração que realizamos no início da lição com o comado `git config user.name` e `git config user.mail`. A data e a hora estão no padrão do Git, mas também podem ser configuradas[^config-date].
+
+Em seguida, podemos ler a mensagem do *commit*, sendo a primeira linha entendida pelo Git como seu título:
+
+```bash
+    Atualização dos dados da lição
+    
+    - Inclusão de autoria no README.md
+    - Atualização do texto em resumos.txt
+```
+
+O comando `git log` possui várias opções que são úteis para acompanharmos e recuperarmos dados sobre o processo metodológico do nosso trabalho. Abaixo, veremos algumas, mas a lista completo pode ser acessada na [página de documentação do Git](https://git-scm.com/docs/git-log/pt_BR).
+
+Podemos ver todos os commits listados em apenas uma linhas, acrescentando a opção `--oneline` ao comando `git log`, o que pode ser útil para uma leitura mais rápida e concisa das alterações:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git log --oneline
+572f33f (HEAD -> main) Atualização dos dados da lição
+48f3c9d Criação do ficheiro para o resumo do tutorial
+93a5660 Criação de README.md
+```
+
+
+Com essa opção, a lista de commits do atual ao mais antigo, apresenta os sete caracteres iniciais da identificação e o título da mensagem.
+
+Também é possível acessarmos um commit específico dessa lista, informando os sete caracteres iniciais:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git log 93a5660
+commit 93a56606662ee3f37846d9623fb03d29b2f21135
+Author: Edward Palmer Thompson <epthompson@hist.com>
+Date:   Thu Jan 5 11:47:12 2023 +0000
+
+    Criação de README.md
+    
+    Este commit cria o arquivo README.md com o objetivo de explicar o funcionamento do Git.
+```
+
+Podemos acessar o histórico de um ficheiro ou diretório específico, incluindo as diferenças, com opção `-p` ou `--path`:
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git log -p resumo.txt
+commit 572f33fbe94ee6612b29be5bbee81d6672c162fa (HEAD -> main)
+Author: Edward Palmer Thompson <epthompson@hist.com>
+Date:   Thu Jan 5 12:01:16 2023 +0000
+
+    Atualização dos dados da lição
+    
+    - Inclusão de autoria no README.md
+    - Atualização do texto em resumos.txt
+
+diff --git a/resumo.txt b/resumo.txt
+index e69de29..bd25a49 100644
+--- a/resumo.txt
++++ b/resumo.txt
+@@ -0,0 +1 @@
++Resumo: Esse tutorial pretende apresentar as funções básicas do Git.
+
+commit 48f3c9d3e7e419de8f29a58211dc7e97957c7b2f
+Author: Edward Palmer Thompson <epthompson@hist.com>
+Date:   Thu Jan 5 11:50:41 2023 +0000
+
+    Criação do ficheiro para o resumo do tutorial
+
+diff --git a/resumo.txt b/resumo.txt
+new file mode 100644
+index 0000000..e69de29
+
 - oneline
-- patch
+- path
 - grep
 - graph
 - pretty-formats
@@ -502,3 +631,4 @@ Ram, Karthik. “Git can facilitate greater reproducibility and increased transp
 [^terminal]: Ver a melhor forma de falar sobre ele. Indicar a lição sobre bash no PH.
 [^echo]: Explorar melhor o comando echo.
 [^vim]: Ver a lição sobre o editor de texto vim.
+[^config-date]: falar sobre configuração de data e hora ou linkar manual do git
