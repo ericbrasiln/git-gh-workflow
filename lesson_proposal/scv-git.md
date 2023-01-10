@@ -32,24 +32,51 @@ Quem nunca passou por isso?
 
 {% include figure.html filename="phdcomics-final-doc" caption="Figura 1: Cham, Jorge. ['PHD Comics: notFinal.doc'](https://phdcomics.com/comics/archive/phd101212s.gif). Acessado 26 de setembro de 2022." %}
 
+É bastante comum em nosso processo de escrita alterar ficheiros constantemente. Inclusões, exclusões, revisões acompanham nosso trabalho acadêmico. Não apenas ao escrevermos um manuscrito, mas também durante a elaboração e execução de projetos de pesquisa: incluímos fontes digitalizadas, imagens, criamos documentos com ideias e fragmentos de análises, geramos planilhas e bancos de dados, etc.
+
+Todos esses procedimentos são modificados ao longo do tempo a partir de escolhas e decisões construídas no decorrer da pesquisa. É fundamental que essas alterações sejam registradas, organizadas e preservadas para o futuro: seja para a sua própria pesquisa e processo de escrita, seja para a avaliação de pares ou os desdobramentos futuros em novas pesquisas.
+
+Portanto, é importante termos algum método explícito para controlar as diferentes versões de nosso trabalho. E de certa forma, cada um de nós tende a desenvolver caminhos para manter esse registro. Contudo, esses métodos costumam ser pouco formalizados e sem uma documentação precisa que possibilite que outros pesquisadores possam compreender o processo de desenvolvimento de uma pesquisa [(Ram et al, 2013, p2)](https://doi.org/10.1186/1751-0473-8-7). Existem várias formas de realizar um controle e registro eficiente dos caminhos de uma pesquisa. James Baker, na lição [Preservar os seus dados de investigação](https://programminghistorian.org/pt/licoes/preservar-os-seus-dados-de-investigacao) apresenta maneiras de documentar e estruturar dados de pesquisa que também servirão de inspiração aqui, sobretudo a importância de uma documentação "que capture de maneira precisa e consistente o conhecimento tácito em torno do processo de pesquisa" e a utilização de "formatos de ficheiro e práticas de notação independentes da plataforma e legíveis por máquina".
+
 ## O que é um sistema de controle de versões?
 
->All scientists use version control in one form or another at various stages of their research projects, from the data collection all the way to manuscript preparation. This process is often informal and haphazard, where multiple revisions of papers, code, and datasets are saved as duplicate copies with uninformative file names (e.g. draft 1.doc, draft 2.doc). [...] A key feature common to all types of VCS is that ability save versions of files during development along with informative comments which are referred to as commit messages. Every change and accompanying notes are stored independent of the files, which obviates the need for duplicate copies.(Ram, 2013, p. 2)
+Entretanto, ao invés de criarmos um método do zero, proponho aqui a utilização de uma categoria de programas criada especificamente para o registro das alterações em ficheiros, os Sistemas de Controle de Versão: consiste em um sistema que registra as mudanças de um ficheiro ou conjunto de ficheiros ao longo do tempo, cada uma dessas mudanças é acompanhada de um conjunto de metadados, e te permite recuperar tanto esses dados quanto o estado em que se encontrava o seu projeto há época.
 
->Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.  
+É como se você possuísse uma máquina do tempo capaz de te levar de volta a qualquer ponto da história de mudanças da sua pesquisa.
 
-Como se você possuísse uma máquina do tempo, capaz de te levar de volta a qualquer ponto na história de mudanças de uma ficheiro.
+O uso de Sistemas de Controle de Versão (SCV) é mais comum entre desenvolvedores de códigos e programas de computador. Entretanto, suas características o colocam como uma importante ferramenta para as ciências humanas e sociais: ao utilizar um SCV você é capaz de acompanhar, documentar, recuperar e corrigir as etapas do projeto de pesquisa. Também é possível acompanhar a trabalhos de alunos ou equipe que compõe um projeto [(Guerrero-Higueras et al., 2020, p. 2)](https://www.mdpi.com/2076-3417/10/4/1492).
 
 ### Centralizado X Distribuído
 
+Os primeiros SCV possuíam um modelo centralizado. Ou seja, o repositório principal é hospedado em um único servidor que armazena todos os ficheiros versionados. Quem trabalha no projeto envia e recupera todas as informações diretamente no servidor centralizado. Esse sistema possui algumas vantagens, como a capacidade dos administradores em controlar e filtrar os acessos e atribuições de cada membro da equipe e todos conseguem saber esses papéis. (Chacon e Straub, 2014, p. 11 - 12). 
 
-[explicar]
+Porém, as desvantagens principais consistem justamente no seu caráter centralizado: caso o servidor tenha algum problema, todo os dados podem ser perdidos, visto que toda a história do projeto está preservada em apenas um local.
+
+{% include figure.html filename="centralized.png" caption="Figura 2: Controle de versão centralizado. A partir de ['Chacon e Straub, Pro Git, 2014'](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control). Acessado 10 de janeiro de 2023." %}
+
+Os SCV distribuídos têm outra abordagem. Nas palavras de Chacon e Strauv, "cada clone [de um repositório de SCV distribuído]é realmente um backup completo de todos os dados" (Chacon e Straub, 2014, p. 12)
+
+{% include figure.html filename="distributed.png" caption="Figura 3: Controle de versão distribuído. A partir de ['Chacon e Straub, Pro Git, 2014'](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control). Acessado 10 de janeiro de 2023." %}
 
 ## O que é o Git?
+
+O Git é um desses SCVs distribuído que foi criado em 2005 e hoje é o mais popular do mundo. Ver: https://survey.stackoverflow.co/2022/#section-version-control-version-control-systems
 
 >Git manages the evolution of a set of files – called a repository or repo – in a sane, highly structured way.” (Bryan, 2018, p. 2)
 
 >Every copy of a Git repository can serve either as the server (a central point for synchronizing changes) or as a client. This ensures that there is no single point of failure. [...] Unlike other VCS, every copy of a Git repository carries a complete history of all changes, including authorship, that can be viewed and searched by anyone. This feature allows new authors to build from any stage of a versioned project. Git also has a small footprint and nearly all operations occur locally. (Ram, 2013, p. 2)
+
+>The Git repository archives the development history of a project. It keeps a record of the changes, called “commits”, made to a file or set of files, along with metadata for each commit such as the unique ID, author, message, and date. It also maintains information about branches (or merges) created to diverge from (or converge to) the main line of development. Thus, the metadata of the Git repository is known to provide rich information for understanding the overall context of development history without delving directly into the source code. As new developers, managers, and testers of a project are generally not well acquainted with the source code, such metadata could alleviate the burden of comprehending the code themselves. (Kim et al., 2021, p. 657)
+
+Mas como o Git entende seus próprios dados?
+
+>Git thinks of its data more like a series of snapshots of a miniature filesystem. With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again, just a link to the previous identical file it has already stored. Git thinks about its data more like a stream of snapshots. (Chacon e Straub, 2014, p. 15)
+
+Local: "Nearly Every Operation Is Local" (Chacon e Straub, 2014, p. 15)
+
+Integridade: "it’s impossible to change the contents of any file or directory without Git knowing about it." (Chacon e Straub, 2014, p. 15)
+
+>Git metadata are a collection of content for each commit, such as its unique ID, author, message, date, and information on the set of changed files. A commit is connected to its parent commits, and thus the metadata can be represented as a DAG, where each node is a commit and each edge is the parental relationship between the commits. (Kim et al., 2021, p. 657)
 
 - Sistema de controle de versões
 - Distribuído
@@ -58,6 +85,8 @@ Como se você possuísse uma máquina do tempo, capaz de te levar de volta a qua
 ### História
 
 ### Fluxo de trabalho
+
+The basic Git workflow goes something like this: 1. You modify files in your working tree. 2. You selectively stage just those changes you want to be part of your next commit, which adds only those changes to the staging area. 3. You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory
 
 ### Vantagens
 
@@ -640,6 +669,8 @@ index 0000000..e69de29
 
 >With disciplined use of Git, individual scientists and labs can ensure that the entire timeline of events that occur over the development of a research project are securely logged in a system that provides security against data loss and encourages risk-free exploration of new ideas and approaches. (Ram, 2013, p. 6)
 # Leituras adicionais
+
+Bird, Christian, Peter C. Rigby, Earl T. Barr, David J. Hamilton, Daniel M. German, e Prem Devanbu. “The promises and perils of mining git”. Em 2009 6th IEEE International Working Conference on Mining Software Repositories, 1–10, 2009. https://doi.org/10.1109/MSR.2009.5069475.
 
 Eric Brasil. (2022, May 20). Criação, manutenção e divulgação de projetos de História em meios digitais: git, GitHub e o Programming Historian. Zenodo. https://doi.org/10.5281/zenodo.6566754
 
