@@ -52,79 +52,53 @@ O uso de SCVs é mais comum entre desenvolvedores de códigos e programas de com
 
 ### Centralizado X Distribuído
 
-Os primeiros SCV possuíam um modelo centralizado. Ou seja, o repositório principal era hospedado em um único servidor que armazenava todos os ficheiros versionados. Quem trabalhava no projeto enviava e recuperava todas as informações diretamente no servidor centralizado. Esse sistema possui algumas vantagens, como a capacidade dos administradores em controlar e filtrar os acessos e atribuições de cada membro da equipe e todos conseguem saber esses papéis. (Chacon e Straub, 2014, p. 11 - 12). 
+Os primeiros SCVs possuíam um modelo centralizado. Ou seja, o repositório principal era hospedado em um único servidor que armazenava todos os ficheiros versionados. Quem trabalhava no projeto enviava e recuperava todas as informações diretamente no servidor central. Esse sistema possui algumas vantagens, como a capacidade dos administradores em controlar e filtrar os acessos e atribuições de cada membro da equipe e todos conseguem saber esses papéis. (Chacon e Straub, 2014, p. 11 - 12). 
 
 Porém, as desvantagens principais consistem justamente no seu caráter centralizado: caso o servidor tenha algum problema, todo os dados podem ser perdidos, visto que toda a história do projeto está preservada em apenas um local.
 
 {% include figure.html filename="centralized.png" caption="Figura 2: Controle de versão centralizado. A partir de ['Chacon e Straub, Pro Git, 2014'](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control). Acessado 10 de janeiro de 2023." %}
 
-Os SCV distribuídos têm outra abordagem. Nas palavras de Chacon e Strauv, "cada clone [de um repositório de SCV distribuído] é realmente um backup completo de todos os dados" (Chacon e Straub, 2014, p. 12)
+Os SCVs distribuídos têm outra abordagem. Nas palavras de Chacon e Strauv, "cada clone [de um repositório de SCV distribuído] é realmente um *backup* completo de todos os dados" (Chacon e Straub, 2014, p. 12)
 
 {% include figure.html filename="distributed.png" caption="Figura 3: Controle de versão distribuído. A partir de ['Chacon e Straub, Pro Git, 2014'](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control). Acessado 10 de janeiro de 2023." %}
 
 ## O que é o Git?
 
-O Git é um desses SCVs distribuído que foi criado em 2005 e hoje é o mais popular do mundo. Ver: https://survey.stackoverflow.co/2022/#section-version-control-version-control-systems
+O Git é um desses SCVs distribuído. Foi criado em 2005 por Linus Torvalds[^torvalds] e [atualmente é o mais popular do mundo](https://survey.stackoverflow.co/2022/#section-version-control-version-control-systems). Ele é um software livre e gratuito, com uma grande comunidade de usuários e documentação extensa e detalhada. O Git "gerencia a evolução de um conjunto de ficheiros - chamado repositório ou repo - de uma forma sã e altamente estruturada" (Bryan, 2018, p. 2, tradução minha). Todas as mudanças são registradas (*commits*) assim como um conjunto de metadados para cada *commit*: identificação única, autoria, mensagem e data. O que permite a compreensão geral da história do desenvolvimento de um projeto (Kim et al., 2021, p. 657). 
 
->Git manages the evolution of a set of files – called a repository or repo – in a sane, highly structured way.” (Bryan, 2018, p. 2)
+O Git compreende seus dados como "uma série de snapshots de um sistema de arquivos em miniatura", ou seja, toda vez que você submete uma alteração ao repositório, o "Git basicamente tira uma fotografia de como todos os seus ficheiros são naquele momento e armazena uma referência para aquele snapshot" (Chacon e Straub, 2014, p. 15). Se um ficheiro não foi modificado, o Git não o armazenará novamente, apenas cria um link atualizado para ele, o que o torna mais leve e rápido. Essas características garantem a integridade do Git, visto que é impossível alterar o conteúdo de qualquer ficheiro ou diretório sem o Git saber (Chacon e Straub, 2014, p. 15). Praticamente todas essas operações acontecem localmente, minimizando problemas relativos à conexão com servidores, violação de dados e segurança.
 
->Every copy of a Git repository can serve either as the server (a central point for synchronizing changes) or as a client. This ensures that there is no single point of failure. [...] Unlike other VCS, every copy of a Git repository carries a complete history of all changes, including authorship, that can be viewed and searched by anyone. This feature allows new authors to build from any stage of a versioned project. Git also has a small footprint and nearly all operations occur locally. (Ram, 2013, p. 2)
+Portanto, o Git também favorece o trabalho em equipe, pois cada membro de um projeto ao mesmo tempo em que tem acesso a todo o histórico de mudanças também pode empreender alterações específicas em seu repositório local e posteriormente submetê-lo a repositórios remotos, hospedados em servidores ou plataformas on-line como o  GitHub[^github].
 
->The Git repository archives the development history of a project. It keeps a record of the changes, called “commits”, made to a file or set of files, along with metadata for each commit such as the unique ID, author, message, and date. It also maintains information about branches (or merges) created to diverge from (or converge to) the main line of development. Thus, the metadata of the Git repository is known to provide rich information for understanding the overall context of development history without delving directly into the source code. As new developers, managers, and testers of a project are generally not well acquainted with the source code, such metadata could alleviate the burden of comprehending the code themselves. (Kim et al., 2021, p. 657)
+Apesar dessas vantagens, é importante refletir sobre as limitações do Git. A primeira questão é a curva de aprendizagem elevada em comparação com outros programas. Apesar de possuir uma série de IDEs e programas que trazem interfaces gráficas para sua utilização, o Git é um programa de linha de comando e compreender seus principais recursos e aplicá-los de forma correta e eficiente requer a dedicação de horas de estudo e prática.
 
-Mas como o Git entende seus próprios dados?
+O git também apresenta dificuldades de lidar com arquivos compactados (como arquivos em formato PDF, DOCX, etc), pois ele não é capaz de diferenciar as mudanças internas desses documentos. Ou seja, o git será capaz de perceber que o arquivo foi alterado, mas não poderá listar as diferenças, como faria em arquivos de texto simples, como txt, LaTex, md, csv, json, etc. Ainda assim, o Git apresenta mais vantagens para acompanhar as mudanças em ficheiros em formatos gerados pelo Microsoft Word do que a utilização do *track changes*, por exemplo, visto que os registros das alterações desaparecem após serem resolvidas. No Git elas permanecerão, mas em outros arquivos no histórico, podendo ser recuperadas e reestabelecidas a qualquer momento.
 
->Git thinks of its data more like a series of snapshots of a miniature filesystem. With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again, just a link to the previous identical file it has already stored. Git thinks about its data more like a stream of snapshots. (Chacon e Straub, 2014, p. 15)
+Também é necessário atentar para o armazenamento de ficheiros muito grandes e que não mudam constantemente. Eles podem gerar históricos muito pesados e nesse caso é recomendado a exclusão desses ficheiros do histórico, mantendo apenas o registro de mudanças nos metadados (Ram, 2013, p. 6)[^gitignore]. 
 
-Local: "Nearly Every Operation Is Local" (Chacon e Straub, 2014, p. 15)
+## Usando o Git
 
-Integridade: "it’s impossible to change the contents of any file or directory without Git knowing about it." (Chacon e Straub, 2014, p. 15)
-
->Git metadata are a collection of content for each commit, such as its unique ID, author, message, date, and information on the set of changed files. A commit is connected to its parent commits, and thus the metadata can be represented as a DAG, where each node is a commit and each edge is the parental relationship between the commits. (Kim et al., 2021, p. 657)
-
-- Sistema de controle de versões
-- Distribuído
-- Repositório Local
-- Livre e gratuito
-### História
+Se você ainda está aqui, acredito que esteja pelo menos interessado em utilizar o Git, mesmo após essa longa e complexa introdução. Vamos agora utilizar o Git e refletir sobre as possibilidades para o seu uso em pesquisas e projetos de história.
 
 ### Fluxo de trabalho
 
-The basic Git workflow goes something like this: 1. You modify files in your working tree. 2. You selectively stage just those changes you want to be part of your next commit, which adds only those changes to the staging area. 3. You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory
+Podemos resumir o fluxo de trabalho básico do Git da seguinte forma, a partir de Chacon e Straub (2014):
 
-### Vantagens
+1. Você modifica algum ficheiro no seu diretório de trabalho (*working tree*);
+2. Você seleciona as mudanças que pretende submeter para o histórico do Git (ou o *repositório local*);
+3. Envia as mudanças para a área de preparação (*staging area*);
+4. Você realiza a submissão (*commit*), incluindo uma mensagem explicativa associada às mudanças realizadas.
+5. O Git então pega os ficheiros exatamente como estão na área de preparação(*staging area*) e armazena esse snapshot permanentemente no seu repositório local do Git, juntamente com o conjunto de metadados associado ao *commit*.
 
-- Controle de histórico
-- Trabalho em equipe
-- Ramificações (Branches)
-- Segurança
-- Organização
-- Integração com repositórios remotos (como o GitHub)
-
-### Limitações
-
-- Curva de aprendizagem mais elevada
-- Maior dificuldade de lidar com arquivos zippados/compactados
-- Pode gerar históricos muito pesados
-
->With large data files, the best practice would be to exclude them from the repository and only track changes in metadata. This protocol is especially ideal when large datasets do not change often over the course of a study. (Ram, 2013, p. 6)
-
-- Repositório Local
-
-### Vale para os dados comuns em pesquisas de humanidades?
-
-**Manuscritos e notas**
-
->Version control can operate on any file type including ones most commonly used in academia such as Microsoft Word.However,since these file types are binary,Git cannot examine the contents and highlight sections that have changed between revisions. In such cases, one would have to rely solely on commit messages or scan through file contents. The full power of Git can best be leveraged when working with plain-text files. These include data stored in non-proprietary spreadsheet formats (e.g. comma separated files versus xls), scripts from programming languages, and manuscripts stored in plain text formats (LaTeX and markdown versus Word documents). With such formats, Git not only tracks versions but can also highlight which sections of a file have changed. (Ram, 2013, p. 2)
-
-Quando vc usa o *track changes* do Microsoft Word os registros das alterações desaparecem após serem resolvidas. No Git elas permanecerão, mas em outros arquivos no histórico.
-
-**Dados variados**
-
-Ideal para dados variados: planilhas, notas de campo, transcrições de documentos, imagens, etc...
-## Usando o Git
+Com isso, é possível recuperar e analisar todos os passos realizados por você desde a criação do repositório local até o presente.
 
 ### Instalação
+
+Para instalar o Git no Windows...
+
+Linux/MacOS
+
+Todas as ações dessa lição serão realizadas a partir de comandos diretamente no terminal de um sistema operacional Linux, pois o objetivo aqui é aprensentar o Git a partir de sua base, sem a necessidade de outros programas. Isso é importante para que a logica do programa, seu fluxo de trabalho e possibilidades de uso sejam compreendidas de forma completa.
 
 ### Configuração Global
 
@@ -160,15 +134,15 @@ init.defaultbranch=main
 core.editor=vim
 ```
 
-### Iniciar um repositório
+### Iniciar um repositório local Git
 
-Nesse tutorial, vamos criar um diretório vazio chamado `projeto-de-pesquisa`. É nele que você vai testar os comandos do Git e acompanhar seu fluxo de trabalho. Para isso, você deve abrir o seu Terminal[^terminal] e criar o diretório no caminho que escolher. Por exemplo, se você pretende criar o diretório `projeto-de-pesquisa` no interior do diretório `Documentos`, você deve utilizar o comando `cd` (*change directory*) e especificar esse caminho.
+Nessa lição, vamos criar um diretório vazio em nossa máquina chamado `projeto-de-pesquisa`. É nele que você vai testar os comandos do Git e acompanhar seu fluxo de trabalho. Para isso, você deve abrir o seu Terminal[^terminal] e criar o diretório no caminho que escolher. Por exemplo, se você pretende criar o diretório `projeto-de-pesquisa` no interior do diretório `Documentos`, você deve utilizar o comando `cd` (*change directory*) e especificar esse caminho. Sobre os comando básicos que serão utilizados aqui, como `cd`, `mkdir`, etc, veja a [lição do  Programming Historian sobre Bash]().
 
 ```bash
 ~$ cd ~/Documentos/
 ```
 
-Em seguida, você pode executar o comando para criar um diretório: `mkdir` (*make directory*).
+Em seguida, você pode executar o comando para criar um diretório: `mkdir` (*make directory*) {{nome do diretório}}.
 
 ```bash
 ~/Documentos$ mkdir projeto-de-pesquisa
@@ -183,7 +157,7 @@ Agora você pode entrar no diretório recém-criado e verificar se ele está vaz
 
 Nada deve aparecer em sua tela, pois o diretório ainda está vazio.
 
-Para iniciar esse diretório como um repositório Git, você deve executar o comando para inicialização: `git init`.
+Para iniciar esse diretório como um repositório local Git, você deve executar o comando para inicialização: `git init`.
 
 <div class="alert alert-warning">
  Lembrando que todos os comandos devem ser executados no interior do diretório `projeto-de-pesquisa`.
@@ -194,7 +168,7 @@ Para iniciar esse diretório como um repositório Git, você deve executar o com
 Repositório vazio Git inicializado em /home/usuario/Documentos/projeto-de-pesquisa/.git/
 ```
 
-A partir de agora, o seu diretório `projeto-de-pesquisa` será um repositório submetido ao controle de versões do Git. Para verificar isso, você pode executar o comando `ls -a` (*list all*), que lista todos os arquivos e diretórios, inclusive os ocultos.
+A partir de agora, o seu diretório `projeto-de-pesquisa` será um repositório submetido ao controle de versões do Git. Para verificar isso, você pode executar o comando `ls -a` (*list all*), que lista todos os ficheiros e diretórios, inclusive os ocultos.
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ ls -a  
@@ -206,15 +180,15 @@ O resultado deve ser o seguinte:
 . ..  .git
 ```
 
-O comando `git init` solicitou ao Git que o diretório `projeto-de-pesquisa` recebesse uma série de arquivos e diretórios específicos para o registro e controle de alterações. Esses arquivos são ocultos, alocados no interior do diretório `.git` e tem a função de garantir que todas as modificações ocorridas no interior do diretório sejam percebidas, registradas e apresentadas a você. O Git reúne uma série de recursos para que você possa não apenas registrar esse histórico de alterações, mas também analisá-lo, recuperá-lo, e trabalhar de forma mais coesa e segura.
+O comando `git init` solicitou ao Git que o diretório `projeto-de-pesquisa` recebesse uma série de arquivos e diretórios específicos para o registro e controle de alterações. Esses arquivos são ocultos, alocados no interior do diretório `.git` e tem a função de garantir que todas as modificações ocorridas no interior do diretório de trabalho sejam percebidas, registradas e apresentadas a você. O Git reúne uma série de recursos para que você possa não apenas registrar esse histórico de alterações, mas também analisá-lo, recuperá-lo, e trabalhar de forma mais coesa e segura.
 
-A estrutura de diretórios criada pelo Git é complexa e não será abordada a fundo nesse tutorial. Se listarmos os ficheiros presentas na recém-criada pasta `.git`, com o comando `ls -a .git`, obteremos o seguinte resultado:
+A estrutura de diretórios criada pelo Git é complexa e não será abordada a fundo nessa lição. Se listarmos os ficheiros presentas na recém-criada pasta `.git`, com o comando `ls -a .git`, obteremos o seguinte resultado:
 
 ```bash
 .  ..  branches  config  description  HEAD  hooks  info  objects  refs
 ```
 
-Nesse conjunto de diretórios e arquivos o Git armazena as informações sobre o repositório: desde as alterações realizadas até os dados de configuração e fluxo de trabalho. O Git é um sistema de controle de versões distribuído, ou seja, cada cópia do repositório é uma cópia completa.
+Nesse conjunto de diretórios e arquivos o Git armazena as informações sobre o repositório: desde as alterações realizadas até os dados de configuração e fluxo de trabalho.
 
 ### Comandos básicos
 
@@ -226,7 +200,7 @@ Vamos criar um arquivo chamado `README.md`, com o conteúdo `# Exemplo para a li
 ~/Documentos/projeto-de-pesquisa$ echo "# Exemplo para a lição" > README.md
 ```
 
-Se você executar o comando `ls`, verá que o arquivo foi criado com sucesso.
+Solicitei que o programa `echo` incluisse a frase *# Exemplo para a lição* no ficheiro `README.md`. Como o ficheiro ainda não existia, ele foi criado. Se você executar o comando `ls`, verá que o ficheiro foi criado com sucesso.
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ ls
@@ -696,3 +670,6 @@ Ram, Karthik. “Git can facilitate greater reproducibility and increased transp
 [^echo]: Explorar melhor o comando echo.
 [^vim]: Ver a lição sobre o editor de texto vim.
 [^config-date]: falar sobre configuração de data e hora ou linkar manual do git
+[^torvalds]: quem?
+[^github]: explicar
+[^gitignore]: explicar
