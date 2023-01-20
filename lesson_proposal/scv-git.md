@@ -47,7 +47,7 @@ Entretanto, ao invés de criarmos um método do zero, proponho aqui a utilizaç�
 O uso de SCVs é mais comum entre desenvolvedores de códigos e programas de computador. Entretanto, suas características o colocam como uma importante ferramenta para as ciências humanas e sociais: ao utilizar um SCV você é capaz de acompanhar, documentar, recuperar e corrigir as etapas do projeto de pesquisa. Também é possível acompanhar a trabalhos de alunos ou equipe que compõe um projeto [(Guerrero-Higueras et al., 2020, p. 2)](https://www.mdpi.com/2076-3417/10/4/1492).
 
 <div class="alert alert-warning">
- Existe uma lição que faz referência e explica os SCVs no Programming Historian em inglês, porém a mesma está retirada. A lição estava centrada na utilização do Github Desktop, aplicativo que não é mais mantido. A lição pode ser acessada [aqui]() e possuiu informações importantes que devem ser consideradas. Entretanto, aqui, busco apresentar o básico sobre Git sem a necessidade de outras ferramentas, apresentando sua lógica e fluxo de trabalho. Dominar esses elementos permite que a utilização de plataformas como GitHub e o uso do Git em IDEs, como VS Code e RStudio, sejam mais eficientes.
+ Existe uma lição que faz referência e explica os SCVs no Programming Historian em inglês, porém a mesma está retirada. A lição estava centrada na utilização do Github Desktop, aplicativo que não é mais mantido. A lição pode ser acessada [aqui](http://programminghistorian.org/en/lessons/retired/getting-started-with-github-desktop) e possuiu informações importantes que devem ser consideradas. Entretanto, aqui, busco apresentar o básico sobre Git sem a necessidade de outras ferramentas, apresentando sua lógica e fluxo de trabalho. Dominar esses elementos permite que a utilização de plataformas como GitHub e o uso do Git em IDEs, como VS Code e RStudio, sejam mais eficientes.
 </div>
 
 ### Centralizado X Distribuído
@@ -88,42 +88,97 @@ Podemos resumir o fluxo de trabalho básico do Git da seguinte forma, a partir d
 2. Você seleciona as mudanças que pretende submeter para o histórico do Git (ou o *repositório local*);
 3. Envia as mudanças para a área de preparação (*staging area*);
 4. Você realiza a submissão (*commit*), incluindo uma mensagem explicativa associada às mudanças realizadas.
-5. O Git então pega os ficheiros exatamente como estão na área de preparação(*staging area*) e armazena esse snapshot permanentemente no seu repositório local do Git, juntamente com o conjunto de metadados associado ao *commit*.
+5. O Git então pega os ficheiros exatamente como estão na área de preparação(*staging area*) e armazena esse *snapshot* permanentemente no seu repositório local do Git, juntamente com o conjunto de metadados associado ao *commit*.
 
 Com isso, é possível recuperar e analisar todos os passos realizados por você desde a criação do repositório local até o presente.
 
 ### Instalação
 
-Para instalar o Git no Windows...
+#### Windows
 
-Linux/MacOS
+Para instalar o Git no Windows, acesse esse [link](https://git-scm.com/download/win) e baixe a versão mais recente do arquivo executável correspondente a arquitetura do seus computador (provavelmente 64-bits). Após a conclusão do download, clique com o botão direito do mouse no arquivo executável e selecione a opção "Executar como Administrador".
 
-Todas as ações dessa lição serão realizadas a partir de comandos diretamente no terminal de um sistema operacional Linux, pois o objetivo aqui é aprensentar o Git a partir de sua base, sem a necessidade de outros programas. Isso é importante para que a logica do programa, seu fluxo de trabalho e possibilidades de uso sejam compreendidas de forma completa.
+É preciso aceitar os termos de uso, e definir a pasta de instalação. Em seguida, é possível definir os componentes que serão instalados e se serão adicionados ícones no menu iniciar. Em seguida, o git pergunta qual será seu editor de texto padrão (eu manterei o Vim, mas você pode escolher o de sua preferência).
+
+A próxima opção é sobre o padrão de nomeação dos branches em novos repositórios. Escolheremos a opção XXXXXXXXX e definiremos o nome do branch principal como *main*.
+
+Por fim, é importante definir que o git será incluído no PATH do sistema, para que possa ser executado a partir de qualquer diretório. Para isso vamos escolher a segunda opção, "XXXXXXXXX"
+
+As seguintes opções, manteremos como padrão, e clicaremos "Next" até a tela com a opção "Instalar".
+
+#### Linux/MacOS
+
+Grande parte das distribuições Linux já vem com o Git instalado. Ainda assim, é muito fácil instalá-lo a partir do seu gerenciador de pacotes. Por exemplo, em distribuições baseadas no Debian/Ubuntu, a última versão estável por ser instalada com o comando:
+
+```bash
+~$ sudo apt install git
+```
+
+Para uma lista completa de comandos para variadas distribuições linux, [clique aqui](https://git-scm.com/download/linux).
+
+Assim, como Linux, a instalação do git no MacOs pode ser realizada de maneira simples com seu gerenciador de pacotes. Para instalar utilizando homebrew, basta executar o seguinte comando no terminal:
+
+```bash
+~$ brew install git
+```
+
+Para instalar utilizando MacPorts, o comando é o seguinte:
+
+```bash
+~$ sudo port install git
+```
+
+Para informações gerais e mais opções de instalação no MacOs, [clique aqui](https://git-scm.com/download/mac).
+
+Após concluída a instalação, podemos perguntar ao nosso sistema qual versão do Git temos instalada. Para Linux e MacOs, abra o terminal e para Windows, abra o Git Bash. Em seguida, digite o seguinte comando:
+
+```bash
+~$ git --version
+```
+
+No meu computador, a informação retornado foi a seguinte:
+
+```bash
+git version 2.34.1
+```
+
+Todas as ações dessa lição serão realizadas a partir de comandos diretamente no terminal de um sistema operacional Linux, pois o objetivo aqui é apresentar o Git a partir de sua base, sem a necessidade de outros programas. Isso é importante para que a lógica do programa, seu fluxo de trabalho e possibilidades de uso sejam compreendidas de forma completa.
+
+Então, abra seu terminal, no Linux ou no MacOs, ou o Git Bash no Windows, e vamos começar!
 
 ### Configuração Global
 
-É importante configurar o Git com os dados de autoria e e-mail. Com essas informações, o Git é capaz de registrar quem realizou as alterações em dado momento. Neste tutorial, aprenderemos como definir essas informações globalmente para o computador utilizado. O git possui um arquivo de configuração intitulado `.gitconfig`. Ele armazena uma série de configurações importantes e pode ser acessado através do comando `git config --global --edit`. Para definir o nome do autor e o e-mail, é necessário executar os seguintes comandos:
+É importante configurar o Git com os dados de autoria e e-mail. Com essas informações, o Git é capaz de registrar quem realizou as alterações em dado momento. Neste tutorial, aprenderemos como definir essas informações globalmente para o computador utilizado. O Git possui um arquivo de configuração intitulado `.gitconfig`. Ele armazena uma série de informações importantes, como autoria, e-mail, padrões de nomeação, editor de texto a ser utilizado[^edit]. Para definir o nome do autor e o e-mail, é necessário executar os seguintes comandos:
 
 - Autor
 
 ```bash
-~$ git.config --global user.name "Edward Palmer Thompson"
+~$ git config --global user.name "Edward Palmer Thompson"
 ```
 
 - Email
 
 ```bash
-~$ git.config --global user.email "epthompson@hist.com"
+~$ git config --global user.email "epthompson@hist.com"
 ```
 
-Esses comandos estão solicitando que o Git acesse o arquivo de configuração global (`git.config`), em seguida passamos a opção `--global`, definindo que as configurações valem para todos que utilizarem esse computador; por fim indicamos qual parâmetro queremos alterar, nesse caso, nome e email do autor: `user.name` e `user.email`.
+Esses comandos estão solicitando que o Git acesse o arquivo de configuração global (`git config`), em seguida passamos a opção `--global`, definindo que as configurações valem para todos que utilizarem esse computador; por fim indicamos qual parâmetro queremos alterar, nesse caso, nome e e-mail do autor: `user.name` e `user.email`.
 
-- Configurar o editor de texto
+- Configurar o editor de texto: o git permite a definição do editor a ser utilizado para a escrita das mensagens de commit. Por padrão, o git utilizará o editor padrão do seu sistema operacional. No meu exemplo, definirei o Vim como editor padrão.
 
 ```bash
-~$ git.config --global core.editor "vim"
+~$ git config --global core.editor "vim"
 ```
-Você pode listar todas as configurações globais com o comando `git config --global --list`.
+
+Também é possível definir o nome do branch principal para novos repositórios. Aqui, seguindo o padrão adotado com maior frequência atualmente, vamos definí-lo como *main*.
+
+```bash
+~$ git config --global init.defaultbranch main
+```
+
+Lembrando que a instalação do Git no Windows já nos pediu para configurar o editor de texto e o nome do branch principal. Caso queira alterar essas configurações, basta executar os comandos acima no terminal.
+
+Você pode listar todas as configurações globais do seus computador com o comando `git config --global --list`.
 
 A seguinte saída deve ser exibida em no terminal:
 
@@ -200,13 +255,13 @@ Vamos criar um arquivo chamado `README.md`, com o conteúdo `# Exemplo para a li
 ~/Documentos/projeto-de-pesquisa$ echo "# Exemplo para a lição" > README.md
 ```
 
-Solicitei que o programa `echo` incluisse a frase *# Exemplo para a lição* no ficheiro `README.md`. Como o ficheiro ainda não existia, ele foi criado. Se você executar o comando `ls`, verá que o ficheiro foi criado com sucesso.
+Solicitei que o programa `echo` incluísse a frase *# Exemplo para a lição* no ficheiro `README.md`. Como o ficheiro ainda não existia, ele foi criado. Se você executar o comando `ls`, verá que o ficheiro foi criado com sucesso.
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ ls
 README.md
 ```
-
+  
 #### Git Status
 
 Portanto, realizamos uma alteração em nosso repositório. Vamos verificar se o Git percebeu a mudança? Para isso, executamos o comando `git status`.
@@ -667,6 +722,7 @@ Ram, Karthik. “Git can facilitate greater reproducibility and increased transp
 ---
 
 [^terminal]: Ver a melhor forma de falar sobre ele. Indicar a lição sobre bash no PH.
+[^edit]: pode ser acessado através do comando `git config --global --edit`.
 [^echo]: Explorar melhor o comando echo.
 [^vim]: Ver a lição sobre o editor de texto vim.
 [^config-date]: falar sobre configuração de data e hora ou linkar manual do git
