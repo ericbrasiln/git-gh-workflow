@@ -1,5 +1,5 @@
 ---
-title: Sistema de Controle de Versões Git como ferramenta metodológica em projetos de História  
+title: Sistema de Controle de Versões Git como ferramenta metodológica em projetos de História (parte 1) 
 collection: lessons  
 layout: lesson  
 authors:
