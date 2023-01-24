@@ -96,33 +96,45 @@ Com isso, é possível recuperar e analisar todos os passos realizados por você
 
 #### Windows
 
-Para instalar o Git no Windows, acesse esse [link](https://git-scm.com/download/win) e baixe a versão mais recente do arquivo executável correspondente a arquitetura do seus computador (provavelmente 64-bits). Após a conclusão do download, clique com o botão direito do mouse no arquivo executável e selecione a opção "Executar como Administrador".
+Para instalar o Git no Windows, acesse esse [link](https://git-scm.com/download/win) e baixe a versão mais recente do arquivo executável correspondente a arquitetura do seu computador (provavelmente 64-bits). Após a conclusão do download, clique com o botão direito do mouse no arquivo executável e selecione a opção "Executar como Administrador".
 
-É preciso aceitar os termos de uso, e definir a pasta de instalação. Em seguida, é possível definir os componentes que serão instalados e se serão adicionados ícones no menu iniciar. Em seguida, o git pergunta qual será seu editor de texto padrão (eu manterei o Vim, mas você pode escolher o de sua preferência).
+É preciso aceitar os termos de uso e definir a pasta de instalação. Em seguida, é possível definir os componentes que serão instalados e se serão adicionados ícones no menu iniciar. 
 
-A próxima opção é sobre o padrão de nomeação dos branches em novos repositórios. Escolheremos a opção XXXXXXXXX e definiremos o nome do branch principal como *main*.
+![Componentes a serem instalados](win-comp.png)
 
-Por fim, é importante definir que o git será incluído no PATH do sistema, para que possa ser executado a partir de qualquer diretório. Para isso vamos escolher a segunda opção, "XXXXXXXXX"
+Na sequência o git pergunta qual será seu editor de texto padrão (eu manterei o *Vim*[^vim], mas você pode escolher o de sua preferência).
 
-As seguintes opções, manteremos como padrão, e clicaremos "Next" até a tela com a opção "Instalar".
+![Selecione editor de texto](win-editor.png)
+
+A próxima opção é sobre o padrão de nomeação dos *branches* em novos repositórios[^branches]. Escolheremos a opção *Override the default branch name for new repositories* e definiremos o nome do branch principal como *main*[^mainvmaster].
+
+![Nome do branch principal](win-branch.png)
+
+Por fim, é importante definir que o git será incluído no PATH do sistema, para que possa ser executado a partir de qualquer diretório. Para isso vamos escolher a segunda opção, *Git from the command line and also from 3rd-party software*
+
+![Incluir no PATH](win-path.png)
+
+As seguintes opções manteremos como padrão, e clicaremos "Next" até a tela com a opção "Instalar".
 
 #### Linux/MacOS
 
-Grande parte das distribuições Linux já vem com o Git instalado. Ainda assim, é muito fácil instalá-lo a partir do seu gerenciador de pacotes. Por exemplo, em distribuições baseadas no Debian/Ubuntu, a última versão estável por ser instalada com o comando:
+A instalação do Git em sistemas Linux e MacOs é muito simples, mas ao mesmo tempo nos oferece menos opções de configuração e é feita diretamente pelo terminal[^terminal], sem o auxílio de uma interface gráfica.
+
+Muitas distribuições Linux já vem com o Git instalado. Ainda assim, é muito fácil instalá-lo a partir do seu gerenciador de pacotes. Por exemplo, em distribuições baseadas no Debian/Ubuntu, a última versão estável pode ser instalada executando o seguinte comando no terminal:
 
 ```bash
 ~$ sudo apt install git
 ```
 
-Para uma lista completa de comandos para variadas distribuições linux, [clique aqui](https://git-scm.com/download/linux).
+Para uma lista completa de comandos para variadas distribuições Linux, [clique aqui](https://git-scm.com/download/linux).
 
-Assim, como Linux, a instalação do git no MacOs pode ser realizada de maneira simples com seu gerenciador de pacotes. Para instalar utilizando homebrew, basta executar o seguinte comando no terminal:
+Assim, como Linux, a instalação do git no MacOs pode ser realizada de maneira simples com seu gerenciador de pacotes. Para instalar utilizando [homebrew](https://brew.sh/), basta executar o seguinte comando no terminal:
 
 ```bash
 ~$ brew install git
 ```
 
-Para instalar utilizando MacPorts, o comando é o seguinte:
+Para instalar utilizando [MacPorts](https://www.macports.org/), o comando é o seguinte:
 
 ```bash
 ~$ sudo port install git
@@ -136,7 +148,7 @@ Após concluída a instalação, podemos perguntar ao nosso sistema qual versão
 ~$ git --version
 ```
 
-No meu computador, a informação retornado foi a seguinte:
+No meu computador, a informação retornada foi a seguinte:
 
 ```bash
 git version 2.34.1
@@ -159,12 +171,12 @@ Então, abra seu terminal, no Linux ou no MacOs, ou o Git Bash no Windows, e vam
 - Email
 
 ```bash
-~$ git config --global user.email "epthompson@hist.com"
+~$ git config --global user.email epthompson@hist.com
 ```
 
-Esses comandos estão solicitando que o Git acesse o arquivo de configuração global (`git config`), em seguida passamos a opção `--global`, definindo que as configurações valem para todos que utilizarem esse computador; por fim indicamos qual parâmetro queremos alterar, nesse caso, nome e e-mail do autor: `user.name` e `user.email`.
+Esses comandos estão solicitando que o Git acesse o arquivo de configuração global (`git config`). Em seguida passamos a opção `--global`, definindo que as configurações valem para todos que utilizarem esse computador; por fim indicamos qual parâmetro queremos alterar, nesse caso, nome e e-mail do autor: `user.name` e `user.email`.
 
-- Configurar o editor de texto: o git permite a definição do editor a ser utilizado para a escrita das mensagens de commit. Por padrão, o git utilizará o editor padrão do seu sistema operacional. No meu exemplo, definirei o Vim como editor padrão.
+- Configurar o editor de texto: o Git permite a definição do editor a ser utilizado para a escrita das mensagens de *commit*. Por padrão, o Git utilizará o editor padrão do seu sistema operacional. No meu exemplo, definirei o Vim como editor padrão.
 
 ```bash
 ~$ git config --global core.editor "vim"
@@ -176,11 +188,11 @@ Também é possível definir o nome do branch principal para novos repositórios
 ~$ git config --global init.defaultbranch main
 ```
 
-Lembrando que a instalação do Git no Windows já nos pediu para configurar o editor de texto e o nome do branch principal. Caso queira alterar essas configurações, basta executar os comandos acima no terminal.
+Lembrando que no Windows, o processo de instalação do Git já nos permitiu configurar o editor de texto e o nome do branch principal. Caso queira alterar essas configurações, basta executar os comandos acima no Git Bash.
 
 Você pode listar todas as configurações globais do seus computador com o comando `git config --global --list`.
 
-A seguinte saída deve ser exibida em no terminal:
+Uma saída parecida com essa deve ser exibida em sua tela:
 
 ```bash
 user.name=Edward Palmer Thompson
@@ -191,7 +203,7 @@ core.editor=vim
 
 ### Iniciar um repositório local Git
 
-Nessa lição, vamos criar um diretório vazio em nossa máquina chamado `projeto-de-pesquisa`. É nele que você vai testar os comandos do Git e acompanhar seu fluxo de trabalho. Para isso, você deve abrir o seu Terminal[^terminal] e criar o diretório no caminho que escolher. Por exemplo, se você pretende criar o diretório `projeto-de-pesquisa` no interior do diretório `Documentos`, você deve utilizar o comando `cd` (*change directory*) e especificar esse caminho. Sobre os comando básicos que serão utilizados aqui, como `cd`, `mkdir`, etc, veja a [lição do  Programming Historian sobre Bash]().
+Nessa lição, vamos criar um diretório vazio em nossa máquina chamado `projeto-de-pesquisa`. É nele que você vai testar os comandos do Git e acompanhar seu fluxo de trabalho. Para isso, você deve abrir o seu Terminal, no Linux e MacOS, ou Git Bash no Windows e criar o diretório no caminho que escolher. Por exemplo, se você pretende criar o diretório `projeto-de-pesquisa` no interior do diretório `Documentos`, você deve utilizar o comando `cd` (*change directory*) e especificar esse caminho. Sobre os comando básicos que serão utilizados aqui, como `cd`, `mkdir`, etc, veja a [lição do  Programming Historian sobre Bash](https://programminghistorian.org/en/lessons/intro-to-bash).
 
 ```bash
 ~$ cd ~/Documentos/
@@ -220,7 +232,7 @@ Para iniciar esse diretório como um repositório local Git, você deve executar
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git init
-Repositório vazio Git inicializado em /home/usuario/Documentos/projeto-de-pesquisa/.git/
+Repositório vazio Git inicializado em /home/proghist/Documentos/projeto-de-pesquisa/.git/
 ```
 
 A partir de agora, o seu diretório `projeto-de-pesquisa` será um repositório submetido ao controle de versões do Git. Para verificar isso, você pode executar o comando `ls -a` (*list all*), que lista todos os ficheiros e diretórios, inclusive os ocultos.
@@ -243,13 +255,13 @@ A estrutura de diretórios criada pelo Git é complexa e não será abordada a f
 .  ..  branches  config  description  HEAD  hooks  info  objects  refs
 ```
 
-Nesse conjunto de diretórios e arquivos o Git armazena as informações sobre o repositório: desde as alterações realizadas até os dados de configuração e fluxo de trabalho.
+Nesse conjunto de diretórios e arquivos, o Git armazena as informações sobre o repositório: desde as alterações realizadas até os dados de configuração e fluxo de trabalho.
 
 ### Comandos básicos
 
 Após iniciar seu repositório com o comando `git init`, podemos criar um novo ficheiro e iniciar o registro das alterações. Assim poderemos compreender com mais clareza o funcionamento do programa.
 
-Vamos criar um arquivo chamado `README.md`, com o conteúdo `# Exemplo para a lição` no interior de nosso diretório `projeto-de-pesquisa`. Você pode fazer isso de várias formas - com editores de texto, por exemplo. Aqui utilizarei o terminal e o comando `echo`. [^echo]
+Vamos criar um arquivo chamado `README.md`, com o conteúdo `# Exemplo para a lição`, no interior de nosso diretório de trabalho (*working directory*) `projeto-de-pesquisa`. Você pode fazer isso de várias formas - com editores de texto, por exemplo. Aqui utilizarei o terminal e o comando `echo`. [^echo] Você pode fazer o mesmo no Git Bash.
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ echo "# Exemplo para a lição" > README.md
@@ -294,8 +306,9 @@ Arquivos não monitorados: (utilize "git add <arquivo>..." para incluir o que se
 nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)	
 ```
 
+O Git nos informa que existe um ficheiro chamado `README.md` dentro do nosso diretório de trabalho que ainda não está sendo monitorado pelo sistema de controle de versões. Ou seja, o ficheiro ainda precisa ser adicionado ao repositório Git para que as alterações efetuadas nele sejam registradas.
+
 #### Git Add
-O Git nos informa que existe um ficheiro chamado `README.md` dentro do nosso diretório que ainda não está sendo monitorado pelo sistema de controle de versões. Ou seja, o ficheiro ainda precisa ser adicionado ao repositório Git para que as alterações efetuadas nele sejam registradas.
 
 O próprio Git nos informa o comando que devemos utilizar para registrar o ficheiro: `git add <arquivo>`. No nosso caso, devemos executar o seguinte:
 
@@ -316,7 +329,7 @@ Mudanças a serem submetidas:
 	new file:   README.md
 ```
 
-Mais uma vez percebemos que estamos no ramo `main` e ainda não realizamos nenhuma submissão (*commits*) para esse ramo. Entretanto, não existem mais ficheiros/arquivos no estágio *não monitorados*. Nosso ficheiro `README.md`mudou de status, agora está como um novo ficheiro (*new file*) estágio `Mudanças a serem submetidas`.
+Mais uma vez percebemos que estamos no ramo `main` e ainda não realizamos nenhuma submissão (*commits*) para esse ramo. Entretanto, não existem mais ficheiros no estágio *não monitorados* (*untracked files*). Nosso ficheiro `README.md`mudou de status, agora está como um novo ficheiro (*new file*) no estágio `Mudanças a serem submetidas` (*Changes to be commited*).
 
 [Explicar: `git rm --cached <arquivo>`. remove do index do git, mas mantém o arquivo no seu diretório de trabalho.]
 
@@ -324,7 +337,9 @@ Mais uma vez percebemos que estamos no ramo `main` e ainda não realizamos nenhu
 
 >Commits serve as checkpoints where individual files or an entire project can be safely reverted to when necessary. (Ram, 2013, p. 2)
 
-Agora, as alterações que realizamos estão preparadas para serem submetidas (*commited*) ao repositório. Para isso, usamos o comando `git commit`. É importante destacar a necessidade de incluir uma mensagem para cada *commit*. [Apontar isso como elemento central para essa lição]. Existem duas formas de incluir uma mensagem ao commit. A primeira delas é mais simples e é realizada diretamente no comando `commit`:
+Agora, as alterações que realizamos estão preparadas para serem submetidas (*commited*) ao repositório. Para isso, usamos o comando `git commit`. É importante destacar a necessidade de incluir uma mensagem para cada *commit*. São essas mensagens que servirão de base para a documentação de cada etapa do seu projeto de pesquisa. Ou seja, todas as alterações realizadas e selecionadas por você para serem registradas na linha do tempo gerenciada pelo Git deverão receber uma mensagem explicativa sobre tais alterações. Esse procedimento permite tanto a criação de um histórico detalhado das mudanças e decisões, suas razões e sentidos, como fomenta uma metodologia organizada e controlada, visto que cada passo tomado deve receber uma reflexão por parte do pesquisador.
+
+Existem duas formas de incluir uma mensagem ao commit. A primeira delas é mais simples e realizada diretamente no comando `commit`:
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git commit -m "Commit inicial"
@@ -334,11 +349,11 @@ Agora, as alterações que realizamos estão preparadas para serem submetidas (*
  create mode 100644 README.md
 ```
 
-Nesse caso, adicionamos a opção `-m` ao comando `commit` e em seguida passado o conteúdo da mensagem entre `"`. Essa opção é mais prática, mas possui limitações, como a impossibilidade de criar mensagens mais detalhadas e com quebras de linha.
+Nesse caso, adicionamos a opção `-m` (de mensagem) ao comando `commit` e em seguida passamos o conteúdo da mensagem entre aspas duplas (`"`). Essa opção é mais prática, mas possui limitações: impossibilidade de criar mensagens mais detalhadas, maiores do que 50 caracteres e com quebras de linha.
 
-Se desejarmos elaborar uma mensagem mais detalhada, utilizamos o comando `git commit`, sem a inclusão da opção `-m`. Nesse caso, o Git abrirá o editor de texto definido em suas configurações para que possamos escrever a mensagem. 
+Se desejarmos uma mensagem mais elaborada - o que para os objetivos dessa lição, é mais coerente -, utilizamos o comando `git commit`, sem a inclusão da opção `-m`. Nesse caso, o Git abrirá o editor de texto definido em suas configurações para que possamos escrever a mensagem. 
 
-Como já havíamos realizado o commit das alterações, o Git nos informa que não há nada a ser submetido:
+Como já havíamos realizado o commit das alterações antes e não realizamos nenhuma nova mudança, se executarmos o comando `git commit`, o Git nos informa que não há nada a ser submetido:
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git commit
@@ -352,9 +367,9 @@ Mas se ainda assim quisermos corrigir a mensagem do último commit, podemos util
 ~/Documentos/projeto-de-pesquisa$ git commit --amend
 ```
 
-O Git abrirá o editor de texto para que possamos editar a mensagem do último commit. Após a edição, basta salvar e fechar o editor. No meu caso, o editor é o `vim`. Para sair do editor, basta digitar `:wq` e pressionar a tecla `Enter`.[^vim] É importante destacas que ao configurar a mensagem de commit com o editor de texto, é possível definir o título e o corpo da mensagem. 
+O Git abrirá o editor de texto para que possamos editar a mensagem do último *commit*. Após a edição, basta salvar e fechar o editor. No meu caso, o editor é o `vim`. Para sair do editor, basta digitar `ESC + :wq` e pressionar a tecla `Enter`.[^vim] É importante destacas que ao configurar a mensagem de commit com o editor de texto, é possível definir o título e o corpo da mensagem. 
 
-O git considera a primeira linha da mensagem como título, e ele deve ter no máximo 50 caracteres. O restante da mensagem é considerado o corpo da mensagem e deve ser separado do título por uma linha em branco. Como no exemplo abaixo:
+O git considera a primeira linha da mensagem como título, e ele deve ter no máximo 50 caracteres. O restante da mensagem é considerado o corpo e deve ser separado do título por uma linha vazia. Como no exemplo abaixo:
 
 ```bash
 Criação de README.md
@@ -371,7 +386,7 @@ Após salvar e fechar o editor, o Git nos informa que o commit foi realizado com
  create mode 100644 README.md
 ```
 
-Pronto, criamos nosso ficheiro `README.md` e o adicionamos ao repositório Git com sucesso. Para isso, utilizamos o comando `git add` para adicionar o ficheiro ao *index* do Git [^git-index], e o comando `git commit` para submeter as alterações ao repositório. Vimos também como incluir a mensagem de commit diretamente na linha de comando (`git commit -m "mensagem"`) e como editar a mensagem do último commit (`git commit --amend`).
+Pronto, criamos nosso ficheiro `README.md` e o adicionamos ao repositório Git com sucesso. Para isso, utilizamos o comando `git add` para adicionar o ficheiro ao *index* do Git [^git-index], e o comando `git commit` para submeter as alterações ao repositório. Vimos também como incluir a mensagem de *commit* diretamente na linha de comando (`git commit -m "mensagem"`) e como editar a mensagem do último *commit* (`git commit --amend`).
 
 Se executarmos git status novamente, veremos que não há mais nada a ser submetido:
 
@@ -385,13 +400,11 @@ nothing to commit, working tree clean
 
 ### Estágios de um arquivo
 
-Agora que já sabemos como adicionar um ficheiro ao repositório Git e como submeter alterações acompanhadas de mensagens, vamos detalhar e analisar os diferentes estágios de um arquivo no Git. Para isso vamos criar um arquivo novo chamado `resumo.txt` e salvá-lo no diretório `projeto-de-pesquisa`. 
+Agora que já sabemos como adicionar um ficheiro ao repositório Git e como submeter alterações acompanhadas de mensagens, vamos detalhar e analisar os diferentes estágios de um arquivo no Git. Para isso vamos criar um arquivo novo chamado `resumo.txt` e salvá-lo no diretório `projeto-de-pesquisa`. Utilizarei o mesmo método que utilizei para criar o arquivo `README.md`, utilizando o comando `echo`, mas você pode criar esse ficheiro utilizando qualquer outro método:
 
 ```bash
-~/Documentos/projeto-de-pesquisa$ touch resumo.txt
+~/Documentos/projeto-de-pesquisa$ echo "Resumo" >> resumo.txt
 ```
-
-A ferramenta `touch` permite criar um ficheiro com o nome especificado, mas você pode criar esse ficheiro utilizando qualquer outro método. 
 
 Se listarmos o conteúdo do diretório `projeto-de-pesquisa` veremos que agora existem dois ficheiros:
 
@@ -412,8 +425,7 @@ Arquivos não monitorados:
 nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
 
 ```
-
-Para preparar o ficheiro, utilizamos `git add <nome do ficheiro>`.
+Ou seja, o ficheiro `resumo,txt` está no estágio **não monitorado** (*untracked*) e precisa ser **preparado**(*staged*). Para preparar o ficheiro, utilizamos `git add <nome do ficheiro>`. Ou seja, estamos solicitando ao Git que ele inclua o ficheiro no *index*.
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git add resumo.txt
@@ -429,22 +441,27 @@ Mudanças a serem submetidas:
 	new file:   resumo.txt
 ```
 
-Ou seja, `resumo.txt` é um novo ficheiro que está pronto para ser submetido ao index do Git. 
+Ou seja, `resumo.txt` é um novo ficheiro que está pronto para ser submetido ao Git. 
 
 ```bash
-~/Documentos/projeto-de-pesquisa$ git commit -m "Criação do ficheiro para o resumo do tutorial"
+~/Documentos/projeto-de-pesquisa$ git commit 
+```
+
+O editor de texto será aberto e você pode inserir a mensagem, por exemplo, "Criação do ficheiro para o resumo do tutorial". Após salvar e fechar o editor, o Git nos informa que o commit foi realizado com sucesso:
+
+```bash
 [main 48f3c9d] Criação do ficheiro para o resumo do tutorial
- 1 file changed, 0 insertions(+), 0 deletions(-)
+ 1 file changed, 1 insertions(+)
  create mode 100644 resumo.txt
 ```
 
-A mensagem retornada nos informa que um ficheiro foi criado, sem nenhuma inserção ou exclusão de conteúdos.
+A mensagem retornada nos informa que um ficheiro foi alterado, e uma inserção realizada em seu conteúdo.
 
-A partir de agora, o ficheiro `resumo.txt`, assim como o `README.md`, está inserido no repositório Git que realizado o controle de versões, ou seja, registra e avalia todas as mudanças que são realizadas. 
+A partir de agora, o ficheiro `resumo.txt`, assim como o `README.md`, está inserido no repositório Git que realiza o controle de versões, ou seja, registra e avalia todas as mudanças que são realizadas. 
 
 Vamos alterar o conteúdo dos dois ficheiros para entendermos esse processo.
 
-Primeiro vamos inserir uma frase no ficheiro `resumo.txt`. Para isso você pode abri-lo em qualquer editor de texto, escrever a frase "Resumo: Esse tutorial pretende apresentar as funções básicas do Git." e salvá-lo. Depois, abra o ficheiro `README.md` e inclua a frase "Lição para o Programming Historian", salvando em seguida. Realizamos alterações em dois ficheiros do nosso diretório de trabalho, ambos registrado e monitorados pelo Git. Vejamos quais informações o comando status nos apresenta:
+Primeiro vamos inserir uma frase no ficheiro `resumo.txt`. Para isso você pode abri-lo em qualquer editor de texto, escrever a frase "Esse tutorial pretende apresentar as funções básicas do Git." e salvá-lo. Depois, abra o ficheiro `README.md` e inclua a frase "Lição para o Programming Historian", salvando em seguida. Realizamos alterações em dois ficheiros do nosso diretório de trabalho, ambos registrados e monitorados pelo Git. Vejamos quais informações o comando *status* nos apresenta:
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git status
@@ -466,7 +483,7 @@ A mensagem informa que dois ficheiros foram modificados e ainda não foram prepa
 
 É possível especificar que todos os ficheiros presentes no diretório de trabalho sejam preparados ao mesmo tempo, utilizando `git add .`.
 
-Agora que preparamos as mudanças para submissão, os ficheiros aparecem com o status **modificados** (*modified*):
+Agora que preparamos as mudanças para submissão, os ficheiros aparecem com o status **Mudanças a serem submetidas** (*Changes to be commited*):
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git status
@@ -499,16 +516,17 @@ Atualização dos dados da lição
 #       modified:   resumo.txt
 #
 ``` 
-[Salvar  e fechar o editor]
+
+Após salvar e fechar o editor, o Git nos informa que o commit foi realizado com sucesso:
 
 ```bash
 [main 572f33f] Atualização dos dados da lição
  2 files changed, 2 insertions(+)
 ```
 
-Resumindo: toda vez que um novo ficheiro for criado ele precisa ser preparado (`git add`) e submetido (`git commit`), as submissões devem vir acompanhadas de uma mensagem explicativa sobre o que foi feito. Cada alterações realizada em qualquer ficheiro presente no diretório de trabalho deve ser também preparada e submetida com uma mensagem clara e explicativa. É possível consultar a condição do diretório de trabalho com o `git status`, o que nos possibilita perceber com clareza quais ficheiros são novos, estão modificados ou ainda precisam ser preparados e submetidos.
+Resumindo: toda vez que um novo ficheiro for criado ele precisa ser preparado (`git add`) e submetido (`git commit`), as submissões devem vir acompanhadas de uma mensagem explicativa sobre o que foi feito. Cada alteração realizada em qualquer ficheiro presente no diretório de trabalho que já esteja sendo monitorado pelo Git deve ser também preparada e submetida com uma mensagem clara e explicativa. É possível consultar a condição do diretório de trabalho com o `git status`, o que nos possibilita perceber com clareza quais ficheiros são novos, quais estão modificados, quais estão preparados ou não para submissão.
 
-## Como escrever uma mensagem de commit eficiente?
+## Como escrever uma mensagem de *commit* eficiente?
 
 Parte significativa do nosso trabalho de pesquisa, escrita e ensino atualmente é mediado por ferramentas digitais, ao mesmo tempo que dados digitais se tornam cada vez mais centrais para as Ciências Sociais e Humanas. Sejam buscas on-line em repositórios, trocas de mensagens por aplicativos, leitura de informações com editores de texto e planilhas, seja a aplicação de linguagem de programação para análise textual, visualização de dados entrou tantas outras possibilidades. A seleção, coleta, organização e tratamento dos dados que pretendemos utilizar em pesquisa, artigos ou aulas nos demanda atualmente cuidados diferentes e adicionais daqueles para os quais fomos treinados em nossa formação anterior à virada digital. Nas palavras de Fridlunnd, Oiva e Paju:
 
@@ -722,6 +740,8 @@ Ram, Karthik. “Git can facilitate greater reproducibility and increased transp
 ---
 
 [^terminal]: Ver a melhor forma de falar sobre ele. Indicar a lição sobre bash no PH.
+[^branches]: Falaremos mais detalhadamento sobre branches e fluxo de trabalho com eles na parte dois dessa lição.
+[^mainvmaster]: explicar. link sobre.
 [^edit]: pode ser acessado através do comando `git config --global --edit`.
 [^echo]: Explorar melhor o comando echo.
 [^vim]: Ver a lição sobre o editor de texto vim.
