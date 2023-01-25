@@ -654,10 +654,10 @@ Date:   Thu Jan 5 11:47:12 2023 +0000
 Ainda utilizando o comando `git log`, também é possível formatar as informações que aparecem na tela. Podemos realizar essa configuração incluindo a opção `--pretty`. Podemos formatar a saída do `git log`  para visualizarmos a hash, o autor, a data e o título do commit em uma única linha. Para isso, o comando seria o seguinte:
 
 ```bash
-~/Documentos/projeto-de-pesquisa$ git log --pretty=format:"%h,%an,%ad,%s"
+~/Documentos/projeto-de-pesquisa$ git log --pretty=format:"%h,%an,%as,'%s','%b'"
 ```
 
-Ou seja, solicitei que o Git apresentasse o log, mas que o formatasse com a opção `--pretty`. Para tanto, passei a opção `format` e passei uma string com as informações que desejo. Em nosso exemplo, a string é composta por `%h`, que representa a hash do commit, `%an`, que representa o autor do commit, `%ad`, que representa a data do commit e `%s`, que representa o título do commit. Existem muitas outras opções de formatação que podem ser acessadas na [página de documentação do Git](https://git-scm.com/docs/git-log/pt_BR). Segue uma tabela com algumas delas:
+Ou seja, solicitei que o Git apresentasse o log, mas que o formatasse com a opção `--pretty`. Para tanto, passei a opção `format` e passei uma string - entre aspas duplas - com as informações que desejo. Em nosso exemplo, a string é composta por `%h`, que representa a hash do commit, `%an`, que representa o autor do commit, `%as`, que representa a data do commit no formato AAAA-MM-DD, `%s`, que representa o título do commit e `%b` que é o corpo da mensagem, caso exista[^log-csv]. Existem muitas outras opções de formatação que podem ser acessadas na [página de documentação do Git](https://git-scm.com/docs/git-log/pt_BR). Segue uma tabela com algumas delas:
 
 |Formato|Descrição|
 |-------|---------|
@@ -733,3 +733,4 @@ Ram, Karthik. “Git can facilitate greater reproducibility and increased transp
 [^torvalds]: quem?
 [^github]: explicar
 [^gitignore]: explicar
+[^log-csv]: Perceba que coloquei os últimos dois elementos entre aspas simples, o que serve como um delimitador do texto que será retornado. Ou seja, possíveis vírgulas presentes no título ou no corpo da mensagem não serão entendidas como separadores de uma nova coluna por programas de edição de planilhas. Para que esse padrão funcione bem, é preciso lembrar de não incluir aspas simples nos títulos ou mensagens de *commits*.
