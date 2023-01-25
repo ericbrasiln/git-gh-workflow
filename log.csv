@@ -1,0 +1,196 @@
+289548b,Eric Brasil,2023-01-24,"Atualização do título","- Informei que é a parte 1
+"
+42ed92e,Eric Brasil,2023-01-24,"Atualização: finalização","- Revisão geral
+- Atualização do tópico git log
+- inclusão de infos sobre parte 2
+"
+13cfd13,Eric Brasil,2023-01-24,"Atualização da lição: revisão","- Revisão do tópico "Usando o Git"
+"
+b7ac8b9,Eric Brasil,2023-01-20,"Atualização: Instalações e Imagens","- Instalação no Windows
+- Instalação no linux e no MacOs
+- Imagens de instalação no Windows
+"
+e83cae3,Eric Brasil,2023-01-16,"Atualização da lição","- O que é o git
+- correções gerais
+"
+b06d0a7,Eric Brasil,2023-01-11,"Correção da parte um",""
+3d2edfb,Eric Brasil,2023-01-10,"Atualização da lição: parte 1","- SCV
+- centralizado x distribuído
+- citações
+"
+ee45371,Eric Brasil,2023-01-10,"Inclusão de imagens sobre SCV","- Centralizado e Distribuído a partir do Cit Pro
+"
+9ec7a6d,Eric Brasil,2023-01-05,"Atualização da Lição: refs de Ram, 2013","- Inclusão de citações de Ram, 2013 a partir de fichamento realizado no
+  Zotero
+"
+d8b2fd6,Eric Brasil,2023-01-05,"Inclusão de imagem sobre branch workflow","- Inclusão do arquivo da imagem sobre branch workflow retirada de Ram, 2013 em formato png
+"
+0e5c10d,Eric Brasil,2023-01-05,"Atualização da lição: saídas e log","- atualização das saídas dos comandos a partir de um novo repositório,
+  agora com user e email de exemplo da lição;
+- Rascunho do tópico `git log`
+"
+a33cc3f,Eric Brasil,2023-01-04,"Atualização da lição: ideia para parte 1","- Inclusão de citações e pontos para serem desenvolvidos na primeira
+  parte da lição
+- Inclusão de algumas leituras adicionais
+"
+266a719,Eric Brasil,2023-01-04,"Atualização da lição: mensagem de commit","- Rascunho de explicação sobre a importância da mensagem de commit
+- Inclusão de mais opções no tópico sobre `git log`
+"
+f95a340,Eric Brasil,2023-01-03,"Inclusão do tópico 'estágios de um arquivo'","- criação e modificação
+- mensagem de commit
+"
+64b7667,Eric Brasil,2022-12-20,"Atualização da lição: status, add, commit, amend","- git status
+- git add
+- git commit; -m; --amend
+"
+1106fad,Eric Brasil,2022-12-15,"Atualização da lição","- iniciar repositório
+- criar readme.md
+"
+2c30196,Eric Brasil,2022-11-08,"Atualização da lição: git.config",""
+9bed34b,Eric Brasil,2022-10-04,"Atualização da proposta de lição","- Inclusão do ficheiro de modelo
+- Início da escrita da lição: comandos iniciais
+"
+b0e4b51,Eric Brasil,2022-10-03,"Atualização da versão pandoc do relatório","- Correção de lista numerada nas propostas
+- criação de versão atualizada do pdf
+"
+8431c7d,Eric Brasil,2022-10-03,"Atualização do conograma",""
+b00ebec,Eric Brasil,2022-10-03,"Atualização das informações dos arquivos README.md",""
+dbdd5ae,Eric Brasil,2022-10-03,"Atualização dos hyperlinks",""
+6fbd6b6,Eric Brasil,2022-10-03,"Merge pull request #24 from ericbrasiln/23-relatório-da-fase-2","Relatório da fase 2"
+9be915a,Eric Brasil,2022-10-03," Inclusão de versão em pdf da proposta de lição",""
+c04fe8d,Eric Brasil,2022-10-03," Inclusão de versão em pdf do relatório",""
+874f9f3,Eric Brasil,2022-10-03,"Criação de versão do relatório com front matter e marcações expecíficas para exportar com pandoc",""
+06a7d58,Eric Brasil,2022-10-03,"Conclusão da versão em md",""
+f6e6094,Eric Brasil,2022-10-03,"Atualização jekyll e org",""
+3562c7a,Eric Brasil,2022-10-03,"Atualização do tópico ph-submissions",""
+94de97a,Eric Brasil,2022-09-30,"mudança dos nomes das pastas",""
+d94f4b1,Eric Brasil,2022-09-30,"Inclusão de csv e atualização da bib do Site",""
+2db7895,Eric Brasil,2022-09-30,"Correção de linhas extras",""
+aa44786,Eric Brasil,2022-09-30,"Inclusão de relatórios e csv do Zotero e git logs",""
+1ad197c,Eric Brasil,2022-09-30,"Atualização do relatório","- Finalização do levantamento bibliográfico
+- Análise do Site
+- Correções gerais
+"
+2396771,Eric Brasil,2022-09-27,"Atualização do relatório - análise Scholar","- Análise dos dados gerados com a busca no Google Scholar
+"
+299a0d6,Eric Brasil,2022-09-27,"Criação de png de cocitações entre autores",""
+76800bc,Eric Brasil,2022-09-27,"Atualização do relatório","- Finalização da análise da etapa 1 do levantamento bibliográfico.
+"
+9f7e88d,Eric Brasil,2022-09-27,"Atualização do tópico 'levantamento bibliográfico'","Avanço na escrita da análise do tópico levantamento bibliográfico no
+relatório.
+"
+44033a1,Eric Brasil,2022-09-27,"Criação do arquivo sa lição sobre git","- Título
+- Inclusão da charge de PhdComics notFinal.doc
+"
+fb9f906,Eric Brasil,2022-09-27,"Atualização do relatório","- Introdução
+- Levantamento bibliográfico (parcial)
+"
+d305fe8,Eric Brasil,2022-09-26,"Atualização do relatório incluíndo dados do git log",""
+70ba180,Eric Brasil,2022-09-26,"Criação de arquivos de log dos commits","- Criação de log completo com gráfico (20/07 a 23/09)
+- Criação de versão online em txt e csv (20/07 a 23/09)
+"
+80d05d8,Eric Brasil,2022-09-22,"Atualização do readme","Atualização da estrutura do diretório"
+84680b7,Eric Brasil,2022-09-21,"Merge pull request #22 from ericbrasiln/15-workflow-jekyll","Atualizções referentes à issue #15 
+Closes #15 "
+0c3ac3e,Eric Brasil,2022-09-21,"Criação do arquivo para escrita do relatório da fase 2.",""
+71a1ca6,Eric Brasil,2022-09-21,"Inclusão do arquivo .bib referente à coleção jekyll no Zotero",""
+8862ea5,Eric Brasil,2022-09-21,"Atualização do cronograma",""
+2401bd5,Eric Brasil,2022-09-21,"Atualização dos títulos das pastas",""
+45966a1,Eric Brasil,2022-09-21,"Criação da pasta e documentos referentes à análise do jekyll",""
+486f0af,Eric Brasil,2022-09-21,"Atualização dos nomes das pastas e subdivisão da pasta erros_sugestoes",""
+8a2b2b5,Eric Brasil,2022-09-21,"Alteração do nome da pasta de bib para bibliography",""
+4eb8239,Eric Brasil,2022-09-21,"Atualização do cronograma",""
+30f4dab,Eric Brasil,2022-09-16,"Inclusão dos relatórios de erros e propostas","- Erros em diretrizes do site e do repositório ph-submissions
+- Sugestões relativas aos branches, index, página inicial da
+  organização.
+- Análise das pastas do ph-submission
+- Proposta de conjunto de Issues templates
+- Criação do formulário de proposta de lição inétida
+"
+69e0939,Eric Brasil,2022-09-16,"Exclusão de PDFs duplicados","- Exclusão de pdfs repetidos na pasta de análise do qualcoder
+"
+ad1de54,Eric Brasil,2022-09-16,"Atualização do cronograma","- atualização das datas
+- atualização das atividades realizadas
+"
+396ca2b,Eric Brasil,2022-09-06,"Merge pull request #21 from ericbrasiln/14-ph-submissions","Inclusão da análise do ph-submission"
+71d8a17,Eric Brasil,2022-09-06,"Inclusão da análise do ph-submission","- Inclusão do arquivo .bib com os dados e análises das páginas e
+  informações que compõe o repositórios ph-submissions.
+"
+cfa5302,Eric Brasil,2022-09-02,"Correção do caminho da img da biblioteca",""
+1befb2d,Eric Brasil,2022-09-01,"Merge pull request #20 from ericbrasiln/18-biblioteca-online-no-zotero","Informações sobre a bib online no Zotero"
+57c2634,Eric Brasil,2022-09-01,"Informações sobre a bib online no Zotero","- Atualização do README.md incluíndo dados sobre as pastas do
+  repositório e sobre a biblioteca online no Zotero;
+- Criação da pasta img/ e inclusão do logo da biblioteca online
+"
+364df51,Eric Brasil,2022-09-01,"Merge pull request #19 from ericbrasiln/16-organização-proghist","Análise do perfil da orgnização no GH"
+2abbede,Eric Brasil,2022-09-01,"Análise do perfil da orgnização no GH","- Inclusão da pasta com arquivo .bib referente à coleção na biblioteca
+  do Zotero com a página inicial da organização no GH, e as páginas das
+equipes
+"
+d708da1,Eric Brasil,2022-08-31,"Merge pull request #17 from ericbrasiln/12-diretrizes-site","Análise das diretrizes do Site"
+1626ce7,Eric Brasil,2022-08-31,"Análise das diretrizes do Site","Inclusão da pasta com o arquivo .bib incluíndo as notas e etiquetas da
+análise do Site no Zotero
+"
+bfb9965,Eric Brasil,2022-08-23,"Merge pull request #13 from ericbrasiln/ericdhlab/issue9","Ericdhlab/issue9"
+0461f1b,Eric Brasil,2022-08-23,"Relatórios gerados no QualCoder","- codebooks, frequências de códigos, relatórios de codificação
+- novos backups do projeto
+"
+35032c0,Eric Brasil,2022-08-23,"Atualização do projeto no QualCoder","- Finalização da codificação
+"
+5e19d91,Eric Brasil,2022-08-23,"Criação da pasta para projeto o QualCoder","- Criaçã do projeto e inserção das publicações;
+- primeiros relatórios: graph dos códigos, codebook, frequencias
+- pasta com todas as publicações em pdf
+"
+a449af8,Eric Brasil,2022-08-23,"Atualiação do README.md","- Inclusão da informação do QualCoder para análise
+"
+ed71858,Eric Brasil,2022-08-17,"Merge pull request #10 from ericbrasiln/levantamento-bib","Levantamento-bib"
+f521ebf,Eric Brasil,2022-08-17,"Dados e visualizações com bibliometrix","Inclusão dos diretórios com dados e visualizações geradas a partir dos dados do levantamento realizado
+no scopus através do app biblioshiny o pacote bibliometrix.
+"
+0f5d699,Eric Brasil,2022-08-17,"Atualização do bib/README.md","Inclusão das informações sobre metodologia  do levantamento bibliográfico:
+
+- Parâmetros gerais;
+- Etapas de busca;
+- Etapas de Análise
+"
+64e8869,Eric Brasil,2022-08-17,"Atualização do cronograma","Inclusão da etapa do levantamento bibliográfico
+"
+f0574fe,Eric Brasil,2022-08-16,"Criação do script do Bibliometrix","Criação do script em R para rodar a função biblioshiny do bibliometrix.
+Com ela podemos utilizar o bibliometrix acom um app no browser.
+"
+74d20e2,Eric Brasil,2022-08-16,"Atualização da busca no Scopus","Relatório da nova busca:
+
+1. site: [https://www.scopus.com](https://www.scopus.com)
+
+2. Logado com a conta de estudante da NOVA
+
+3. data: 2022-08-16
+
+4. parâmetro: REF ( "programming Historian" )
+
+5. Resultado: 130 documentos
+
+    1. journal: 86
+
+    2. conference proceedings: 25
+
+    3. Book: 13
+
+    4. book series: 6
+"
+c9b1e20,Eric Brasil,2022-08-11,"Criação do README.md","Criação do readme para a pasta referente ao levantamento bibliográfico
+"
+66783db,Eric Brasil,2022-08-10,"Merge pull request #8 from ericbrasiln/ericdhlab/issue6","Ericdhlab/issue6"
+4ad6538,Eric Brasil,2022-08-10,"Estruturar pontos para estudo dos repos do PH Fixes #6",""
+7466939,Eric Brasil,2022-08-04,"Criação da pasta com dados relativos ao levantament bibliográfico","Nessa pasta foram inseridos arquivos .bib das buscas iniciais no scholar e scopus.
+"
+a250045,Eric Brasil,2022-08-04,"Criação do doc de estrutura de análise","Criação do documento relativo à elaboração da estrutura da análise.
+"
+bef4680,Eric Brasil,2022-08-01,"Merge pull request #5 from ericbrasiln/ericdhlab/issue1","Ericdhlab/issue1and2"
+ebc416c,Eric Brasil,2022-08-01,"Organizar repositório Fixes #1 e Incluir documentos da capacitação #2",""
+8cd6ab1,Eric Brasil,2022-08-01,"Organizar repositório Fixes #1",""
+5a7e747,Eric Brasil,2022-08-01,"Merge pull request #4 from ericbrasiln/pr-template","Create PULL_REQUEST_TEMPLATE"
+c05f09e,Eric Brasil,2022-08-01,"Merge pull request #3 from ericbrasiln/issue-template","Update issue templates"
+0a741e0,Eric Brasil,2022-08-01,"Create PULL_REQUEST_TEMPLATE","Criação do template padrão para criação de PR"
+5505d8d,Eric Brasil,2022-08-01,"Update issue templates","Criação do template padrão de issues"
+a93e12a,Eric Brasil,2022-07-20,"Initial commit",""
