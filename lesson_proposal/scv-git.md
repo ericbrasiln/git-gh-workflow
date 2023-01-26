@@ -30,7 +30,7 @@ No final deste tutorial os participantes devem estar aptos a:
 
 Quem nunca passou por isso?
 
-{% include figure.html filename="phdcomics-final-doc" caption="Figura 1: Cham, Jorge. ['PHD Comics: notFinal.doc'](https://phdcomics.com/comics/archive/phd101212s.gif). Acessado 26 de setembro de 2022." %}
+{% include figure.html filename="phdcomics-final-doc" caption="Cham, Jorge. ['PHD Comics: notFinal.doc'](https://phdcomics.com/comics/archive/phd101212s.gif). Acessado 26 de setembro de 2022." %}
 
 É bastante comum em nosso processo de escrita alterar ficheiros constantemente. Inclusões, exclusões, revisões acompanham nosso trabalho acadêmico. Não apenas ao escrevermos um manuscrito, mas também durante a elaboração e execução de projetos de pesquisa: incluímos fontes digitalizadas, imagens, criamos documentos com ideias e fragmentos de análises, geramos planilhas e bancos de dados, etc.
 
@@ -56,11 +56,11 @@ Os primeiros SCVs possuíam um modelo centralizado. Ou seja, o repositório prin
 
 Porém, as desvantagens principais consistem justamente no seu caráter centralizado: caso o servidor tenha algum problema, todo os dados podem ser perdidos, visto que toda a história do projeto está preservada em apenas um local.
 
-{% include figure.html filename="centralized.png" caption="Figura 2: Controle de versão centralizado. A partir de ['Chacon e Straub, Pro Git, 2014'](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control). Acessado 10 de janeiro de 2023." %}
+{% include figure.html filename="centralized.png" caption="Controle de versão centralizado. A partir de ['Chacon e Straub, Pro Git, 2014'](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control). Acessado 10 de janeiro de 2023." %}
 
 Os SCVs distribuídos têm outra abordagem. Nas palavras de Chacon e Strauv, "cada clone [de um repositório de SCV distribuído] é realmente um *backup* completo de todos os dados" (Chacon e Straub, 2014, p. 12)
 
-{% include figure.html filename="distributed.png" caption="Figura 3: Controle de versão distribuído. A partir de ['Chacon e Straub, Pro Git, 2014'](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control). Acessado 10 de janeiro de 2023." %}
+{% include figure.html filename="distributed.png" caption="Controle de versão distribuído. A partir de ['Chacon e Straub, Pro Git, 2014'](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control). Acessado 10 de janeiro de 2023." %}
 
 ## O que é o Git?
 
@@ -100,19 +100,19 @@ Para instalar o Git no Windows, acesse esse [link](https://git-scm.com/download/
 
 É preciso aceitar os termos de uso e definir a pasta de instalação. Em seguida, é possível definir os componentes que serão instalados e se serão adicionados ícones no menu iniciar. 
 
-![Componentes a serem instalados](win-comp.png)
+{% include figure.html filename="win-comp.png" caption="Instalação no Windows: componentes a serem instalados" %}
 
 Na sequência o git pergunta qual será seu editor de texto padrão (eu manterei o *Vim*[^vim], mas você pode escolher o de sua preferência).
 
-![Selecione editor de texto](win-editor.png)
+{% include figure.html filename="win-editor.png" caption="Instalação no Windows: selecione editor de texto" %}
 
 A próxima opção é sobre o padrão de nomeação dos *branches* em novos repositórios[^branches]. Escolheremos a opção *Override the default branch name for new repositories* e definiremos o nome do branch principal como *main*[^mainvmaster].
 
-![Nome do branch principal](win-branch.png)
+{% include figure.html filename="win-branch.png" caption="Instalação no Windows: nome do branch principal" %}
 
 Por fim, é importante definir que o git será incluído no PATH do sistema, para que possa ser executado a partir de qualquer diretório. Para isso vamos escolher a segunda opção, *Git from the command line and also from 3rd-party software*
 
-![Incluir no PATH](win-path.png)
+{% include figure.html filename="win-path.png" caption="Instalação no Windows: incluir no PATH" %}
 
 As seguintes opções manteremos como padrão, e clicaremos "Next" até a tela com a opção "Instalar".
 
@@ -344,7 +344,7 @@ Existem duas formas de incluir uma mensagem ao commit. A primeira delas é mais 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git commit -m "Commit inicial"
 
-[main (root-commit) 861b527] Commit inicial
+[main (root-commit) 254e395] Commit inicial
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ```
@@ -380,8 +380,8 @@ Este commit cria o arquivo README.md com o objetivo de explicar o funcionamento 
 Após salvar e fechar o editor, o Git nos informa que o commit foi realizado com sucesso:
 
 ```bash
-[main 93a5660] Criação de README.md
- Date: Thu Jan 5 11:47:12 2023 +0000
+[main d3fc906] Criação de README.md
+ Date: Thu Jan 26 11:49:25 2023 +0000
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ```
@@ -450,8 +450,8 @@ Ou seja, `resumo.txt` é um novo ficheiro que está pronto para ser submetido ao
 O editor de texto será aberto e você pode inserir a mensagem, por exemplo, "Criação do ficheiro para o resumo do tutorial". Após salvar e fechar o editor, o Git nos informa que o commit foi realizado com sucesso:
 
 ```bash
-[main 48f3c9d] Criação do ficheiro para o resumo do tutorial
- 1 file changed, 1 insertions(+)
+[main 29ffe51] Criação do ficheiro para o resumo do tutorial
+ 1 file changed, 1 insertion(+)
  create mode 100644 resumo.txt
 ```
 
@@ -461,7 +461,7 @@ A partir de agora, o ficheiro `resumo.txt`, assim como o `README.md`, está inse
 
 Vamos alterar o conteúdo dos dois ficheiros para entendermos esse processo.
 
-Primeiro vamos inserir uma frase no ficheiro `resumo.txt`. Para isso você pode abri-lo em qualquer editor de texto, escrever a frase "Esse tutorial pretende apresentar as funções básicas do Git." e salvá-lo. Depois, abra o ficheiro `README.md` e inclua a frase "Lição para o Programming Historian", salvando em seguida. Realizamos alterações em dois ficheiros do nosso diretório de trabalho, ambos registrados e monitorados pelo Git. Vejamos quais informações o comando *status* nos apresenta:
+Primeiro vamos inserir uma frase no ficheiro `resumo.txt`. Para isso você pode abri-lo em qualquer editor de texto, escrever a frase "Esse tutorial pretende apresentar as funções básicas do Git." e salvá-lo. Depois, abra o ficheiro `README.md` e inclua a frase "Lição para o Programming Historian.", salvando em seguida. Realizamos alterações em dois ficheiros do nosso diretório de trabalho, ambos registrados e monitorados pelo Git. Vejamos quais informações o comando *status* nos apresenta:
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git status
@@ -504,7 +504,7 @@ Para submeter essas mudanças é preciso utilizar o comando *commit*. Podemos fa
 ```vim
 Atualização dos dados da lição
 
-- Inclusão de autoria no README.md
+- Inclusão do nome do Programmig Historian no README.md
 - Atualização do texto em resumos.txt
 
 # Please enter the commit message for your changes. Lines starting
@@ -520,8 +520,8 @@ Atualização dos dados da lição
 Após salvar e fechar o editor, o Git nos informa que o commit foi realizado com sucesso:
 
 ```bash
-[main 572f33f] Atualização dos dados da lição
- 2 files changed, 2 insertions(+)
+[main 5904720] Atualização dos dados da lição
+ 2 files changed, 3 insertions(+), 1 deletion(-)
 ```
 
 Resumindo: toda vez que um novo ficheiro for criado ele precisa ser preparado (`git add`) e submetido (`git commit`), as submissões devem vir acompanhadas de uma mensagem explicativa sobre o que foi feito. Cada alteração realizada em qualquer ficheiro presente no diretório de trabalho que já esteja sendo monitorado pelo Git deve ser também preparada e submetida com uma mensagem clara e explicativa. É possível consultar a condição do diretório de trabalho com o `git status`, o que nos possibilita perceber com clareza quais ficheiros são novos, quais estão modificados, quais estão preparados ou não para submissão.
@@ -570,24 +570,24 @@ Para recuperarmos as informações submetidas ao repositório local, podemos uti
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git log
-commit 572f33fbe94ee6612b29be5bbee81d6672c162fa (HEAD -> main)
+commit 59047209f8e53290b2226304a601d15a223af08e (HEAD -> main)
 Author: Edward Palmer Thompson <epthompson@hist.com>
-Date:   Thu Jan 5 12:01:16 2023 +0000
+Date:   Thu Jan 26 11:55:21 2023 +0000
 
     Atualização dos dados da lição
     
-    - Inclusão de autoria no README.md
+    - Inclusão do nome do Programming Historian no README.md
     - Atualização do texto em resumos.txt
 
-commit 48f3c9d3e7e419de8f29a58211dc7e97957c7b2f
+commit 29ffe5182a8ace0b863392cf23072f5b15db4061
 Author: Edward Palmer Thompson <epthompson@hist.com>
-Date:   Thu Jan 5 11:50:41 2023 +0000
+Date:   Thu Jan 26 11:52:50 2023 +0000
 
     Criação do ficheiro para o resumo do tutorial
 
-commit 93a56606662ee3f37846d9623fb03d29b2f21135
+commit d3fc9068bd0dd9b3d7c6c464e3db08a6f15c268d
 Author: Edward Palmer Thompson <epthompson@hist.com>
-Date:   Thu Jan 5 11:47:12 2023 +0000
+Date:   Thu Jan 26 11:49:25 2023 +0000
 
     Criação de README.md
     
@@ -599,10 +599,10 @@ Podemos perceber que o `git log` nos retorna a lista de *commits* realizados no 
 Em sua primeira linha, temos a seguinte informação:
 
 ```bash
-commit 572f33fbe94ee6612b29be5bbee81d6672c162fa (HEAD -> main)
+commit 59047209f8e53290b2226304a601d15a223af08e (HEAD -> main)
 ```
 
-Encontramos o número de identificação do *commit* com 40 caracteres. Não se assuste, não há necessidade de ler esse número nem entender como ele é gerado para utilizar o Git. O importante é saber que cada commit possui um identificador único, possibilitando seu acesso e recuperação dentro do banco de dados do sistema de controle de versões. Na verdade, é possível utilizar os 7 primeiros caracteres para encontrar e referenciar commits específicos. Por exemplo, esse commit pode ser identificado por `572f33f` e o Git será capaz de encontrá-lo. A importância dessa identificação única para cada alteração reside justamente na possibilidade de se acessar cada mudança a qualquer momento e, inclusive, retornar o repositório para a condição que se encontrava naquele momento do tempo.
+Encontramos o número de identificação do *commit* com 40 caracteres. Não se assuste, não há necessidade de ler esse número nem entender como ele é gerado para utilizar o Git. O importante é saber que cada commit possui um identificador único, possibilitando seu acesso e recuperação dentro do banco de dados do sistema de controle de versões. Na verdade, é possível utilizar os 7 primeiros caracteres para encontrar e referenciar commits específicos. Por exemplo, esse commit pode ser identificado por `5904720` e o Git será capaz de encontrá-lo. A importância dessa identificação única para cada alteração reside justamente na possibilidade de se acessar cada mudança a qualquer momento e, inclusive, retornar o repositório para a condição que se encontrava naquele momento do tempo.
 
 A informação que se segue também é importante, mas fará mais sentido na parte 2 dessa lição. `(HEAD -> main)` está indicando que o commit mais recente está apontando para o ramo (*branch*) *main*.  Ou seja, você está trabalhando atualmente em uma linha do tempo chamada *main*, e todas as mudanças que realizar incidirão sobre ela. Na parte dois da lição veremos que é possível criar outras linhas de trabalho ou ramificações, criar alterações nos ficheiros e não afetar as informações contidas em outros ramos.
 
@@ -610,7 +610,7 @@ Nas duas linhas seguintes, temos a autoria e data relativa ao *commit*:
 
 ```bash
 Author: Edward Palmer Thompson <epthompson@hist.com>
-Date:   Thu Jan 5 12:01:16 2023 +0000
+Date:   Thu Jan 26 11:55:21 2023 +0000
 ```
 
 Os dados do autor - nome e email -  são retirados da configuração que realizamos no início da lição com o comado `git config --global user.name` e `git config --global user.mail`. A data e a hora estão no padrão do Git, mas também podem ser configuradas[^config-date].
@@ -620,7 +620,7 @@ Em seguida, podemos ler a mensagem do *commit*, sendo a primeira linha entendida
 ```bash
     Atualização dos dados da lição
     
-    - Inclusão de autoria no README.md
+    - Inclusão do nome do Programming Historian no README.md
     - Atualização do texto em resumos.txt
 ```
 
@@ -630,21 +630,20 @@ Podemos ver todos os commits listados em apenas uma linha, acrescentando a opç�
 
 ```bash
 ~/Documentos/projeto-de-pesquisa$ git log --oneline
-572f33f (HEAD -> main) Atualização dos dados da lição
-48f3c9d Criação do ficheiro para o resumo do tutorial
-93a5660 Criação de README.md
+5904720 (HEAD -> main) Atualização dos dados da lição
+29ffe51 Criação do ficheiro para o resumo do tutorial
+d3fc906 Criação de README.md
 ```
-
 
 Com essa opção, a lista de commits do atual ao mais antigo, apresenta os sete caracteres iniciais da identificação e o título da mensagem.
 
 Também é possível acessarmos um commit específico dessa lista, informando os sete caracteres iniciais:
 
 ```bash
-~/Documentos/projeto-de-pesquisa$ git log 93a5660
-commit 93a56606662ee3f37846d9623fb03d29b2f21135
+~/Documentos/projeto-de-pesquisa$ git log d3fc906
+commit d3fc9068bd0dd9b3d7c6c464e3db08a6f15c268d
 Author: Edward Palmer Thompson <epthompson@hist.com>
-Date:   Thu Jan 5 11:47:12 2023 +0000
+Date:   Thu Jan 26 11:49:25 2023 +0000
 
     Criação de README.md
     
@@ -654,10 +653,20 @@ Date:   Thu Jan 5 11:47:12 2023 +0000
 Ainda utilizando o comando `git log`, também é possível formatar as informações que aparecem na tela. Podemos realizar essa configuração incluindo a opção `--pretty`. Podemos formatar a saída do `git log`  para visualizarmos a hash, o autor, a data e o título do commit em uma única linha. Para isso, o comando seria o seguinte:
 
 ```bash
-~/Documentos/projeto-de-pesquisa$ git log --pretty=format:"%h,%an,%as,'%s','%b'"
+~/Documentos/projeto-de-pesquisa$ git log --pretty=format:"%h,%an,%ad,%s"
 ```
 
-Ou seja, solicitei que o Git apresentasse o log, mas que o formatasse com a opção `--pretty`. Para tanto, passei a opção `format` e passei uma string - entre aspas duplas - com as informações que desejo. Em nosso exemplo, a string é composta por `%h`, que representa a hash do commit, `%an`, que representa o autor do commit, `%as`, que representa a data do commit no formato AAAA-MM-DD, `%s`, que representa o título do commit e `%b` que é o corpo da mensagem, caso exista[^log-csv]. Existem muitas outras opções de formatação que podem ser acessadas na [página de documentação do Git](https://git-scm.com/docs/git-log/pt_BR). Segue uma tabela com algumas delas:
+Ou seja, solicitei que o Git apresentasse o log, mas que o formatasse com a opção `--pretty`. Para tanto, passei a opção `format` e passei uma string - entre aspas duplas - com as informações que desejo. Em nosso exemplo, a string é composta por `%h`, que representa a hash do commit, `%an`, que representa o autor do commit, `%ad`, que representa a data do commit no formato padrão do Git, e `%s`, que representa o título do commit. 
+
+O resultado foi o seguinte:
+
+```bash
+5904720,Edward Palmer Thompson,Thu Jan 26 11:55:21 2023 +0000,Atualização dos dados da lição
+29ffe51,Edward Palmer Thompson,Thu Jan 26 11:52:50 2023 +0000,Criação do ficheiro para o resumo do tutorial
+d3fc906,Edward Palmer Thompson,Thu Jan 26 11:49:25 2023 +0000,Criação de README.md
+```
+
+Existem muitas outras opções de formatação que podem ser acessadas na [página de documentação do Git](https://git-scm.com/docs/git-log/pt_BR). Segue uma tabela com algumas delas:
 
 |Formato|Descrição|
 |-------|---------|
@@ -673,10 +682,10 @@ Ou seja, solicitei que o Git apresentasse o log, mas que o formatasse com a opç
 |%f|linha do assunto higienizado, adequado para um nome de arquivo|
 |%b|corpo|
 
-Com essas informações podemos criar um arquivo tabular com todos os dados de um projeto, registrando de forma explícita e organizada o histórico de alterações, os responsáveis por elas, as datas e o conteúdo das mensagens. Assim, com apenas uma linha de comando temos uma planilha contendo todas as informações necessárias para a gestão do projeto, recuperação de dados e documentação eficiente e transparente.
+Com essas informações podemos criar, por exemplo, um arquivo tabular com todos os dados de um projeto, registrando de forma explícita e organizada o histórico de alterações, os responsáveis por elas, as datas e o conteúdo das mensagens. Assim, com apenas uma linha de comando podemos salvar uma planilha contendo todas as informações necessárias para a gestão do projeto, recuperação de dados e documentação eficiente e transparente.
 
 ```bash
-~/Documentos/projeto-de-pesquisa$ git log --pretty=format:"%h,%an,%ad,%s,%b" > log.csv
+~/Documentos/projeto-de-pesquisa$ git log --pretty=format:"%h,%an,%ad,'%s','%b'" > log.csv
 ```
 
 O comando acima cria um arquivo no formato `csv` com as seguintes informações separadas por vírgula:
@@ -687,11 +696,25 @@ O comando acima cria um arquivo no formato `csv` com as seguintes informações 
 - título do commit - %s
 - conteúdo da mensagem do commit - %b
 
+Perceba que coloquei os últimos dois elementos entre aspas simples, o que serve como um delimitador do texto que será retornado. Ou seja, possíveis vírgulas presentes no título ou no corpo da mensagem não serão entendidas como separadores de uma nova coluna por programas de edição de planilhas. Para que esse padrão funcione bem, é preciso lembrar de não incluir aspas simples nos títulos ou mensagens de *commits*. Essa é uma dica específica para quem deseja gerar arquivos csv a partir do seu histórico. Por isso é importante refletir previamente sobre os processos de documentação de seu projeto.
+
 Podemos visualizar o conteúdo do ficheiro `log.csv` em qualquer software para edição de planilhas. Aqui um exemplo de como ficaria o arquivo:
 
-![Print de visualização do log.csv]()
+|hash abreviada do commit|nome do autor|data do commit|título do commit|conteúdo da mensagem do commit|
+|:----|:----|:----|:----|:----|
+|5904720|Edward Palmer Thompson|Thu Jan 26 11:55:21 2023 +0000|'Atualização dos dados da lição'|'- Inclusão do nome do Programming Historian no README.md - Atualização do texto em resumos.txt|
+|29ffe51|Edward Palmer Thompson|Thu Jan 26 11:52:50 2023 +0000|'Criação do ficheiro para o resumo do tutorial'| |
+|d3fc906|Edward Palmer Thompson|Thu Jan 26 11:49:25 2023 +0000|'Criação de README.md'|'Este commit cria o arquivo README.md com o objetivo de explicar o funcionamento do Git.|
 
-Não se esquece de preparar e submeter as alterações desse novo ficheiro em seu repositório local!
+Não se esqueça de preparar e submeter as alterações desse novo ficheiro em seu repositório local!
+
+```bash
+~/Documentos/projeto-de-pesquisa$ git add log.csv
+~/Documentos/projeto-de-pesquisa$ git commit -m "Criação do arquivo log.csv"
+[main 7e55f5b] Criação do arquivo log.csv
+ 1 file changed, 6 insertions(+)
+ create mode 100644 log.csv
+```
 
 # Considerações finais
 
@@ -723,14 +746,13 @@ Ram, Karthik. “Git can facilitate greater reproducibility and increased transp
 
 ---
 
-[^terminal]: Ver a melhor forma de falar sobre ele. Indicar a lição sobre bash no PH.
-[^branches]: Falaremos mais detalhadamente sobre branches e fluxo de trabalho com eles na parte dois dessa lição.
-[^mainvmaster]: explicar. link sobre.
+[^terminal]: Para abrir o seu emulador de terminal padrão em distribuições Linux, basta apertar `Super` + `t` e no MacOs, basta clicar no Launchpad e buscar "Terminal".
+[^branches]: Falaremos mais detalhadamente sobre *branches* e fluxo de trabalho com eles na parte dois dessa lição.
+[^mainvmaster]: Seguindo debates público recentes, o [GitHub alterou o padrão de nomeação do ramo principal](https://github.com/github/renaming/) de `master` para `main` em 2020. A questão também está sendo discutida no projeto Git, como pode ser visto [aqui](https://sfconservancy.org/news/2020/jun/23/gitbranchname/).
 [^edit]: pode ser acessado através do comando `git config --global --edit`.
-[^echo]: Explorar melhor o comando echo.
-[^vim]: Ver a lição sobre o editor de texto vim.
-[^config-date]: falar sobre configuração de data e hora ou linkar manual do git
-[^torvalds]: quem?
-[^github]: explicar
-[^gitignore]: explicar
-[^log-csv]: Perceba que coloquei os últimos dois elementos entre aspas simples, o que serve como um delimitador do texto que será retornado. Ou seja, possíveis vírgulas presentes no título ou no corpo da mensagem não serão entendidas como separadores de uma nova coluna por programas de edição de planilhas. Para que esse padrão funcione bem, é preciso lembrar de não incluir aspas simples nos títulos ou mensagens de *commits*.
+[^echo]: É uma ferramente Unix que permite imprimir texto numa determinada saída. Aqui estamos utilizando para inserir texto dentro de um arquivo. Para mais informações, [ver a documentação](https://www.gnu.org/software/coreutils/manual/html_node/echo-invocation.html#echo-invocation)
+[^vim]: Editor de texto altamente configurável, comumente pré-instalado em sistemas Unix e MacOs. Veja [documentação aqui](https://www.vim.org/).
+[^config-date]: É possível configurar o modelo de apresentação da data e hora no Git. Para saber mais veja a [documentação](https://git-scm.com/docs/git-log#Documentation/git-log.txt---dateltformatgt) ou ainda essa [explicação no StackOverflow](https://stackoverflow.com/a/34778736/12751702).
+[^torvalds]: [Linus Torvald](https://pt.wikipedia.org/wiki/Linus_Torvalds) é criado e desenvolvedor do Kernel Linux, e também criador do Git.
+[^github]: O GitHub é uma plataforma de hospedagem de repositórios Git, que permite a colaboração entre pesquisadores e a publicação de projetos de pesquisa, entre diversas outras funcionalidades que serão abordadas na parte dois dessa lição. Para saber mais, veja a [documentação](https://docs.github.com/pt/github/getting-started-with-github).
+[^gitignore]: O arquivo `.gitignore` é um ficheiro de texto onde podemos inserir uma lista de padrões de nomes de ficheiros que o Git deve ignorar, ou seja, não rastrear. Isso é útil para evitar a inclusão de arquivos muito pesados no seu histórico, ou ainda ficheiros de texto que não correspondem à pesquisa. Veremos com mais detalhes esse recurso na parte dois da lição. Para saber mais, veja a [documentação](https://git-scm.com/docs/gitignore).
