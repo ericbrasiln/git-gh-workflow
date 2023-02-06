@@ -19,7 +19,7 @@ Para essa lição, vamos criar um repositório local intitulado `projeto-de-pesq
 
 Computador ligado à internet. Terminal (Linux e Mac) ou Git Bash (Windows).
 
-# Objetivos de aprendizagem
+# Objectivos de aprendizagem
 
 No final deste tutorial os participantes deverão estar aptos a:
 	- Compreender os sistemas de controle de versões e suas implicações metodológicas para a pesquisa;
@@ -40,19 +40,19 @@ Portanto, é importante termos algum método explícito para controlar as difere
 
 ## O que é um sistema de controle de versões?
 
-Entretanto, ao invés de criarmos um método do zero, proponho aqui a utilização de uma categoria de programas criada especificamente para o registro das alterações em ficheiros: os Sistemas de Controle de Versão (*SCVs*): consiste em um sistema que registra as mudanças de um ficheiro ou conjunto de ficheiros ao longo do tempo, cada uma dessas mudanças é acompanhada de um conjunto de metadados, e te permite recuperar tanto esses dados quanto o estado em que se encontrava o seu projeto há época.
+Entretanto, ao invés de criarmos um método do zero, proponho aqui a utilização de uma categoria de programas criada especificamente para o registro das alterações em ficheiros: os Sistemas de Controle de Versão (*SCVs*). Um SCV consiste em um sistema que registra as mudanças de um ficheiro ou conjunto de ficheiros ao longo do tempo, cada uma dessas mudanças é acompanhada de um conjunto de metadados (ou seja, informações sobre os dados), e te permite recuperar tanto esses dados quanto o estado em que se encontrava o seu projeto há época.
 
 É como se você possuísse uma máquina do tempo capaz de te levar de volta a qualquer ponto da história de mudanças da sua pesquisa.
 
 O uso de SCVs é mais comum entre desenvolvedores de códigos e programas de computador. Entretanto, suas características o colocam como uma importante ferramenta para as ciências humanas e sociais: ao utilizar um SCV você é capaz de acompanhar, documentar, recuperar e corrigir as etapas do projeto de pesquisa. Também é possível acompanhar trabalhos de alunos ou equipe que compõe um projeto [(Guerrero-Higueras et al., 2020, p. 2)](https://www.mdpi.com/2076-3417/10/4/1492).
 
 <div class="alert alert-warning">
- Existe uma lição que faz referência e explica os SCVs no Programming Historian em inglês, porém a mesma está retirada. A lição estava centrada na utilização do Github Desktop, aplicativo que não é mais mantido. A lição pode ser acessada em (http://programminghistorian.org/en/lessons/retired/getting-started-with-github-desktop) e possuiu informações importantes que devem ser consideradas. Entretanto, aqui, busco apresentar o básico sobre Git sem a necessidade de outras ferramentas, apresentando sua lógica e fluxo de trabalho. Dominar esses elementos permite que a utilização de plataformas como GitHub e o uso do Git em IDEs, como VS Code e RStudio, sejam mais eficientes.
+ Existe uma lição que faz referência e explica os SCVs no Programming Historian em inglês, porém a mesma está retirada. A lição estava centrada na utilização do Github Desktop, aplicativo que não é mais mantido.Ela pode ser acessada [nesse link](http://programminghistorian.org/en/lessons/retired/getting-started-with-github-desktop) e possuiu informações importantes que devem ser consideradas. Entretanto, aqui, busco apresentar o básico sobre Git sem a necessidade de outras ferramentas, apresentando sua lógica e fluxo de trabalho. Dominar esses elementos permite que a utilização de plataformas como GitHub e o uso do Git em IDEs, como VS Code e RStudio, sejam mais eficientes.
 </div>
 
 ### Centralizado X Distribuído
 
-Os primeiros SCVs possuíam um modelo centralizado. Ou seja, o repositório principal era hospedado em um único servidor que armazenava todos os ficheiros versionados. Quem trabalhava no projeto enviava e recuperava todas as informações diretamente no servidor central. Esse sistema possui algumas vantagens, como a capacidade dos administradores em controlar e filtrar os acessos e atribuições de cada membro da equipe e todos conseguem saber esses papéis. (Chacon e Straub, 2014, p. 11 - 12). 
+Os primeiros SCVs possuíam um modelo centralizado. Ou seja, o repositório principal era hospedado em um único servidor que armazenava todos os ficheiros versionados. Quem trabalhava no projeto enviava e recuperava todas as informações diretamente no servidor central. Esse sistema possui algumas vantagens, como a capacidade dos administradores em controlar e filtrar os acessos e atribuições de cada membro da equipe e todos conseguem saber quais são eles. (Chacon e Straub, 2014, p. 11 - 12, tradução minha). 
 
 Porém, as desvantagens principais consistem justamente no seu caráter centralizado: caso o servidor tenha algum problema, todo os dados podem ser perdidos, visto que toda a história do projeto está preservada em apenas um local.
 
@@ -296,7 +296,7 @@ Arquivos não monitorados:
 nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
 ```
 
-Vamos entender o que o Git está nos dizendo. Ao passarmos o comando `status` para o Git, ele nos informa a situação atual do repositório. Nesse momento, o Git nos informa que estamos no ramo (ou *branch*) `main`: `No ramo main`. Em seguida nos informa que não existem submissões (*commits*) ainda: `No commits yet`. Mais abaixo veremos o que são *commits* e sua importância metodológica para nossas pesquisas.
+Vamos entender o que o Git está nos dizendo. Ao passarmos o comando `status` para o Git, ele nos informa a situação atual do repositório. Nesse momento, o Git nos informa que estamos no ramo (ou *branch*) `main`: `No ramo main`. Em seguida nos informa que não existem submissões (*commits*) ainda: `No commits yet`[^gittrasnlate]. Mais abaixo veremos o que são *commits* e sua importância metodológica para nossas pesquisas.
 
 Em seguida temos a mensagem: 
 
@@ -530,11 +530,11 @@ Resumindo: toda vez que um novo ficheiro for criado ele precisa ser preparado (`
 
 Parte significativa do nosso trabalho de pesquisa, escrita e ensino atualmente é mediado por ferramentas digitais, ao mesmo tempo que dados digitais se tornam cada vez mais centrais para as Ciências Sociais e Humanas. Sejam buscas on-line em repositórios, trocas de mensagens por aplicativos, leitura de informações com editores de texto e planilhas, seja a aplicação de linguagem de programação para análise textual, visualização de dados entrou tantas outras possibilidades. A seleção, coleta, organização e tratamento dos dados que pretendemos utilizar em pesquisa, artigos ou aulas nos demanda atualmente cuidados diferentes e adicionais daqueles para os quais fomos treinados em nossa formação anterior à virada digital. Nas palavras de Fridlunnd, Oiva e Paju:
 
->Os métodos de pesquisa digital criam demandas novas e às vezes mais rigorosas de precisão, pensamento metodológico, auto-organização e colaboração do que a pesquisa histórica tradicional" (FRIDLUND; OIVA; PAJU, 2020, pos. 543).
+>Os métodos de pesquisa digital criam demandas novas e às vezes mais rigorosas de precisão, pensamento metodológico, auto-organização e colaboração do que a pesquisa histórica tradicional" (FRIDLUND; OIVA; PAJU, 2020, pos. 543, tradução minha).
 
 Um caminho importante na busca de sanar essas novas demandas, é a transparência metodológica. Nas palavras de Gibbs e Owens:
 
->novos métodos usados para explorar e interpretar dados históricos exigem um novo nível de transparência metodológica na escrita histórica. Exemplos incluem discussões de consultas de dados, fluxos de trabalho com ferramentas específicas e a produção e interpretação de visualizações de dados. No mínimo, as publicações de pesquisa dos historiadores precisam refletir novas prioridades que explicam o processo de interfacear, explorar e, em seguida, compreender as fontes históricas de uma forma fundamentalmente digital - ou seja, a hermenêutica dos dados. (Gibbs e Owens, 2013: 159)
+>novos métodos usados para explorar e interpretar dados históricos exigem um novo nível de transparência metodológica na escrita histórica. Exemplos incluem discussões de consultas de dados, fluxos de trabalho com ferramentas específicas e a produção e interpretação de visualizações de dados. No mínimo, as publicações de pesquisa dos historiadores precisam refletir novas prioridades que explicam o processo de interfacear, explorar e, em seguida, compreender as fontes históricas de uma forma fundamentalmente digital - ou seja, a hermenêutica dos dados. (Gibbs e Owens, 2013, p. 159, tradução minha)
 
 É fundamental criar um plano para organização, documentação, preservação e compartilhamento dos dados, métodos e resultados da pequisa (ver a [lição de James Baker](https://programminghistorian.org/pt/licoes/preservar-os-seus-dados-de-investigacao)). É necessário não apenas ficar atentos, mas também dedicar tempo em nosso cronograma de trabalho para uma reflexão em torno de:
 
@@ -563,7 +563,7 @@ Isso é muito importante em pelo menos dois aspectos:
   
 ### git log
 
->Git commit logs can provide a highly granular way to track and assess individual author contributions to a project. When projects are tracked using Git, every single action (such as additions, deletions, and changes) is attributed to an author. (Ram, 2013, p. 3)
+>Os logs de commits do Git podem fornecer uma maneira altamente granular de rastrear e avaliar as contribuições de autores individuais para um projeto. Quando os projetos são rastreados usando o Git, cada ação (como adições, exclusões e alterações) é atribuída a um autor. (Ram, 2013, p. 3, tradução minha)
 
 
 Para recuperarmos as informações submetidas ao repositório local, podemos utilizar o comando `git log`. Esse comando será muito útil para acessarmos as informações sobre o histórico de alterações em nossos ficheiros e avaliarmos o progresso do trabalho.
@@ -718,7 +718,7 @@ Não se esqueça de preparar e submeter as alterações desse novo ficheiro em s
 
 # Considerações finais
 
->With disciplined use of Git, individual scientists and labs can ensure that the entire timeline of events that occur over the development of a research project are securely logged in a system that provides security against data loss and encourages risk-free exploration of new ideas and approaches. (Ram, 2013, p. 6)
+>Com o uso disciplinado do Git, cientistas e laboratórios podem garantir que toda a linha do tempo dos eventos que ocorrem durante o desenvolvimento de um projeto de pesquisa seja registrada de forma segura em um sistema que oferece segurança contra perda de dados e incentiva a exploração sem riscos de novas ideias e abordagens. (Ram, 2013, p. 6, tradução minha)
 
 O uso consciente e sistemático do Git, apesar de sua curva de aprendizado mais acentuada, permite que pesquisadores e equipes possam trabalhar de forma segura e controlada, integrando ao processo de pesquisa/escrita os procedimentos metodológicos de documentação e registro de metadados e decisões tomadas. Ao mesmo tempo, garante a criação de uma linha do tempo de todo o processo, permitindo a recuperação das informações e restauração de ficheiros. 
 
@@ -746,6 +746,7 @@ Ram, Karthik. “Git can facilitate greater reproducibility and increased transp
 
 ---
 
+[^gittrasnlate]: A versão em portugês do Git ainda apresenta trechos em inglês, o que pode gerar problemas de compreensão. Nessa lição mantivemos o padrão do Git em português.
 [^terminal]: Para abrir o seu emulador de terminal padrão em distribuições Linux, basta apertar `Super` + `t` e no MacOs, basta clicar no Launchpad e buscar "Terminal".
 [^branches]: Falaremos mais detalhadamente sobre *branches* e fluxo de trabalho com eles na parte dois dessa lição.
 [^mainvmaster]: Seguindo debates público recentes, o [GitHub alterou o padrão de nomeação do ramo principal](https://github.com/github/renaming/) de `master` para `main` em 2020. A questão também está sendo discutida no projeto Git, como pode ser visto [aqui](https://sfconservancy.org/news/2020/jun/23/gitbranchname/).
