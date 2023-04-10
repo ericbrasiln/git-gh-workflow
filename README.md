@@ -29,7 +29,7 @@ Veja mais detalhes [aqui](PH_workflow/README.md)
 
 ## Proposta de lição em português para o PH
 
-Veja mais detalhes [aqui](lesson-proposal/README.md)
+Veja mais detalhes [aqui](https://github.com/ericbrasiln/git-gh-workflow/blob/main/lesson_proposal/scv-git.md)
 
 ## Biblioteca Online no Zotero
 
