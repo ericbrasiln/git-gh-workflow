@@ -1,0 +1,15 @@
+32f1eb0,Eric Brasil,2023-05-25,'Inclusão de novas imagens','- Inclusão de imagens referentes ao fluxo de trabalho
+- Correção e atualização dos títulos dos ficheiros
+- Correção das legendas no ficheiro markdown
+- inclusão de nova versão do arquivo compactado
+'
+ce47c8b,Eric Brasil,2023-05-24,'reorganização das pastas',''
+6c6ea17,Eric Brasil,2023-05-22,'Criação de ficheiro zip','Criação de ficheiro compactado com a versão final da lição em md e com
+ficheiros de imagens.
+'
+f8ca95a,Eric Brasil,2023-05-22,'Excusão de imagens não utilizadas','Imagem de branches e termo de instalação do windows foram excluídas da
+pasta pois não foram utilizadas na parte um da lição.
+'
+136beb9,Eric Brasil,2023-05-22,'Correção Final','Correção final realizada após leitura e sugestões de Daniel Alves.
+'
+bd669df,Eric Brasil,2023-05-22,'Commit Inicial',''
